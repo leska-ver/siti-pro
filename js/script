@@ -1,0 +1,50 @@
+document.addEventListener('DOMContentLoaded', function () {
+
+
+/*Клик БУРГЕР*/
+  const burger = document.querySelector('#burger');
+  const menu = document.querySelector('#menu');
+  //Анимируем крест бургера
+  burger.addEventListener('click', function(e) {
+    burger.classList.toggle('active');
+  });
+  //Кликом по бургеру открываем меню
+  burger.addEventListener('click', function () {
+    burger.classList.add('open');
+
+    menu.classList.toggle('is-active');
+
+    if (menu.classList.contains('is-active')) {
+      menu.style.transition = 'transform .7s ease-in-out';
+    }
+  });
+  menu.addEventListener('transitionend', function () {
+    if (!menu.classList.contains('is-active')) {
+      menu.style.transition = '';
+      burger.classList.remove('open');
+    }
+  });
+
+  
+  // hero SWIPER
+  const swiper = new Swiper(".hero__swiper_mySwiper", {
+    pagination: {
+      el: ".hero__pagination",
+      // type: "fraction",
+      clickable: true,  
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
+
+
+  
+
+  
+      
+      
+  
+
+});

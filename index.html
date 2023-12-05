@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="shorcut icon" href="img/favicon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Для поиска в сети-->
+    <meta name="description" content="Вам нужна реставрация или окраска? Вы по адресу."> 
+    <meta property="og:title" content="Производство календарей для фрилансеров">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="здесь ссылка на сайт"><!-- здесь ссылка на сайт -->
+    <meta property="og:image" content="img/ogImage.jpg">
+    <meta name="keywords" content="календарь, фрилансер, удалёнка, работа, заказ">
+    <!-- //Для поиска в сети-->
+    <!-- Swiper -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+    <title>СИТИ ПРО</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <div class="wrapper">
+      <h1 class="visually-hidden">Я для семантики</h1>
+      <header class="header">
+        <div class="header__container">
+          <a href="#" class="header__logo">
+            <img class="header__logo-img" src="img/logo.png" alt="Логотип Slate">
+          </a>
+          <button class="burger" id="burger" aria-label="Меню">
+            <span class="rect"></span>
+            <span class="rect"></span>
+            <span class="rect"></span>
+          </button>
+          <div class="header__block-menu menu" id="menu">
+            <nav class="header__nav">
+              <ul class="header__list">
+                <!--  menu" id="menu  -->
+                <li class="header__item">
+                  <a class="header__link" href="#" aria-label="Нажмите чтобы узнать о нас">О нас</a>
+                </li>
+                <li class="header__item">
+                  <a class="header__link" href="#" aria-label="Нажмите чтобы увидеть виды услуг">Виды услуг</a>
+                </li>
+                <li class="header__item">
+                  <a class="header__link" href="#" aria-label="Нажмите чтобы увидеть портфолио">Портфолио</a>
+                </li>
+                <li class="header__item">
+                  <a class="header__link" href="#" aria-label="Нажмите чтобы оставить заявку">Оставьте заявку</a>
+                </li>
+                <li class="header__item">
+                  <a class="header__link" href="#" aria-label="Нажмите чтобы узнать о нас">Контакты</a>
+                </li>
+              </ul>
+            </nav>            
+            <a class="header__phone" href="tel:79000000000">
+              <svg width="30" height="30" viewbox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="15" cy="15" r="15" fill="#73A56C"/>
+                <path d="M17.6667 10.5556C18.1382 10.5556 18.5903 10.7429 18.9237 11.0763C19.2571 11.4097 19.4444 11.8618 19.4444 12.3333M17.6667 7C19.0812 7 20.4377 7.5619 21.4379 8.5621C22.4381 9.56229 23 10.9188 23 12.3333M8.77778 7.88889H12.3333L14.1111 12.3333L11.8889 13.6667C12.8409 15.5969 14.4031 17.1591 16.3333 18.1111L17.6667 15.8889L22.1111 17.6667V21.2222C22.1111 21.6937 21.9238 22.1459 21.5904 22.4793C21.257 22.8127 20.8048 23 20.3333 23C16.866 22.7893 13.5957 21.3169 11.1394 18.8606C8.68311 16.4043 7.21071 13.134 7 9.66667C7 9.19517 7.1873 8.74299 7.5207 8.40959C7.8541 8.07619 8.30628 7.88889 8.77778 7.88889Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              +7 900 000 00 00
+            </a>
+            <!-- Шаблон микс и модификаторы (_) icone -->
+            <nav class="header__nav-icone icone">
+              <ul class="icone__list">
+                <li class="icone__item">
+                  <a class="icone__link" href="https://vk.com/" target="blank">
+                    <img src="img/icone/01.svg" alt="Вконтакте">
+                  </a>
+                </li>   
+                <li class="icone__item">
+                  <a class="icone__link" href="https://telegram.org/" target="blank">
+                    <img src="img/icone/02.svg" alt="Телеграмм">
+                  </a>
+                </li>
+                <li class="icone__item">
+                  <a class="icone__link" href="https://whatsapp.com/" target="blank">
+                    <img src="img/icone/03.svg" alt="Ватсап">
+                  </a>
+                </li>
+                <li class="icone__item">
+                  <a class="icone__link" href="https://viber.com/" target="blank">
+                    <img src="img/icone/04.svg" alt="Вайбер">
+                  </a>
+                </li>
+              </ul>
+            </nav>       
+          </div>
+        </div>  
+      </header>
+      <main>
+        <section class="hero"> 
+          <!-- Swiper -->
+          <div class="hero__swiper hero__swiper_mySwiper swiper">
+            <div class="hero__wrapper swiper-wrapper">
+              <div class="hero__swiper hero__swiper_one swiper-slide">                  
+                <div class="hero__container hero__container_padding"> 
+                  <h2 class="hero__h2 h2">Реставрация лакокрасочного покрытия</h2>
+                  <button class="hero__btn btn">
+                    Получить консультацию
+                  </button>
+                </div>
+              </div>  
+              <div class="hero__swiper hero__swiper_two swiper-slide">
+                <div class="hero__container hero__container_padding"> 
+                  <h2 class="hero__h2 h2">Профессиональная окраска интерьера</h2>
+                  <button class="hero__btn btn">
+                    Получить консультацию
+                  </button>
+                </div>
+              </div>
+              <div class="hero__swiper hero__swiper_three swiper-slide">
+                <div class="hero__container hero__container_padding"> 
+                  <h2 class="hero__h2 h2">Профессиональная окраска экстерьера</h2>
+                  <button class="hero__btn btn">
+                    Получить консультацию
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="hero__pagination">
+              <div class=" swiper-pagination"></div>
+            </div>
+          </div> 
+        </section>
+        <section class="about">
+          <div class="about__container figure">
+            <span class="about__span figure-span"></span>
+            <h2 class="about__h2 h2">О нас</h2>
+            <div class="about__grid">
+              <div class="about__info">
+                <h3 class="about__h3 h3">
+                  Сплочённость команды профессионалов позволила расправить крылья
+                </h3>
+                <div class="about__content content-block content_block hide">                  
+                  <p class="about__desc desc">
+                    Противоположная точка зрения подразумевает, что интерактивные прототипы, инициированные исключительно синтетически, превращены в посмешище, хотя само их существование приносит несомненную пользу обществу.
+                  </p>
+                  <p class="about__desc desc">
+                    В частности, перспективное планирование предопределяет высокую востребованность инновационных методов управления процессами.
+                  </p>
+                  <p class="about__desc desc">
+                    А ещё ключевые особенности структуры проекта представляют собой не что иное, как квинтэссенцию победы маркетинга над разумом и должны быть подвергнуты целой серии независимых исследований.
+                  </p>
+                </div>
+                <button class="about__button content-toggle content_toggle arrow-t">
+                  <svg width="18" height="11" viewbox="0 0 18 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M2 2L9 9L16 2" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </button>
+              </div>
+              <div class="about__img">
+                <img src="img/about.jpg" alt="Покраска изделия">
+              </div>
+            </div>
+          </div>
+        </section>  
+        <section class="promise">
+          <div class="promise__container">
+            <ul class="promise__list">
+              <li class="promise__item">
+                <div class="promise__img">
+                  <img src="img/icone-promise/01.png" alt="иконка-">
+                </div>
+                <p class="promise__desc desc">
+                  Гарантия на все виды работ                  
+                </p>
+              </li>
+              <li class="promise__item">
+                <div class="promise__img">
+                  <img src="img/icone-promise/02.png" alt="иконка-">
+                </div>
+                <p class="promise__desc desc">
+                  В работе используются материалы от ведущих европейских производителей
+                </p>
+              </li>
+              <li class="promise__item">
+                <div class="promise__img">
+                  <img src="img/icone-promise/03.png" alt="иконка-">
+                </div>
+                <p class="promise__desc desc">
+                  Высококвалифицированный персонал
+                </p>
+              </li>
+              <li class="promise__item">
+                <div class="promise__img">
+                  <img src="img/icone-promise/04.png" alt="иконка-">
+                </div>
+                <p class="promise__desc desc">
+                  Своя лаборатория цветоподбора
+                </p>
+              </li>
+            </ul>
+          </div>
+        </section>       
+      </main>
+      <footer class="footer">
+        <div class="footer__container"></div>
+      </footer>  
+    </div><!-- wrapper -->
+
+
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <!-- jquery JS для блока "about - О нас" -->
+    <script src="https://snipp.ru/cdn/jquery/2.1.1/jquery.min.js"></script>
+
+    <!-- Мои JS -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="js/script"></script>
+  </body>
+</html>
+
