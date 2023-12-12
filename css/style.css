@@ -39,6 +39,8 @@
   --color-asparagus: #73A56C;
   --color-mercury: #e8e8e8;
   --color-fruitSalad: #54994b;
+  --color-gray: #878787;
+  --color-athensGray: #eee;
 }  
 
 html {
@@ -152,8 +154,8 @@ button {
 }
 
 [class*="__container"] {
-  /*1170px = 1070px + 50px + 50px не менять!*/
-  max-width: 1170px;
+  /*1310px = 1210px + 50px + 50px не менять!*/
+  max-width: 1310px;
   margin: 0 auto;
   padding: 0 70px;
 }
@@ -174,6 +176,17 @@ button {
   margin: 0;
   font-size: clamp(14px, 4vw, 16px);
   font-weight: 400;
+}
+
+/*Цвет для всех форм инпутов*/
+::placeholder {  
+  line-height: 1.2;
+  color: rgb(98, 98, 98);  
+}
+/*-//- Цвет для всех форм инпутов*/
+
+textarea {
+  resize: none;
 }
 
 /* Шаблон микс и модификаторы (_) icone */
@@ -219,12 +232,12 @@ button {
 
 .figure-span {
   position: absolute;
-  top: -18px;
+  top: -27px;
   left: clamp(177px, 5vw, 305px);
   left: 25%;
   display: inline-block;
-  border-bottom: 20px solid #e8e8e8;
-  border-right: 20px solid transparent;
+  border-bottom: 30px solid #e8e8e8;
+  border-right: 30px solid transparent;
 }
 /* // Шаблон микс figure */
 
@@ -234,6 +247,318 @@ button {
 }
 /* // Шаблон микc. Показать и скрыть часть текста  jquery */
 
+/*биб swiper*/
+.swiper {
+  overflow: hidden;
+}
+
+/* Шаблон микс и модификаторы (_) pattern (about, portfolio)*/
+.pattern__h3 {
+  margin-bottom: 24px;
+  line-height: 1.12;
+  color: var(--color-fruitSalad);
+}
+
+.pattern__desc {
+  margin-bottom: 18px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+/* // Шаблон микс и модификаторы (_) pattern (about, portfolio)*/
+
+/***Стилазация фразы ошибки***/
+.form__label {/*общий*/
+  position: relative;
+}
+
+.js-validate-error-label {
+  position: absolute;
+  top: -19px;
+  left: 7px;
+  font-size: 12px;
+}
+/***Конец стилазация фразы ошибки***/
+
+/* Шаблон микс form */
+.form__block {
+  display: -ms-grid;
+  display: grid;
+  grid-template-areas:
+  "form__label_grid form__label_gridTwo" 
+  "form__label_areas form__label_areas"; 
+  -webkit-grid-template-columns: repeat(2, 1fr);
+  -o-grid-template-columns: repeat(2, 1fr);
+  -moz-grid-template-columns: repeat(2, 1fr);
+  -ms-grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, 1fr);
+  -webkit--gap: 32px;
+  -moz--gap: 32px;
+  gap: 32px;
+  margin-bottom: 31px;
+}
+
+.form__label:not(:last-child) {
+  margin-bottom: 25px;
+}
+
+.form__label_grid {
+  grid-area: form__label_grid;
+}
+
+.form__label_gridTwo {
+  grid-area: form__label_gridTwo;
+}
+
+.form__label_areas {
+  grid-area: form__label_areas;
+}
+
+.form__input, .form__textarea {
+  width: 100%;
+  padding: 24px 26px;
+  border-radius: 15px;
+  border: 1px solid transparent;
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--color-gray);
+  outline: none;
+  -webkit-transition: all .4s ease-in-out;
+  -ms-transition: all .4s ease-in-out;
+  -moz-transition: all .4s ease-in-out;
+  -o-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+}
+
+.form__input:focus-visible, .form__textarea:focus-visible {
+  background-color: var(--color-mercury);
+}
+
+.form__textarea {
+  height: 204px;
+}
+
+.form__checkbox-container {
+  position: relative;
+  margin: 0 0 42px;
+  font-size: clamp(14px, 5vw, 16px);
+  font-weight: 500;
+  text-align: center;
+  color: var(--color-mineShaft);
+}
+
+.form__input-checkbox {
+  padding-left: 0;
+  /*Убрали синий чекбокс, он на мобильнике высвечивается*/
+  opacity: 0;
+}
+
+.form__label_checkbox {
+  padding-left: 0;
+}
+
+.form__input-checkbox:focus, input[type="checkbox"]:focus ~ label::before, .checkbox-js:checked + .form__label_checkbox:focus::before {
+border: 1px solid rgb(255, 105, 114);
+background-color: var(--color-asparagus);
+outline: none;
+}
+
+/*Для Галпа*/
+.form__input-checkbox:focus-visible {
+  outline: none;
+}
+/* // Для Галпа*/
+
+.form__input-checkbox:hover, input[type="checkbox"]:hover ~ label::before {
+border: 1px solid #0046A2;
+background-color: #0046A2;
+}
+
+.form__label_checkbox::before {
+  content: "";
+  position: absolute;
+  top: -8px;
+  left: -16px;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  width: 38px;
+  height: 38px;
+  background-color: var(--color-white);
+  cursor: pointer;
+  -webkit-transition: border-color 0.05s linear, background-color 0.05s linear;
+  -ms-transition: border-color 0.05s linear, background-color 0.05s linear;
+  -moz-transition: border-color 0.05s linear, background-color 0.05s linear;
+  -o-transition: border-color 0.05s linear, background-color 0.05s linear;
+  transition: border-color 0.05s linear, background-color 0.05s linear;
+}
+
+.checkbox-js:checked + .form__label_checkbox::before {
+  border-color: var(--color-white);
+  background-color: var(--color-white);
+}
+
+.form__label_checkbox::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: -9px;
+  border-top: 6px solid #0046A2;
+  border-right: 6px solid #0046A2;
+  border-radius: 2px;
+  width: 22px;
+  height: 15px;
+  transform: rotate(133deg);
+  cursor: pointer;
+  -webkit-transition: background-image 0.05s linear;
+  -ms-transition: background-image 0.05s linear;
+  -moz-transition: background-image 0.05s linear;
+  -o-transition: background-image 0.05s linear;
+  transition: background-image 0.05s linear;
+  display: none;
+}
+
+.checkbox-js:checked + .form__label_checkbox::after {
+  display: block;
+}
+
+.form__checkbox-container .js-validate-error-label {
+  top: -8px;
+  left: 16%;
+}  
+
+.form__desc {
+  display: inline-block;
+  padding-left: 33px;
+  font-weight: 500;
+}
+
+.form__button {
+  display: block;
+  margin: 0 auto;
+  padding: 21px 94px;
+}
+
+.form__button_filled:disabled, #openModal01 .form__button_filled:disabled {
+  color: #999;
+  border-color: #EAEAEA;
+  background-color: #EAEAEA;
+}
+/* // Шаблон микс form */
+
+
+/*** Шаблон микс modal СПАСИБО 1920px***/
+.modal {  
+  display: flex;
+  align-items: center;
+  justify-content: center;  
+  width: 100%;
+  height: 100%;  
+  background-color: rgba(51, 51, 51, 0.3);
+}
+
+.modal_js {
+  visibility: hidden;
+  opacity: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 999;/*Для js перекрыть .modal*/
+}
+
+.modal_js_active {
+  visibility: visible;
+  opacity: 1;
+}
+
+.modal__sps {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  flex-basis: 624px;
+  padding: 116px 30px 75px;
+  border-radius: 10px;
+  min-width: 260px;
+  background-color: var(--color-white);
+  opacity: 0;  
+  -webkit-transition: opacity 0.15s linear;
+  -ms-transition: opacity 0.15s linear;
+  -moz-transition: opacity 0.15s linear;
+  -o-transition: opacity 0.15s linear;
+  transition: opacity 0.15s linear;  
+  overflow: hidden; 
+}
+
+.modal__sps_js {
+ display: none;
+ opacity: 0;
+}
+
+.modal__sps_js_active {
+ opacity: 1;
+ display: -webkit-box;
+ display: -ms-flexbox;
+ display: flex;
+}
+
+/*Крест выключатель модального окна*/
+.modal__close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  outline: none; 
+  border: 1px solid transparent; 
+  font-size: clamp(14px, 5vw, 25px);
+  color: var(--color-lueViolet);
+  -webkit-transition: color .4s ease-in-out, background-color .4s ease-in-out;
+  -ms-transition: color .4s ease-in-out, background-color .4s ease-in-out;
+  -moz-transition: color .4s ease-in-out, background-color .4s ease-in-out;
+  -o-transition: color .4s ease-in-out, background-color .4s ease-in-out;
+  transition: color .4s ease-in-out, background-color .4s ease-in-out;
+  cursor: pointer;  
+}
+
+.modal__close:focus {  
+  border: 1px solid var(--color-cobalt);
+}
+
+.modal__close:hover {
+  color: var(--color-white);
+  background-color: var(--color-cobalt);
+}
+
+.modal__close:active {
+  opacity: .7;
+}
+
+.modal__h2 {
+  margin-top: 0;
+  margin-bottom: 70px;
+  font-weight: 500;
+  font-size: clamp(16px, 5vw, 32px);
+  line-height: 1.2;
+}
+/*** // Шаблон микс modal СПАСИБО 1920px***/
+
+/*---Яндекс карта map---*/
+#map {
+  margin: 0;
+  padding: 0;
+}
+
+[class*="ground-pane"] {
+  filter: grayscale(1)/*черно-белое*/
+}
+
+/* Скрыла рекламу такси и всякий мусор */
+.ymaps-2-1-79-copyrights-pane {
+  display: none;
+}
+/*--- // Яндекс карта map---*/
+
 
 /***Шапка header-1920px***/
 .header {
@@ -242,7 +567,7 @@ button {
   z-index: 2;
 }
 
-.header__container {
+.header__padding {
   display: flex;
   align-items: center;
   padding: 20px 70px;
@@ -306,20 +631,28 @@ button {
 /* // Анимируем крест бургера */
 
 .header__block-menu {
-  display: flex;
-  justify-content: end;
+  display: -ms-grid;
+  display: grid;
+  -webkit-grid-template-columns: 1fr 189px;
+  -o-grid-template-columns: 1fr 189px;
+  -moz-grid-template-columns: 1fr 189px;
+  -ms-grid-template-columns: 1fr 189px;
+  grid-template-columns: 1fr 189px;
+  -webkit--gap: 38px;
+  -moz--gap: 38px;
+  gap: 38px;
   align-items: center;
 }
 
 .header__nav {
-  margin: -4px 38px 0 0;
-  width: 74%;
+  margin: -4px 0 0;
 }
 
 .header__list {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  justify-content: space-between;
 }
 
 .header__item:not(:last-child) {
@@ -353,7 +686,7 @@ button {
   display: flex;
   align-items: center;
   margin-left: auto;
-  width: 189px;
+  /* width: 189px; */
   font-size: 18px;
   -webkit-transition: all .4s ease-in-out;
   -ms-transition: all .4s ease-in-out;
@@ -396,18 +729,18 @@ button {
 }
 
 .hero__swiper_one {
-  background: url("../img/swiper-1/01.png") center / cover no-repeat;
+  background: url("../img/swiper-1/01.png") 0% 0% / cover no-repeat;
 }
 
 .hero__swiper_two {
-  background: url("../img/swiper-1/02.png") center / cover no-repeat;
+  background: url("../img/swiper-1/02.png") 0% 0% / cover no-repeat;
 }
 
 .hero__swiper_three {
-  background: url("../img/swiper-1/03.png") center / cover no-repeat;
+  background: url("../img/swiper-1/03.png") 0% 0% / cover no-repeat;
 }
 
-.hero__swiper .swiper-horizontal > .swiper-pagination-bullets, .hero__swiper .swiper-pagination-bullets.swiper-pagination-horizontal {
+.hero__mySwiper .swiper-horizontal > .swiper-pagination-bullets, .hero__mySwiper .swiper-pagination-bullets.swiper-pagination-horizontal {
   position: absolute;
   bottom: 40.4%;
   left: 25%;
@@ -433,7 +766,7 @@ button {
 }
 
 /*булить палочки отталкиваем друг от друга*/
-.hero__swiper .swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet, .hero__swiper .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+.hero__mySwiper .swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet, .hero__mySwiper .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
   margin-right: 16px;
 }
 
@@ -463,7 +796,7 @@ button {
 
 .hero__h2 {
   margin-bottom: 94px;
-  padding: 0 70px;
+  padding: 0 70px 0 140px;
   width: 545px;
   font-size: clamp(20px, 5vw, 50px);
   line-height: 1.23;
@@ -472,7 +805,7 @@ button {
 }
 
 .hero__btn {
-  margin: 0 70px 0;
+  margin: 0 70px 0 140px;
 }
 /*** // Слайдер hero-1920px***/
 
@@ -480,8 +813,9 @@ button {
 /***  О нас about-1920px***/
 .about {
   position: relative;
-  margin-top: -88px;
-  padding-bottom: 50px;
+  margin-top: -115px;
+  padding-top: 27px;
+  padding-bottom: 51px;
   z-index: 1;
 }
 
@@ -489,6 +823,7 @@ button {
   position: relative;  
   padding-top: 23px;
   padding-bottom: 101px;
+  width: 1170px;
 }
 
 .about__h2 {
@@ -511,14 +846,10 @@ button {
 
 .about__h3 {
   margin-bottom: 24px;
-  line-height: 1.12;
-  color: var(--color-fruitSalad);
 }
 
 .about__desc {
   margin-bottom: 18px;
-  font-weight: 500;
-  line-height: 1.2;
 }
 
 .about__img img {
@@ -527,24 +858,528 @@ button {
 /*** // О нас about-1920px***/
 
 
+/*** обещать promise-1920px***/
+.promise {
+  padding: 51px 0 104px;
+}
 
-@media (max-width: 1111px) {
+.promise__list {
+  display: -ms-grid;
+  display: grid;
+  -webkit-grid-template-columns: repeat(4, 1fr);
+  -o-grid-template-columns: repeat(4, 1fr);
+  -moz-grid-template-columns: repeat(4, 1fr);
+  -ms-grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, 1fr);
+  -webkit--gap: 32px;
+  -moz--gap: 32px;
+  gap: 32px;
+}
+
+.promise__item {
+  text-align: center;
+}
+
+.promise__img {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 23px;
+}
+
+.promise__desc {
+  font-size: 16px;
+  line-height: 1.1;
+}
+/*** // обещать promise-1920px***/
+
+
+/*** Виды услуг services-1920px***/
+.services {
+  position: relative;
+  width: 100%;
+  padding-bottom: 164px;
+  background-color: var(--color-mercury);
+  background: url("../img/rectangle-center.png") center / cover no-repeat;
+}
+
+.services__h2 {
+  margin-bottom: 48px;
+  padding: 23px 0 0;
+  text-align: center;
+}
+
+.services__mySwiper .swiper-container {
+  width: 100%;
+  height: 100%;
+}
+
+.services__mySwiper .swiper-slide {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;  
+  height: auto;
+  text-align: center;
+}
+
+.services__mySwiper .swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.services__link {
+  position: relative;
+  padding: 185px 0 61px;
+  border-radius: 20px;
+  width: 100%;
+  -webkit-transition: all .4s ease-in-out;
+  -moz-transition: all .4s ease-in-out;
+  -o-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;   
+  outline: none;  
+}
+
+.services__link_one {
+  background: url("../img/img-services/01.jpg") center / cover no-repeat;
+}
+
+.services__link_two {
+  background: url("../img/img-services/02.jpg") center / cover no-repeat;
+}
+
+.services__link_three {
+  background: url("../img/img-services/03.jpg") center / cover no-repeat;
+}
+
+.services__link_four {
+  background: url("../img/img-services/04.jpg") center / cover no-repeat;
+}
+
+.services__link .services__desc_hover {
+  display: none;
+}
+
+.services__link:hover::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 107px 100px 20px 20px;
+  height: 208px;
+  background: #06F;
+}
+
+.services__link:focus-visible.services__link_one {
+  background: url("../img/img-services/color-01.jpg") center / cover no-repeat;
+}
+
+.services__link:hover.services__link_one {
+  background: url("../img/img-services/color-blue-01.jpg") center / cover no-repeat;
+}
+
+.services__link:hover .services__desc_hoverNone {
+  display: none;
+}
+
+.services__link:active.services__link_one, .services__link:active.services__link_two, .services__link:active.services__link_three, .services__link:active.services__link_four {
+  opacity: .7;
+}
+
+.services__link:hover.services__link_one .services__btn, .services__link:hover.services__link_two .services__btn, .services__link:hover.services__link_three .services__btn, .services__link:hover.services__link_four .services__btn {
+  transform: rotate(180deg) translateX(50%);
+}
+
+
+.services__link:hover.services__link_one .services__desc_hover, .services__link:hover.services__link_two .services__desc_hover, .services__link:hover.services__link_four .services__desc_hover {
+  display: block;
+  margin-top: 83px;
+  margin-bottom: 0;
+  font-size: 24px;
+  line-height: 1;
+}
+
+.services__link:hover.services__link_four .services__desc {
+  margin-bottom: 32px;
+}
+
+.services__link:hover.services__link_three .services__desc_hover {
+  display: block;
+  margin-top: 97px;
+  margin-bottom: 42px;
+  font-size: 24px;
+  line-height: 1;
+}
+
+.services__link:focus-visible.services__link_two {
+  background: url("../img/img-services/color-02.jpg") center / cover no-repeat;
+}
+
+.services__link:hover.services__link_two {
+  background: url("../img/img-services/color-blue-02.jpg") center / cover no-repeat;
+}
+
+.services__link:focus-visible.services__link_three {
+  background: url("../img/img-services/color-03.jpg") center / cover no-repeat;
+}
+
+.services__link:hover.services__link_three {
+  background: url("../img/img-services/color-blue-03.jpg") center / cover no-repeat;
+}
+ 
+.services__link:focus-visible.services__link_four {
+  background: url("../img/img-services/color-04.jpg") center / cover no-repeat;
+}
+
+.services__link:hover.services__link_four {
+  background: url("../img/img-services/color-blue-04.jpg") center / cover no-repeat;
+}
+
+.services__link_three {
+  padding: 185px 0 55px;
+}
+
+.services__link_four .services__svg {
+  margin: 0 auto 41px;
+}
+
+.services__svg {
+  margin: 0 auto 48px;
+}
+
+.services__desc {
+  position: relative;
+  margin: 0 auto 56px;
+  width: 216px;
+  font-size: 20px;
+  line-height: 1.1;
+  color: var(--color-white);
+  z-index: 1;
+}
+
+.services__btn {
+  position: absolute;
+  bottom: 58px;
+  /*центрируем по PP*/
+  left: 49%;
+  /*центрируем по PP*/
+  transform: translateX(-49%);
+  transition: 0.3s;
+  outline: none;
+}
+
+.services__btn:focus path {
+  stroke: var(--color-asparagus);
+}
+
+.services__pagination {
+  display: none;
+}
+
+.services__pagination.swiper-horizontal>.swiper-pagination-bullets, .services__pagination.swiper-pagination-bullets.swiper-pagination-horizontal {  
+  margin: 60px auto 0;
+  width: 299px;
+}
+
+/*булить стала палочкой*/
+.services__pagination .swiper-pagination-bullet {
+  position: relative;
+  border-radius: 100px;
+  width: 52px;
+  height: 4px;
+} 
+
+/* цвет булита */
+.services__pagination .swiper-pagination-bullet-active {
+  background-color: var(--color-cobalt);
+}
+
+
+/*булить палочки отталкиваем друг от друга*/
+.services__mySwiper .swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet, .services__mySwiper .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+  margin-right: 16px;
+}
+
+.services__pagination .swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet, .services__pagination .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+  position: relative;
+  top: 19px;
+  display: flex;
+  align-items: center;
+  margin-left: 19px;
+} 
+
+.services__pagination .swiper-pagination-bullet:first-child:before {
+  content: "01";
+  position: absolute;
+  top: -8px;
+  left: -39px;
+  font-size: 18px;
+}
+
+.services__pagination .swiper-pagination-bullet:last-child:before {
+  content: "04";
+  position: absolute;
+  top: -8px;
+  right: -34px;  
+  font-size: 18px;
+}
+/*** // Виды услуг services-1920px***/
+
+
+/*** Нам доверяют partners-1920px***/
+.partners {
+  padding-bottom: 50px;
+}
+
+.partners__h2 {
+  margin: -19px 0 52px;
+  text-align: center;
+}
+
+.partners__list {
+  display: -ms-grid;
+  display: grid;
+  -webkit-grid-template-columns: repeat(3, 1fr);
+  -o-grid-template-columns: repeat(3, 1fr);
+  -moz-grid-template-columns: repeat(3, 1fr);
+  -ms-grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  -webkit--gap: 30px;
+  -moz--gap: 30px;
+  gap: 30px;
+}
+
+.partners__item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  height: 259px;
+  background-color: var(--color-white);
+  box-shadow: 0px 0px 100px 0px rgba(0, 0, 0, 0.10);
+}
+/*** // Нам доверяют partners-1920px***/
+
+
+/*** ПОРТФОЛИО работ portfolio-1920px***/
+.portfolio {
+  padding: 50px 0 52px;
+}
+
+.portfolio__container .swiper-container {
+  width: 100%;
+  height: 100%;
+}
+
+.portfolio__container .swiper-slide img {
+  position: absolute;
+  display: block;
+  width: 51.3%;
+  height: max-content;
+  object-fit: cover;
+}
+
+.portfolio__overflow {
+  overflow: hidden;
+}
+
+.portfolio__padding {
+  padding: 60px 0 114px;
+}
+
+.portfolio__mySwiper {
+  position: relative;
+  padding-bottom: 51px;
+}
+
+.portfolio__mySwiper.swiper {
+  overflow: inherit;
+}
+
+.portfolio__mySwiper.figure:before {
+  width: 40.2%;
+}  
+
+.portfolio__mySwiper.figure:after {
+  left: 40.2%;
+}  
+
+.portfolio__span.figure-span {
+  left: 39.2%;
+}
+
+.portfolio__wrapper.swiper-wrapper {
+  box-sizing: content-box;
+}
+
+.portfolio__h2 {
+  margin: -34px 0 44px 0;
+  padding-left: 70px;
+  width: 282px;
+}
+
+.portfolio__grid {
+  display: -ms-grid;
+  display: grid;
+  -webkit-grid-template-columns: 38.9% 1fr;
+  -o-grid-template-columns: 38.9% 1fr;
+  -moz-grid-template-columns: 38.9% 1fr;
+  -ms-grid-template-columns: 38.9% 1fr;
+  grid-template-columns: 38.9% 1fr;
+  -webkit--gap: 30px;
+  -moz--gap: 30px;
+  gap: 30px;
+  padding: 0 70px;
+}
+
+.portfolio__info .pattern__h3 {
+  margin-bottom: 13px;
+} 
+
+.portfolio__img img {
+  border-radius: 20px;
+}
+
+.portfolio__pagination {
+  margin-bottom: -107px;
+  margin-left: 11.5%;
+  width: 180px;
+  font-size: 50px;
+  line-height: 90.5%;
+  letter-spacing: 0.5px;
+  color: #333132;
+}
+
+.portfolio__pagination .swiper-pagination-current {
+  font-size: 85px;
+  letter-spacing: 0.85px;
+}
+
+.portfolio__button.swiper-button-prev:after, .portfolio__button.swiper-button-next:after {
+  display: none;
+}
+
+.portfolio__button.swiper-button-next, .portfolio__button.swiper-button-prev {
+  position: absolute;
+  top: inherit;
+  bottom: -96px;
+  width: 56px;
+  height: 50px;
+  margin-top: 0;
+  z-index: 10;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.portfolio__button.swiper-button-prev {  
+  left: 66.8px;
+}
+
+.portfolio__button.swiper-button-next {  
+  left: 29.5%;
+  transform: rotate(180deg);
+}
+
+.portfolio__pagination_555 {
+  display: none;
+}
+/*** // ПОРТФОЛИО работ portfolio-1920px***/
+
+
+/*** Оставьте заявку работ forms-1920px***/
+.forms {
+  padding: 51px 0;
+}
+
+.forms__background {
+  padding: 50px 70px 100px;
+  border-radius: 35px;
+  background: url("../img/rectangle-green.png") top / cover no-repeat;
+}
+
+.forms__h2 {
+  margin: -24px 0 51px;
+  width: 222px;
+}
+/*** // Оставьте заявку работ forms-1920px***/
+
+
+@media (max-width: 1484px) {
+  .hero__swiper_one {
+    background: url("../img/swiper-1/01.png") center / cover no-repeat;
+  }
+
+  .hero__swiper_two {
+    background: url("../img/swiper-1/02.png") center / cover no-repeat;
+  }
+
+  .hero__swiper_three {
+    background: url("../img/swiper-1/03.png") center / cover no-repeat;
+  }
+}
+
+
+@media (max-width: 1252px) {
   [class*="__container"] {
     padding: 0 50px;
-  }
-
-  .header__container {
-    padding: 20px 50px;
-  }
-
-  .header__nav {
-    margin: 0 38px 0 0;
-    width: 71%;
   }
 
   .header__item:not(:last-child) {
     margin-right: 20px;
   }
+
+  .header__padding {
+    padding: 20px 50px;
+  } 
+
+
+  .hero__container_padding {
+    padding-top: 190px;
+    padding-bottom: 469px;
+  }
+
+  .about__container {
+    padding-bottom: 80px;
+    width: 100%;
+  }
+
+
+  .portfolio__h2 {
+    padding-left: 40px;
+  }
+
+  .portfolio__grid {
+    -webkit-grid-template-columns: 47% 50%;
+    -o-grid-template-columns: 47% 50%;
+    -moz-grid-template-columns: 47% 50%;
+    -ms-grid-template-columns: 47% 50%;
+    grid-template-columns: 47% 50%;
+    padding: 0 40px;
+  }
+
+  .portfolio__container .swiper-slide img {
+    position: relative;
+    width: 100%;
+  }  
+
+}  
+
+@media (max-width: 1133px) {  
+  .header__block-menu {
+    gap: 15px;
+  }
+
+  .header__padding {
+    padding: 20px 25px;
+  }  
 
   .hero__container_padding {
     padding-top: 190px;
@@ -565,6 +1400,44 @@ button {
     padding-top: 23px;
     padding-bottom: 101px;
   }  
+
+
+  .promise__list {
+    -webkit-grid-template-columns: repeat(2, 1fr);
+    -o-grid-template-columns: repeat(2, 1fr);
+    -moz-grid-template-columns: repeat(2, 1fr);
+    -ms-grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+
+  .partners__list {
+    display: flex;
+    gap: 0;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+
+  .partners__item {
+    width: 48%;
+  }
+
+  .partners__item:not(:last-child) {
+    margin-bottom: 30px;
+  }
+
+
+  .forms__background {
+    padding: 50px 25px 100px;
+  }
+
+  .form__block {
+    margin-bottom: 26px;
+  }
+
+  .form__desc {
+    display: inline;
+  }
 }
 
 @media (max-width: 999px) {
@@ -587,9 +1460,15 @@ button {
 
   .header__container {
     position: relative;
-    padding: 13px 20px 14px;
-    border-top-right-radius: 0;
-    border-top-left-radius: 0;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    background-color: var(--color-white);
+  }
+
+  .header__padding {
+    padding: 15px 0;
+    border-radius: 0;
+    background-color: transparent;
   }
 
   .header__logo {
@@ -683,22 +1562,24 @@ button {
 
   .hero__swiper {
     border-radius: 20px;
-    background-color: var(--color-mercury);
   }
 
   .hero__swiper_one {
     background: url("../img/swiper-1/01-320.png") center / contain no-repeat;
+    background-color: var(--color-mercury);
   }
   
   .hero__swiper_two {
     background: url("../img/swiper-1/02-320.png") center / contain no-repeat;
+    background-color: var(--color-mercury);
   }
   
   .hero__swiper_three {
     background: url("../img/swiper-1/03-320.png") center / contain no-repeat;
+    background-color: var(--color-mercury);
   }
 
-  .hero__swiper .swiper-pagination-bullets.swiper-pagination-horizontal {
+  .hero__mySwiper .swiper-pagination-bullets.swiper-pagination-horizontal {
     position: relative;
     left: 6px;
     bottom: 45px;
@@ -749,6 +1630,57 @@ button {
     order: 1;
     margin: 0 auto;
   }
+
+  .services__desc br {
+    display: none;
+  }
+
+
+  .partners__list {
+    display: block;
+  }
+
+  .partners__item {
+    width: 100%;
+  }
+
+
+  .portfolio__grid {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .portfolio__info {
+    order: 2;
+  }
+
+  .portfolio__img {
+    order: 1;
+    margin: 0 auto;
+  }
+
+  .portfolio__button svg {
+    display: none;
+  }
+
+
+  .forms__background {
+    background: url("../img/rectangle-green-320.png") top / cover no-repeat;
+  }
+
+  .forms__h2 {
+    margin: -24px auto 51px;
+    text-align: center;
+  }
+
+  .form__block {
+    display: block;
+  }
+
+  .form__label:not(:last-child) {
+    display: block;
+    margin-bottom: 20px;
+  } 
 }  
 
 @media (max-width: 717px) {
@@ -767,6 +1699,25 @@ button {
 
   .about {
     padding-top: 102px;
+    padding-bottom: 39px;
+  }
+
+
+  .promise {
+    padding: 36px 0 16px;
+  }
+
+  .promise__list {
+    display: block;
+    gap: 0;
+  }
+
+  .promise__item {
+    margin-bottom: 33px;
+  }
+
+  .promise__desc {
+    line-height: 1.2;
   }
 }
 
@@ -851,13 +1802,16 @@ button {
   /* // Шаблон микс figure 555px*/
 
 
+  .hero__mySwiper {
+    padding-top: 23px;
+  }
+
   .hero__swiper {
     margin-top: -83px;
   }
 
-
   .hero__container_padding {
-    padding-top: 373px;
+    padding-top: 266px;
     padding-bottom: 81px;
   }
 
@@ -865,13 +1819,18 @@ button {
     margin: 71px auto 22px;
   }  
 
-  .hero__swiper .swiper-pagination-bullets.swiper-pagination-horizontal {
-    bottom: 32px;
+  .hero__swiper {
+    padding-bottom: 16px;
+    background-position: top;
+  }
+
+  .hero__mySwiper .swiper-pagination-bullets.swiper-pagination-horizontal {
+    bottom: 48px;
   }
 
 
   .about {
-    padding: 29px 0 14px;
+    padding: 13px 0 14px;
   }
 
   .about__container {
@@ -904,7 +1863,420 @@ button {
     margin-bottom: 9px;
     line-height: 1.21;
   }
+
+
+  .services {
+    padding-bottom: 37px;
+    background: url("../img/rectangle-320.png") center / cover no-repeat;
+    background-size: 127% 100%;
+  } 
+
+  .services__link {
+    width: 96%;
+  }  
+
+  .services__svg {
+    margin: 0 auto 45px;
+  }
+  
+  .services__h2 {
+    margin-bottom: 25px;
+    padding: 16px 0 0;
+  }
+
+  .services__pagination {
+    display: block;
+  }  
+
+  .services__pagination.swiper-pagination-bullets.swiper-pagination-horizontal {
+    margin: 32px auto 0;
+    width: 208px;
+  }
+
+  .services__pagination .swiper-pagination-bullet {
+    width: 37px;
+  }
+
+  .services__pagination .swiper-pagination-bullet:first-child:before {
+    left: -41px;
+  }
+
+  .services__mySwiper .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+    margin-right: 11px;
+  }
+
+
+  .partners {
+    padding: 63px 0 24px;
+  }
+
+  .partners__h2 {
+    margin-bottom: 57px;
+  }
+
+  .partners__item {
+    height: 121px;
+  }
+
+  .partners__item:not(:last-child) {
+    margin-bottom: 19px;
+  }
+
+  .partners__item img {
+    max-width: 67%;
+  }
+
+
+  .portfolio {
+    padding: 25px 0 14px;
+  }
+
+  .portfolio__container {
+    padding: 0;
+    border-radius: 20px;
+  }
+
+  .portfolio__overflow {
+    overflow: inherit;
+  }
+
+  .portfolio__padding {
+    padding: 0;
+  }
+
+  .portfolio__mySwiper {
+    padding-bottom: 0;
+  }
+
+  .portfolio__mySwiper.figure {
+    background: none;
+  }
+
+  .portfolio__mySwiper.figure-span {
+    display: none;
+  }
+
+  .portfolio__container .swiper-slide img {
+    height: 270px;
+  }
+
+  .portfolio__swiper {
+    border-radius: 20px;
+    height: auto;
+    background: url("../img/rectangle-320.png") top / cover no-repeat;
+  }
+
+  .portfolio__h2 {
+    margin: 18px 0 19.5px;
+    padding-left: 0;
+    width: 100%;
+    text-align: center;
+    line-height: .9;
+  }
+
+  .portfolio__grid {
+    gap: 63px;
+    padding: 0 19px;
+  }
+
+  .portfolio__info {
+    padding-bottom: 40px;
+  }
+
+  .portfolio__text.content-block.hide{
+    height: 137px;
+  }
+
+  .portfolio__text.content-block.hide:after{
+    height: 142px;
+  }
+
+  .portfolio__btn.arrow-t {
+    z-index: 1;
+  }
+
+  .portfolio__pagination {
+    margin: 0;
+  }
+
+  .portfolio__pagination_1920, .portfolio__button.swiper-button-next {
+    display: none;
+  }
+
+  .portfolio__pagination_555 {
+    display: block;
+  }
+
+  .portfolio__pagination_555.swiper-pagination-bullets.swiper-pagination-horizontal {
+    position: absolute;
+    top: 363px;
+    left: 59px;
+    width: 80%;
+    height: max-content;
+    z-index: 1;
+  }
+  
+  /*булить стала палочкой*/
+  .portfolio__pagination_555 .swiper-pagination-bullet {
+    position: relative;
+    border-radius: 100px;
+    width: 51px;
+    height: 4px;
+  } 
+  
+  /* цвет булита */
+  .portfolio__pagination_555 .swiper-pagination-bullet-active {
+    background-color: var(--color-cobalt);
+  }
+
+
+  /*булить палочки отталкиваем друг от друга*/
+  .portfolio__mySwiper .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+    margin-right: 16px;
+  }
+
+  .portfolio__pagination_555 .swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet, .portfolio__pagination_555 .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+    position: relative;
+    top: 19px;
+    display: flex;
+    align-items: center;
+    margin-left: 19px;
+  } 
+
+  .portfolio__pagination_555 .swiper-pagination-bullet:first-child:before {
+    content: "01";
+    position: absolute;
+    top: -20px;
+    left: -43px;
+    font-size: 18px;
+  }
+
+  .portfolio__pagination_555 .swiper-pagination-bullet:last-child:before {
+    content: "03";
+    position: absolute;
+    top: -20px;
+    right: -44px;  
+    font-size: 18px;
+  }
+
+  .portfolio__info .pattern__h3 {
+    margin-bottom: 11px;
+  }
+
+  .portfolio__btn.content-toggle {
+    bottom: -30px;
+  }  
+
+
+  .forms {
+    padding: 45px 0;
+  }
+
+  .forms__container {
+    background: url("../img/rectangle-green-320.png") top / cover no-repeat;
+  }
+
+  .forms__container .form__block {
+    margin-bottom: 10px;
+  }
+
+  .forms__container .form__textarea {
+    height: 200px;
+  }
+
+  .forms__container .form__checkbox-container {
+    margin: 0 0 21px;
+    text-align: start;
+  }
+
+  .forms__container .form__label_checkbox::before {
+    left: 0;
+  }  
+
+  .forms__container .form__label_checkbox::after {
+    left: 7px;
+  }
+
+  .forms__container .form__label_checkbox {
+    display: flex;
+    padding-left: 0;
+  }  
+
+  .forms__container .form__desc {
+    margin-top: -8px;
+    padding-right: 8px;
+    padding-left: 50px;
+    line-height: 1.15;
+  }
+
+  .forms__container .form__button {
+    margin: 0;
+    padding: 21px 100px;
+  }
+
+  .forms__background {
+    padding: 50px 0 30px;
+    background: transparent;
+  }
+
+  .forms__h2 {
+    margin: -33px auto 31px;
+    line-height: .87;
+  }  
 }  
 
 
 
+
+
+/**/
+
+
+.registration {
+	position: fixed;
+	font-family: Arial, Helvetica, sans-serif;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: rgba(232, 232, 232, 0.60);
+  backdrop-filter: blur(12.5px);
+	z-index: 99999;
+	-webkit-transition: opacity 400ms ease-in;
+	-moz-transition: opacity 400ms ease-in;
+	transition: opacity 400ms ease-in;
+	display: none;
+	pointer-events: none;
+}
+
+.registration:target {
+	display: block;
+	pointer-events: auto;
+}
+
+.registration > div {
+	position: relative;
+	margin: 30px auto;
+  padding-bottom: 68px;
+	border-radius: 20px;
+	width: 1001px;
+	background: var(--color-athensGray);
+  box-shadow: 0px 4px 25px 0px rgba(0, 0, 0, 0.25)
+}
+
+.registration__white {
+  margin-bottom: 52px;
+  padding: 30px 50px;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+  background-color: var(--color-white);
+}
+
+.registration__logo {
+  display: block;
+  width: 260px;
+  height: 96px;
+}
+
+.registration__logo:focus {
+  outline-offset: 8px;
+  outline: 1px solid var(--color-asparagus);
+}
+
+.registration__logo img {
+  width: 100%;
+  height: 100%;
+}
+
+.registration__close {
+	position: absolute;
+  top: 48px;
+  right: 85px;
+	width: 24px;
+  outline: none;
+  cursor: pointer;
+  -webkit-transition: all .4s ease-in-out;
+  -ms-transition: all .4s ease-in-out;
+  -moz-transition: all .4s ease-in-out;
+  -o-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+  z-index: 1;
+}
+
+.registration__close:focus-visible svg path {
+  stroke: var(--color-asparagus);
+}
+
+.registration__close:hover svg path {
+  stroke: var(--color-gray);
+}
+
+.registration__close:active svg path {
+  opacity: .7;
+}
+
+.registration__block {
+  display: -ms-grid;
+  display: grid;
+  -webkit-grid-template-columns: 350px 1fr;
+  -o-grid-template-columns: 350px 1fr;
+  -moz-grid-template-columns: 350px 1fr;
+  -ms-grid-template-columns: 350px 1fr;
+  grid-template-columns: 350px 1fr;
+  -webkit--gap: 52px;
+  -moz--gap: 52px;
+  gap: 52px;
+  padding: 0 50px;
+}
+
+.registration__h2 {
+  margin-bottom: 22px;
+  font-size: clamp(35px, 5vw, 65px);
+  color: var(--color-fiord);
+}
+
+.registration__desc {
+  font-size: clamp(14px, 5vw, 30px);
+  line-height: 1.17;
+  color: var(--color-mineShaft);
+}
+
+.registration__block .form__block {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.registration__block .form__checkbox-container {
+  margin: 0 0 24px;
+}  
+
+.registration__block .form__label:not(:last-child) {
+  display: block;
+  margin-bottom: 30px;
+}
+
+.registration__block .form__label_checkbox {
+  display: block;
+}
+
+.registration__block .form__label_checkbox::before {
+  left: 0;
+}
+
+.registration__block .form__label_checkbox::after {
+  left: 7px;
+}
+
+.registration__block .form__desc {
+  margin-top: -5px;
+  padding-left: 47px;
+  text-align: start;
+  font-size: 14.2px;
+  line-height: 1.2;
+}
+
+.registration__block .form__button {
+  padding: 16px 17px 18px;
+  width: 100%;
+  font-size: 22px;
+}
