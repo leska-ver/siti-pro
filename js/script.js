@@ -116,7 +116,46 @@ document.addEventListener('DOMContentLoaded', function () {
       },
     });
   };
+
+
+  // Модальное окно для нескольких окон(services). Модалка не прокручиваеться.//
+  const activeClass = "services__modal-active";
+  const buttons = document.querySelectorAll(".services_modalBtn-js");
+
+  for (let button of buttons) {
+    modalEvent(button);
+  }
   
+  function closeModal (modal) {
+	 modal.classList.remove(activeClass);
+	 document.body.style.overflow  = '';
+  }
+	  
+  function modalEvent(button) {
+    button.addEventListener("click", (e) => {//(e) - дефолт - чтобы при нажитие на модального окна, модалка не улетала вверх.
+      e.preventDefault();
+
+      const trigger = button.getAttribute("data-modal-trigger");
+      const modal = document.querySelector(`[data-modal=${trigger}]`);
+      const modalContent = modal.querySelector(".modal-container");
+      const close = modal.querySelector(".modal-close");
+           
+      /* --Cтили body при открытие модального окна-- */
+      modal.classList.add('services__modal-active');		 
+      if (modal.classList.contains(activeClass)) {
+        document.body.style.overflow  = 'hidden';
+      }
+
+      close.addEventListener("click", () =>  {
+		 closeModal (modal); 
+	  });
+      modal.addEventListener("click", () => {
+		 closeModal (modal); 
+	  });
+      modalContent.addEventListener("click", (e) => e.stopPropagation());
+      
+    });
+  };   
  
   
   // Активность кнопки - галка и Отправить(.form__button_filled:disabled)
@@ -154,7 +193,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const formJs = document.querySelector('.form_js');
   if (formJs) { // Обёртка if. Спасение Gulp-а от null в браузере
     const telSelector = formJs.querySelector('input[type="tel"]');
-    const inputMask = new Inputmask('+7 (999) 999-99-99');
+    const inputMask = new Inputmask('+7 999 999 99 99');
     inputMask.mask(telSelector);
 
     // const validateForms = function validateForms(form, selector, successModal, yaGoal) {

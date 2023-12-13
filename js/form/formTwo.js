@@ -1,16 +1,29 @@
 document.addEventListener('DOMContentLoaded', function () {
+ 
+  // Активность кнопки - галка и Отправить(.form__button_filled:disabled)
+  const formDis02 = document.querySelector(".form-disabled02");
+  if (formDis02) {
+    const e = formDis02.querySelector(".checkbox-disabled02");
+    if (e) {
+      const t = formDis02.querySelector(".form__button_jsDis02");
+      e.addEventListener("change", () => {
+        e.checked ? t.removeAttribute("disabled") : t.setAttribute("disabled", "")
+      })
+    }
+  } 
+
 
   // Шаблон микс modal СПАСИБО/-Профессиональная окраска на объекте-
-  const btnCloseBuy02 = document.querySelector('.modal__close_js');
-  const modalBuy02 = document.querySelector('.modal_js');
+  const btnCloseBuy02 = document.querySelector('.modal__close_js02');
+  const modalBuy02 = document.querySelector('.modal_js02');
   if (modalBuy02) {
     btnCloseBuy02.addEventListener('click', function () {
-      document.querySelector('.modal_js').classList.toggle('modal_js_active');
+      document.querySelector('.modal_js02').classList.toggle('modal_js02_active');
     });
     modalBuy02.addEventListener('click', function (event) {
       if (event._notClick) return;
-      modalBuy02.classList.remove('modal_js_active');
-      document.querySelector('.modal__sps_js').classList.remove('modal__sps_js_active');
+      modalBuy02.classList.remove('modal_js02_active');
+      document.querySelector('.modal__sps_js02').classList.remove('modal__sps_js02_active');
     });    
   }
   
@@ -19,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const formJs02 = document.querySelector('.form_js02');
   if (formJs02) { // Обёртка if. Спасение Gulp-а от null в браузере
     const telSelector = formJs02.querySelector('input[type="tel"]');
-    const inputMask = new Inputmask('+7 (999) 999-99-99');
+    const inputMask = new Inputmask('+7 999 999 99 99');
     inputMask.mask(telSelector);
 
     // const validateForms = function validateForms(form, selector, successModal, yaGoal) {
@@ -65,7 +78,7 @@ document.addEventListener('DOMContentLoaded', function () {
           function: 'Здесь должно быть 11 симв..'
         },
         text: {
-          required: 'Введите: адрес места жительства, название товара, размер и количество',
+          required: 'Пару слов к заказу',
           minLength: 'Введите 15 и более символов',
           maxLength: 'Запрещено вводить более 1000 символов'
         },
@@ -91,8 +104,8 @@ document.addEventListener('DOMContentLoaded', function () {
         xhr.open('POST', 'mail.php', true);// 'mail.php', 'list.php',
         xhr.send(formData);
         thisForm.reset();
-        document.querySelector('.modal_js').classList.toggle('modal_js_active');
-        document.querySelector('.modal__sps_js').classList.toggle('modal__sps_js_active');
+        document.querySelector('.modal_js02').classList.toggle('modal_js02_active');
+        document.querySelector('.modal__sps_js02').classList.toggle('modal__sps_js02_active');
       }
     })
   }

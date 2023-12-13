@@ -273,9 +273,10 @@ textarea {
 
 .js-validate-error-label {
   position: absolute;
-  top: -19px;
+  top: -22px;
   left: 7px;
-  font-size: 12px;
+  font-weight: 400;
+  font-size: clamp(14px, 5vw, 18px);
 }
 /***Конец стилазация фразы ошибки***/
 
@@ -298,7 +299,7 @@ textarea {
 }
 
 .form__label:not(:last-child) {
-  margin-bottom: 25px;
+  margin-bottom: 28px;
 }
 
 .form__label_grid {
@@ -318,9 +319,9 @@ textarea {
   padding: 24px 26px;
   border-radius: 15px;
   border: 1px solid transparent;
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 500;
-  color: var(--color-gray);
+  color: var(--color-mineShaft);
   outline: none;
   -webkit-transition: all .4s ease-in-out;
   -ms-transition: all .4s ease-in-out;
@@ -329,12 +330,18 @@ textarea {
   transition: all .4s ease-in-out;
 }
 
+.form__input::placeholder, .form__textarea::placeholder {  
+  font-size: 23px;
+  color: var(--color-gray);
+}
+
 .form__input:focus-visible, .form__textarea:focus-visible {
   background-color: var(--color-mercury);
 }
 
 .form__textarea {
-  height: 204px;
+  padding: 19px 28px;
+  height: 200px;
 }
 
 .form__checkbox-container {
@@ -437,16 +444,18 @@ background-color: #0046A2;
   padding: 21px 94px;
 }
 
-.form__button_filled:disabled, #openModal01 .form__button_filled:disabled {
+.form__button_filled:disabled, .form__button_filled01:disabled {
   color: #999;
   border-color: #EAEAEA;
   background-color: #EAEAEA;
 }
 /* // Шаблон микс form */
 
-
+.modals {
+  position: relative;
+}
 /*** Шаблон микс modal СПАСИБО 1920px***/
-.modal {  
+.modal, .modal01, .modal02, .modal03, .modal04 {  
   display: flex;
   align-items: center;
   justify-content: center;  
@@ -455,7 +464,7 @@ background-color: #0046A2;
   background-color: rgba(51, 51, 51, 0.3);
 }
 
-.modal_js {
+.modal_js, .modal_js01, .modal_js02, .modal_js03, .modal_js04 {
   visibility: hidden;
   opacity: 0;
   position: fixed;
@@ -466,12 +475,12 @@ background-color: #0046A2;
   z-index: 999;/*Для js перекрыть .modal*/
 }
 
-.modal_js_active {
+.modal_js_active, .modal_js01_active, .modal_js02_active, .modal_js03_active, .modal_js04_active {
   visibility: visible;
   opacity: 1;
 }
 
-.modal__sps {
+.modal__sps, .modal__sps01, .modal__sps02, .modal__sps03, .modal__sps04 {
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -492,20 +501,35 @@ background-color: #0046A2;
   overflow: hidden; 
 }
 
-.modal__sps_js {
+.modal__sps_js, .modal__sps_js01, .modal__sps_js02, .modal__sps_js03, .modal__sps_js04 {
  display: none;
  opacity: 0;
 }
 
-.modal__sps_js_active {
+.modal__sps_js_active, .modal__sps_js01_active, .modal__sps_js02_active, .modal__sps_js03_active, .modal__sps_js04_active {
  opacity: 1;
  display: -webkit-box;
  display: -ms-flexbox;
  display: flex;
 }
 
+/*Модалку модалку перекрыла*/
+.registration__modal01.modal_js01_active .modal__sps_js01,
+.registration__modal02.modal_js02_active .modal__sps_js02, 
+.registration__modal03.modal_js03_active .modal__sps_js03, 
+.registration__modal04.modal_js04_active .modal__sps_js04 {
+  padding: 75px 30px;
+  flex-basis: 520px;
+}
+
+.modal01__h2, .modal02__h2, .modal03__h2, .modal04__h2 {
+  font-size: 25px;
+  line-height: 1.5;
+}
+/* // Модалку модалку перекрыла*/
+
 /*Крест выключатель модального окна*/
-.modal__close {
+.modal__close, .modal__close01, .modal__close02, .modal__close03, .modal__close04 {
   position: absolute;
   top: 15px;
   right: 15px;
@@ -521,16 +545,16 @@ background-color: #0046A2;
   cursor: pointer;  
 }
 
-.modal__close:focus {  
+.modal__close:focus, .modal__close01:focus, .modal__close02:focus, .modal__close03:focus, .modal__close04:focus {  
   border: 1px solid var(--color-cobalt);
 }
 
-.modal__close:hover {
+.modal__close:hover, .modal__close01:hover, .modal__close02:hover, .modal__close03:hover, .modal__close04:hover    {
   color: var(--color-white);
   background-color: var(--color-cobalt);
 }
 
-.modal__close:active {
+.modal__close:active, .modal__close01:active, .modal__close02:active, .modal__close03:active, .modal__close04:active {
   opacity: .7;
 }
 
@@ -935,7 +959,7 @@ background-color: #0046A2;
 
 .services__link {
   position: relative;
-  padding: 185px 0 61px;
+  padding: 185px 0 68px;
   border-radius: 20px;
   width: 100%;
   -webkit-transition: all .4s ease-in-out;
@@ -1190,7 +1214,7 @@ background-color: #0046A2;
 }
 
 .portfolio__padding {
-  padding: 60px 0 114px;
+  padding: 60px 0 117px;
 }
 
 .portfolio__mySwiper {
@@ -1239,7 +1263,7 @@ background-color: #0046A2;
 }
 
 .portfolio__info .pattern__h3 {
-  margin-bottom: 13px;
+  margin-bottom: 10px;
 } 
 
 .portfolio__img img {
@@ -1312,6 +1336,169 @@ background-color: #0046A2;
 /*** // Оставьте заявку работ forms-1920px***/
 
 
+/* modals - openModal микс 1920px */
+.registration {
+	position: fixed;
+	font-family: Arial, Helvetica, sans-serif;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: rgba(232, 232, 232, 0.60);
+  backdrop-filter: blur(12.5px);
+	z-index: 99999;
+	-webkit-transition: opacity 400ms ease-in;
+	-moz-transition: opacity 400ms ease-in;
+	transition: opacity 400ms ease-in;
+	display: none;
+	pointer-events: none;
+}
+
+.registration:target {
+	display: block;
+	pointer-events: auto;
+}
+
+.registration > div {
+	position: relative;
+	margin: 30px auto;
+  padding-bottom: 68px;
+	border-radius: 20px;
+	width: 1001px;
+	background: var(--color-athensGray);
+  box-shadow: 0px 4px 25px 0px rgba(0, 0, 0, 0.25);
+}
+
+.registration__white {
+  margin-bottom: 52px;
+  padding: 30px 50px;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+  background-color: var(--color-white);
+}
+
+.registration__logo {
+  display: block;
+  width: 260px;
+  height: 96px;
+}
+
+.registration__logo:focus {
+  outline-offset: 8px;
+  outline: 1px solid var(--color-asparagus);
+}
+
+.registration__logo img {
+  width: 100%;
+  height: 100%;
+}
+
+.registration__close {
+	position: absolute;
+  top: 48px;
+  right: 48px;
+  outline: none;
+  cursor: pointer;
+  -webkit-transition: all .4s ease-in-out;
+  -ms-transition: all .4s ease-in-out;
+  -moz-transition: all .4s ease-in-out;
+  -o-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+  z-index: 1;
+}
+
+.registration__close:focus-visible svg path {
+  stroke: var(--color-asparagus);
+}
+
+.registration__close:hover svg path {
+  stroke: var(--color-gray);
+}
+
+.registration__close:active svg path {
+  opacity: .7;
+}
+
+.registration__block-menu {
+  display: none;
+}
+
+.registration__img {
+  display: none;
+}
+
+.registration__block {
+  display: -ms-grid;
+  display: grid;
+  -webkit-grid-template-columns: 350px 1fr;
+  -o-grid-template-columns: 350px 1fr;
+  -moz-grid-template-columns: 350px 1fr;
+  -ms-grid-template-columns: 350px 1fr;
+  grid-template-columns: 350px 1fr;
+  -webkit--gap: 52px;
+  -moz--gap: 52px;
+  gap: 52px;
+  padding: 0 50px;
+}
+
+.registration__h2 {
+  margin-bottom: 22px;
+  font-size: clamp(32px, 5vw, 65px);
+  color: var(--color-fiord);
+}
+
+.registration__desc {
+  font-size: clamp(14px, 2vw, 30px);
+  line-height: 1.17;
+  color: var(--color-mineShaft);
+}
+
+.registration__block .form__block {
+  display: block;
+  margin-bottom: 9px;
+}
+
+.registration__block .form__checkbox-container {
+  margin: 0 0 27px;
+}  
+
+.registration__block .form__label:not(:last-child) {
+  display: block;
+  margin-bottom: 30px;
+}
+
+.registration__block .form__label_checkbox {
+  display: block;
+}
+
+.registration__block .form__label_checkbox::before {
+  left: 0;
+}
+
+.registration__block .form__label_checkbox::after {
+  left: 7px;
+}
+
+.registration__block .form__desc {
+  margin-top: -5px;
+  padding-left: 47px;
+  text-align: start;
+  font-size: 14.2px;
+  line-height: 1.2;
+}
+
+.registration__block .form__button {
+  padding: 16px 17px 18px;
+  width: 100%;
+  font-size: 22px;
+}
+
+.registration__block .form__label_areas .js-validate-error-label {
+  top: -212px;
+}
+/* // modals - openModal микс 1920px */
+
+
 @media (max-width: 1484px) {
   .hero__swiper_one {
     background: url("../img/swiper-1/01.png") center / cover no-repeat;
@@ -1323,6 +1510,95 @@ background-color: #0046A2;
 
   .hero__swiper_three {
     background: url("../img/swiper-1/03.png") center / cover no-repeat;
+  }
+
+
+  .registration > div {
+    margin: 12px auto;
+    padding-bottom: 20px;
+  }
+
+  /*modals - openModal*/
+  .registration__white {
+    margin-bottom: 25px;
+    padding: 15px 25px;
+  }
+
+  .registration__logo {
+    width: 100px;
+    height: 30px;
+  }
+
+  .registration__close {
+    top: 10px;
+    right: 25px
+  }  
+
+  .registration__close svg {
+    width: 40px;
+    height: 40px;
+  }  
+
+  .registration__desc br {
+    display: none;
+  }
+
+  .registration__block {
+    -webkit-grid-template-columns: 37.2% 1fr;
+    -o-grid-template-columns: 37.2% 1fr;
+    -moz-grid-template-columns: 37.2% 1fr;
+    -ms-grid-template-columns: 37.2% 1fr;
+    grid-template-columns: 37.2% 1fr;
+    padding: 0 30px;
+  }
+
+  .registration__block .form__label:not(:last-child) {
+    margin-bottom: 24px;
+  }
+
+  .registration__block .form__input {
+    padding: 16px;
+  }
+
+  .registration__block .form__textarea {
+    padding: 16px;
+  }
+
+  .registration__block .form__block {
+    margin-bottom: 4px;
+  }
+
+  .registration__block .form__checkbox-container {
+    margin: 0 0 20px;
+  } 
+
+  .registration__block .form__label_checkbox::before {
+    width: 30px;
+    height: 30px;
+  }
+
+  .registration__block .form__label_checkbox::after {
+    top: -1px;
+    left: 5px;
+    width: 18px;
+    height: 13px;
+  }
+
+  .registration__block .js-validate-error-label {
+    top: -19px;
+  }
+  
+  .registration__block .form__label_areas .js-validate-error-label {
+    top: -204px;
+  }
+
+  .registration__block .form__desc {
+    display: block;
+  }  
+
+  .registration__block .form__button {
+    padding: 17px;
+    font-size: 17px;
   }
 }
 
@@ -1437,6 +1713,11 @@ background-color: #0046A2;
 
   .form__desc {
     display: inline;
+  }
+
+
+  .registration > div {
+    width: 90%;
   }
 }
 
@@ -1681,6 +1962,19 @@ background-color: #0046A2;
     display: block;
     margin-bottom: 20px;
   } 
+
+  
+  .registration__burger {
+    display: none;
+  }
+
+  .registration__block {
+    -webkit-grid-template-columns: 34% 1fr;
+    -o-grid-template-columns: 34% 1fr;
+    -moz-grid-template-columns: 34% 1fr;
+    -ms-grid-template-columns: 34% 1fr;
+    grid-template-columns: 34% 1fr;
+  }
 }  
 
 @media (max-width: 717px) {
@@ -1718,6 +2012,92 @@ background-color: #0046A2;
 
   .promise__desc {
     line-height: 1.2;
+  }
+
+
+  .registration {
+    background: transparent;
+    backdrop-filter: none;
+  }
+
+  .registration > div {
+    position: fixed;
+    bottom: 0;
+    margin: 0;
+    padding: 0;
+    border-radius: 0;
+    width: 100%;
+    height: 100%;
+    box-shadow: none;
+  }
+
+  .registration__white {
+    display: flex;
+    padding: 15px 20px;
+    border-radius: 0px 0px 20px 20px;
+    box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.15);
+  }
+
+  .registration__logo {
+    margin-right: auto;
+    width: 80px;
+  }
+
+  .registration__close {
+    top: 6px;
+    right: 0;
+    left: 12px;
+    width: 97px;
+    opacity: 0;
+  }
+
+  .registration__close:hover {
+    border: 1px solid var(--color-asparagus);
+    background-color: var(--color-white);
+    opacity: 1;
+  }
+
+  .registration__close svg {
+    padding: 5px;
+    width: 100%;
+    height: 48px;
+  }
+
+  .registration__burger {
+    display: block;
+  }
+
+  .registration__burger.burger {
+    margin-top: 2px;
+  }
+
+  .registration__img {
+    display: block;
+    margin: 0 auto 28px;
+    width: 232px;
+    height: 128px;
+    background: url("../img/phone-320.png") left / contain no-repeat;
+  }
+
+  .registration__block {
+    display: block;
+    padding: 0 23px;
+    background: url("../img/rectangle-320.png") center / cover no-repeat;
+  }
+
+  .registration__h2 {
+    margin-bottom: 9px;
+    padding-top: 18px;
+    text-align: center;
+  }
+
+  .registration__desc {
+    margin-bottom: 21px;
+    text-align: center;
+  }
+
+  .registration__block .form__input::placeholder {  
+    font-size: 18px;
   }
 }
 
@@ -2123,160 +2503,81 @@ background-color: #0046A2;
     margin: -33px auto 31px;
     line-height: .87;
   }  
+
+  /*modals - openModal*/
+
+  .registration__block .form__label:not(:last-child) {
+    margin-bottom: 20px;
+  }
+
+  .registration__block .form__input {
+    padding: 23.5px;
+  }
+
+  .registration__block .form__textarea {
+    padding: 25px 28px;
+  }
+
+  .registration__block .form__block {
+    margin-bottom: 7px;
+  }
+
+  .registration__block .form__checkbox-container {
+    margin: 0 0 35px;
+  }
+
+  .registration__block .form__label_checkbox::before {
+    height: 40px;
+  }
+
+  .registration__block .form__button {
+    padding: 20px 17px;
+    font-size: 17px;
+  }
 }  
 
 
 
 
 
-/**/
-
-
-.registration {
-	position: fixed;
-	font-family: Arial, Helvetica, sans-serif;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	background: rgba(232, 232, 232, 0.60);
-  backdrop-filter: blur(12.5px);
-	z-index: 99999;
-	-webkit-transition: opacity 400ms ease-in;
-	-moz-transition: opacity 400ms ease-in;
-	transition: opacity 400ms ease-in;
-	display: none;
-	pointer-events: none;
-}
-
-.registration:target {
-	display: block;
-	pointer-events: auto;
-}
-
-.registration > div {
-	position: relative;
-	margin: 30px auto;
-  padding-bottom: 68px;
-	border-radius: 20px;
-	width: 1001px;
-	background: var(--color-athensGray);
-  box-shadow: 0px 4px 25px 0px rgba(0, 0, 0, 0.25)
-}
-
-.registration__white {
-  margin-bottom: 52px;
-  padding: 30px 50px;
-  border-top-right-radius: 20px;
-  border-top-left-radius: 20px;
-  background-color: var(--color-white);
-}
-
-.registration__logo {
+/*js общей модалки*/
+.services__modal-active {
   display: block;
-  width: 260px;
-  height: 96px;
-}
-
-.registration__logo:focus {
-  outline-offset: 8px;
-  outline: 1px solid var(--color-asparagus);
-}
-
-.registration__logo img {
-  width: 100%;
+  align-items: center;
   height: 100%;
+  background-color: rgba(51,51,51,.3);
+  transform: scale(1);
+}
+/*---Скроллбар(d-31-ПОЛЬЗОВАТЕЛЬСКОЕ СОГЛАШЕНИЕ)---*/
+.simplebar-mask {
+  /*Чтобы текст не прятался в прокрутке в блок*/
+  margin-top: 15px;
+  margin-bottom: 20px;
 }
 
-.registration__close {
-	position: absolute;
-  top: 48px;
-  right: 85px;
-	width: 24px;
-  outline: none;
-  cursor: pointer;
-  -webkit-transition: all .4s ease-in-out;
-  -ms-transition: all .4s ease-in-out;
-  -moz-transition: all .4s ease-in-out;
-  -o-transition: all .4s ease-in-out;
-  transition: all .4s ease-in-out;
-  z-index: 1;
+.simplebar-content-wrapper {
+  /*авто включение js для скролл*/
+  overflow: auto;
 }
 
-.registration__close:focus-visible svg path {
-  stroke: var(--color-asparagus);
+.simplebar-track.simplebar-vertical {
+  /*Прокрутку двигаем*/ 
+  right: 10px;
+  bottom: 20px;
+} 
+
+.simplebar-track.simplebar-vertical .simplebar-scrollbar:before {
+  /*Прокрутку двигаем*/
+  top: 65px;
+  right: 0;
 }
 
-.registration__close:hover svg path {
-  stroke: var(--color-gray);
+.simplebar-scrollbar::before {
+  /*Из библиотеки*/
+  /*Здесь(кодепен) цвет не работает*/
+  /*На компе и в css работает*/
+  height: 70px;
+  background-color: red;
+  /* opacity: 1; */
 }
-
-.registration__close:active svg path {
-  opacity: .7;
-}
-
-.registration__block {
-  display: -ms-grid;
-  display: grid;
-  -webkit-grid-template-columns: 350px 1fr;
-  -o-grid-template-columns: 350px 1fr;
-  -moz-grid-template-columns: 350px 1fr;
-  -ms-grid-template-columns: 350px 1fr;
-  grid-template-columns: 350px 1fr;
-  -webkit--gap: 52px;
-  -moz--gap: 52px;
-  gap: 52px;
-  padding: 0 50px;
-}
-
-.registration__h2 {
-  margin-bottom: 22px;
-  font-size: clamp(35px, 5vw, 65px);
-  color: var(--color-fiord);
-}
-
-.registration__desc {
-  font-size: clamp(14px, 5vw, 30px);
-  line-height: 1.17;
-  color: var(--color-mineShaft);
-}
-
-.registration__block .form__block {
-  display: block;
-  margin-bottom: 5px;
-}
-
-.registration__block .form__checkbox-container {
-  margin: 0 0 24px;
-}  
-
-.registration__block .form__label:not(:last-child) {
-  display: block;
-  margin-bottom: 30px;
-}
-
-.registration__block .form__label_checkbox {
-  display: block;
-}
-
-.registration__block .form__label_checkbox::before {
-  left: 0;
-}
-
-.registration__block .form__label_checkbox::after {
-  left: 7px;
-}
-
-.registration__block .form__desc {
-  margin-top: -5px;
-  padding-left: 47px;
-  text-align: start;
-  font-size: 14.2px;
-  line-height: 1.2;
-}
-
-.registration__block .form__button {
-  padding: 16px 17px 18px;
-  width: 100%;
-  font-size: 22px;
-}
+/*--- // Скроллбар---*/

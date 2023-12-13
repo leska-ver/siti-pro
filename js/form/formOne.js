@@ -1,16 +1,54 @@
 document.addEventListener('DOMContentLoaded', function () {
 
+  /*Клик БУРГЕР*/
+  const registrationBurger01 = document.querySelector('#registration__burger01');
+  const registrationMenu01 = document.querySelector('#registration__menu01');
+  //Анимируем крест бургера
+  registrationBurger01.addEventListener('click', function(e) {
+    registrationBurger01.classList.toggle('active');
+  });
+  //Кликом по бургеру открываем меню
+  registrationBurger01.addEventListener('click', function () {
+    registrationBurger01.classList.add('open');
+
+    registrationMenu01.classList.toggle('is-active');
+
+    if (registrationMenu01.classList.contains('is-active')) {
+      registrationMenu01.style.transition = 'transform .7s ease-in-out';
+    }
+  });
+  registrationMenu01.addEventListener('transitionend', function () {
+    if (!registrationMenu01.classList.contains('is-active')) {
+      registrationMenu01.style.transition = '';
+      registrationBurger01.classList.remove('open');
+    }
+  });
+
+
+  // Активность кнопки - галка и Отправить(.form__button_filled:disabled)
+  const formDis01 = document.querySelector(".form-disabled01");
+  if (formDis01) {
+    const e = formDis01.querySelector(".checkbox-disabled01");
+    if (e) {
+      const t = formDis01.querySelector(".form__button_jsDis01");
+      e.addEventListener("change", () => {
+        e.checked ? t.removeAttribute("disabled") : t.setAttribute("disabled", "")
+      })
+    }
+  }
+
+
   // Шаблон микс modal СПАСИБО/-Реставрация лакокрасочного покрытия-
-  const btnCloseBuy01 = document.querySelector('.modal__close_js');
-  const modalBuy01 = document.querySelector('.modal_js');
+  const btnCloseBuy01 = document.querySelector('.modal__close_js01');
+  const modalBuy01 = document.querySelector('.modal_js01');
   if (modalBuy01) {
     btnCloseBuy01.addEventListener('click', function () {
-      document.querySelector('.modal_js').classList.toggle('modal_js_active');
+      document.querySelector('.modal_js01').classList.toggle('modal_js01_active');
     });
     modalBuy01.addEventListener('click', function (event) {
       if (event._notClick) return;
-      modalBuy01.classList.remove('modal_js_active');
-      document.querySelector('.modal__sps_js').classList.remove('modal__sps_js_active');
+      modalBuy01.classList.remove('modal_js01_active');
+      document.querySelector('.modal__sps_js01').classList.remove('modal__sps_js01_active');
     });    
   }
   
@@ -19,7 +57,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const formJs01 = document.querySelector('.form_js01');
   if (formJs01) { // Обёртка if. Спасение Gulp-а от null в браузере
     const telSelector = formJs01.querySelector('input[type="tel"]');
-    const inputMask = new Inputmask('+7 (999) 999-99-99');
+    const inputMask = new Inputmask('+7 999 999 99 99');
     inputMask.mask(telSelector);
 
     // const validateForms = function validateForms(form, selector, successModal, yaGoal) {
@@ -65,7 +103,7 @@ document.addEventListener('DOMContentLoaded', function () {
           function: 'Здесь должно быть 11 симв..'
         },
         text: {
-          required: 'Введите: адрес места жительства, название товара, размер и количество',
+          required: 'Пару слов к заказу',
           minLength: 'Введите 15 и более символов',
           maxLength: 'Запрещено вводить более 1000 символов'
         },
@@ -91,8 +129,8 @@ document.addEventListener('DOMContentLoaded', function () {
         xhr.open('POST', 'mail.php', true);// 'mail.php', 'list.php',
         xhr.send(formData);
         thisForm.reset();
-        document.querySelector('.modal_js').classList.toggle('modal_js_active');
-        document.querySelector('.modal__sps_js').classList.toggle('modal__sps_js_active');
+        document.querySelector('.modal_js01').classList.toggle('modal_js01_active');
+        document.querySelector('.modal__sps_js01').classList.toggle('modal__sps_js01_active');
       }
     })
   }

@@ -1,16 +1,29 @@
 document.addEventListener('DOMContentLoaded', function () {
 
+  // Активность кнопки - галка и Отправить(.form__button_filled:disabled)
+  const formDis04 = document.querySelector(".form-disabled04");
+  if (formDis04) {
+    const e = formDis04.querySelector(".checkbox-disabled04");
+    if (e) {
+      const t = formDis04.querySelector(".form__button_jsDis04");
+      e.addEventListener("change", () => {
+        e.checked ? t.removeAttribute("disabled") : t.setAttribute("disabled", "")
+      })
+    }
+  }
+
+
   // Шаблон микс modal СПАСИБО/-Профессиональная окраска ограждений и витражей-
-  const btnCloseBuy04 = document.querySelector('.modal__close_js');
-  const modalBuy04 = document.querySelector('.modal_js');
+  const btnCloseBuy04 = document.querySelector('.modal__close_js04');
+  const modalBuy04 = document.querySelector('.modal_js04');
   if (modalBuy04) {
     btnCloseBuy04.addEventListener('click', function () {
-      document.querySelector('.modal_js').classList.toggle('modal_js_active');
+      document.querySelector('.modal_js04').classList.toggle('modal_js04_active');
     });
     modalBuy04.addEventListener('click', function (event) {
       if (event._notClick) return;
-      modalBuy04.classList.remove('modal_js_active');
-      document.querySelector('.modal__sps_js').classList.remove('modal__sps_js_active');
+      modalBuy04.classList.remove('modal_js04_active');
+      document.querySelector('.modal__sps_js04').classList.remove('modal__sps_js04_active');
     });    
   }
   
@@ -18,8 +31,8 @@ document.addEventListener('DOMContentLoaded', function () {
   // inputmask - Телефон/-Профессиональная окраска ограждений и витражей-
   const formJs04 = document.querySelector('.form_js04');
   if (formJs04) { // Обёртка if. Спасение Gulp-а от null в браузере
-    const telSelector = formJs03.querySelector('input[type="tel"]');
-    const inputMask = new Inputmask('+7 (999) 999-99-99');
+    const telSelector = formJs04.querySelector('input[type="tel"]');
+    const inputMask = new Inputmask('+7 999 999 99 99');
     inputMask.mask(telSelector);
 
     // const validateForms = function validateForms(form, selector, successModal, yaGoal) {
@@ -65,7 +78,7 @@ document.addEventListener('DOMContentLoaded', function () {
           function: 'Здесь должно быть 11 симв..'
         },
         text: {
-          required: 'Введите: адрес места жительства, название товара, размер и количество',
+          required: 'Пару слов к заказу',
           minLength: 'Введите 15 и более символов',
           maxLength: 'Запрещено вводить более 1000 символов'
         },
@@ -91,8 +104,8 @@ document.addEventListener('DOMContentLoaded', function () {
         xhr.open('POST', 'mail.php', true);// 'mail.php', 'list.php',
         xhr.send(formData);
         thisForm.reset();
-        document.querySelector('.modal_js').classList.toggle('modal_js_active');
-        document.querySelector('.modal__sps_js').classList.toggle('modal__sps_js_active');
+        document.querySelector('.modal_js04').classList.toggle('modal_js04_active');
+        document.querySelector('.modal__sps_js04').classList.toggle('modal__sps_js04_active');
       }
     })
   }
