@@ -119,8 +119,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
   // Модальное окно для нескольких окон(services). Модалка не прокручиваеться.//
-  const activeClass = "services__modal-active";
-  const buttons = document.querySelectorAll(".services_modalBtn-js");
+  const activeClass = "trigger-active";
+  const buttons = document.querySelectorAll(".triggerBtn-js");
 
   for (let button of buttons) {
     modalEvent(button);
@@ -137,11 +137,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
       const trigger = button.getAttribute("data-modal-trigger");
       const modal = document.querySelector(`[data-modal=${trigger}]`);
-      const modalContent = modal.querySelector(".modal-container");
+      const modalContent = modal.querySelector(".trigger-block");
       const close = modal.querySelector(".modal-close");
            
       /* --Cтили body при открытие модального окна-- */
-      modal.classList.add('services__modal-active');		 
+      modal.classList.add('trigger-active');		 
       if (modal.classList.contains(activeClass)) {
         document.body.style.overflow  = 'hidden';
       }
@@ -155,7 +155,12 @@ document.addEventListener('DOMContentLoaded', function () {
       modalContent.addEventListener("click", (e) => e.stopPropagation());
       
     });
-  };   
+  };
+  
+  
+
+
+  
  
   
   // Активность кнопки - галка и Отправить(.form__button_filled:disabled)
@@ -239,7 +244,7 @@ document.addEventListener('DOMContentLoaded', function () {
           function: 'Здесь должно быть 11 симв..'
         },
         text: {
-          required: 'Введите: адрес места жительства, название товара, размер и количество',
+          required: 'Пару инфы о заказе',
           minLength: 'Введите 15 и более символов',
           maxLength: 'Запрещено вводить более 1000 символов'
         },
@@ -272,6 +277,23 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
 
+
+  // Плавный скролл по якорям. В любое место можно кинуть.
+  const smoothLinks = document.querySelectorAll('a[href^="#"]');
+  for (let smoothLink of smoothLinks) {
+    smoothLink.addEventListener('click', function (e) {
+      e.preventDefault();
+      const id = smoothLink.getAttribute('href');
+
+      document.querySelector(id).scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+      });
+    });
+  };
+
+  
+  
  
 
 

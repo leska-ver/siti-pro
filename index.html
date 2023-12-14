@@ -17,8 +17,8 @@
   <!-- //Для поиска в сети-->
   <!-- Swiper -->
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-  <!--Скроллбар для модалок
-  <link rel="stylesheet" href="https://unpkg.com/simplebar@latest/dist/simplebar.css">-->
+  <!-- Яндекс карта -->
+  <script defer="defer" src="https://api-maps.yandex.ru/2.1/?apikey=ваш API-ключ&lang=ru_RU" type="text/javascript"></script>
   <title>СИТИ ПРО</title>
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/style.css">
@@ -27,7 +27,7 @@
 <body>
   <div class="wrapper">
     <h1 class="visually-hidden">Я для семантики</h1>
-    <header class="header">
+    <header class="header" id="header">
       <div class="header__container">
         <div class="header__padding">
           <a href="#" class="header__logo">
@@ -71,22 +71,22 @@
             <nav class="header__nav-icone icone">
               <ul class="icone__list">
                 <li class="icone__item">
-                  <a class="icone__link" href="https://vk.com/" target="blank">
+                  <a class="icone__link" href="https://vk.com/" target="_blank">
                     <img src="img/icone/01.svg" alt="Вконтакте">
                   </a>
                 </li>
                 <li class="icone__item">
-                  <a class="icone__link" href="https://telegram.org/" target="blank">
+                  <a class="icone__link" href="https://telegram.org/" target="_blank">
                     <img src="img/icone/02.svg" alt="Телеграмм">
                   </a>
                 </li>
                 <li class="icone__item">
-                  <a class="icone__link" href="https://whatsapp.com/" target="blank">
+                  <a class="icone__link" href="https://whatsapp.com/" target="_blank">
                     <img src="img/icone/03.svg" alt="Ватсап">
                   </a>
                 </li>
                 <li class="icone__item">
-                  <a class="icone__link" href="https://viber.com/" target="blank">
+                  <a class="icone__link" href="https://viber.com/" target="_blank">
                     <img src="img/icone/04.svg" alt="Вайбер">
                   </a>
                 </li>
@@ -213,8 +213,8 @@
           <h2 class="services__h2 h2">Виды услуг</h2>
           <div class="services__mySwiper swiper">
             <ul class="services__list swiper-wrapper">
-              <li class="services__item swiper-slide">                 
-                <a href="#" class="services__link services__link_one services_modalBtn-js" data-modal-trigger="trigger-01"><!-- openModal01 -->
+              <li class="services__item swiper-slide">
+                <div class="services__btnCard services__btnCard_one triggerBtn-js" data-modal-trigger="trigger-01">
                   <svg class="services__svg" width="80" height="74" viewbox="0 0 80 74" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
                     <path
@@ -223,7 +223,7 @@
                   </svg>
                   <p class="services__desc services__desc_hoverNone desc">
                     Реставрация лакокрасочного покрытия
-                  </p>                  
+                  </p>
                   <p class="services__desc services__desc_hover desc">
                     Получить консультацию
                   </p>
@@ -233,10 +233,10 @@
                         stroke-linejoin="round" />
                     </svg>
                   </button>
-                </a>
+                </div>
               </li>
               <li class="services__item swiper-slide">
-                <a href="#openModal02" class="services__link services__link_two">
+                <div class="services__btnCard services__btnCard_two triggerBtn-js" data-modal-trigger="trigger-02">
                   <svg class="services__svg" width="80" height="80" viewbox="0 0 80 80" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
                     <path
@@ -248,20 +248,20 @@
                   </svg>
                   <p class="services__desc services__desc_hoverNone desc">
                     Профессиональная окраска <br>на объекте
-                  </p>                  
+                  </p>
                   <p class="services__desc services__desc_hover desc">
                     Получить консультацию
-                  </p>    
+                  </p>
                   <button class="services__btn">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="14" viewbox="0 0 24 14" fill="none">
                       <path d="M2 2L12 12L22 2" stroke="white" stroke-width="4" stroke-linecap="round"
                         stroke-linejoin="round" />
                     </svg>
                   </button>
-                </a>
+                </div>
               </li>
               <li class="services__item swiper-slide">
-                <a href="#openModal03" class="services__link services__link_three">
+                <div class="services__btnCard services__btnCard_three triggerBtn-js" data-modal-trigger="trigger-03">
                   <svg class="services__svg" width="80" height="69" viewbox="0 0 80 69" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
                     <path
@@ -286,10 +286,10 @@
                         stroke-linejoin="round" />
                     </svg>
                   </button>
-                </a>
+                </div>
               </li>
               <li class="services__item swiper-slide">
-                <a href="#openModal04" class="services__link services__link_four">
+                <div class="services__btnCard services__btnCard_four triggerBtn-js" data-modal-trigger="trigger-04">
                   <svg class="services__svg" width="86" height="86" viewbox="0 0 86 86" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
                     <path
@@ -317,7 +317,7 @@
                   </svg>
                   <p class="services__desc services__desc_hoverNone desc">
                     Профессиональная окраска ограждений и витражей
-                  </p>                  
+                  </p>
                   <p class="services__desc services__desc_hover desc">
                     Получить консультацию
                   </p>
@@ -327,7 +327,7 @@
                         stroke-linejoin="round" />
                     </svg>
                   </button>
-                </a>
+                </div>
               </li>
             </ul>
             <div class="services__pagination">
@@ -474,11 +474,11 @@
       </section>
       <section class="forms">
         <div class="forms__container">
-          <div class="forms__background"> 
-            <h2 class="forms__h2 h2">Оставьте заявку</h2>  
+          <div class="forms__background">
+            <h2 class="forms__h2 h2">Оставьте заявку</h2>
             <!-- Шаблон микс form -->
-            <form class="forms__form form form_js form-disabled" action="mail.php" enctype="multipart/form-data" method="POST"
-              aria-label="Здесь Вы можете заказать товар">
+            <form class="forms__form form form_js form-disabled" action="mail.php" enctype="multipart/form-data"
+              method="POST" aria-label="Здесь Вы можете заказать товар">
               <!--action="#"-->
               <input type="hidden" name="admin_email[]" value="darki@yandex.ru">
               <!--darki@yandex.ru-->
@@ -487,9 +487,8 @@
               <div class="form__block">
                 <!--data здесь он обрабатывает плагин валидатор кода-->
                 <label class="form__label form__label_grid" for="nameZakaz">
-                  <input class="form__input" type="text" name="name" placeholder="Ваше имя"
-                    data-validate-field="name" id="nameZakaz" required="" aria-label="Введите ваше имя"
-                    maxlength="20">
+                  <input class="form__input" type="text" name="name" placeholder="Ваше имя" data-validate-field="name"
+                    id="nameZakaz" required="" aria-label="Введите ваше имя" maxlength="20">
                 </label>
                 <label class="form__label form__label_gridTwo" for="telZakaz">
                   <input class="form__input" type="tel" name="tel" placeholder="Номер телефона*"
@@ -502,18 +501,19 @@
                 </label> -->
                 <label class="form__label form__label_areas" for="messageZakaz">
                   <span class="form__label-descr"></span>
-                  <textarea class="form__textarea" name="message" id="messageZakaz"
-                    placeholder="Ваше сообщение"
+                  <textarea class="form__textarea" name="message" id="messageZakaz" placeholder="Ваше сообщение"
                     data-validate-field="text"></textarea>
                 </label>
               </div>
               <div class="form__checkbox-container">
-                <input class="form__input-checkbox checkbox-js checkbox-disabled" id="checkbox" type="checkbox" checked="checked" aria-label="Нажмите если принимаете пользовательское соглашение" required="" data-validate-field="checkbox">
-                <label class="form__label form__label_checkbox" for="checkbox">
-                  <p class="form__desc desc">Нажимая кнопку «ОТПРАВИТЬ» вы соглашаетесь на обработку ваших данных</p>
-                </label>
+                <input class="form__input-checkbox checkbox-js checkbox-disabled" id="checkbox" type="checkbox"
+                  checked="checked" aria-label="Нажмите если принимаете пользовательское соглашение" required=""
+                  data-validate-field="checkbox">
+                <label class="form__label form__label_checkbox" for="checkbox"></label>
+                <p class="form__desc desc">Нажимая кнопку «ОТПРАВИТЬ» вы соглашаетесь на обработку ваших данных</p>
               </div>
-              <button class="form__button btn form__button_jsDis form__button_filled" aria-label="Нажмите чтобы отправить">
+              <button class="form__button btn form__button_jsDis form__button_filled"
+                aria-label="Нажмите чтобы отправить">
                 Отправить
               </button>
             </form>
@@ -531,31 +531,337 @@
             <!-- // Шаблон микс modal СПАСИБО/-Профессиональная окраска ограждений и витражей- -->
           </div>
         </div>
-      </section>      
+      </section>
+      <section class="contacts">
+        <div class="contacts__container">
+          <div class="contacts__info">
+            <h2 class="contacts__h2 h2">Контакты</h2>
+            <!-- Шаблон микс и модификаторы (_) контакт/contact -->
+            <ul class="contacts__list contact">
+              <li class="contact__item">
+                <a class="contact__text" href="https://yandex.ru/maps/213/moscow/house/moskovskaya_ulitsa_1/Z04YcgdpT0AAQFtvfXp3eHxjYg==/?ll=37.410041%2C55.668887&pt=55.669006%2C37.409657&z=18.8" target="_blank">
+                  <svg width="30" height="30" viewbox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="15" cy="15" r="15" fill="#73A56C"/>
+                    <path d="M15 16.5211C16.4497 16.5211 17.625 15.3585 17.625 13.9244C17.625 12.4903 16.4497 11.3277 15 11.3277C13.5502 11.3277 12.375 12.4903 12.375 13.9244C12.375 15.3585 13.5502 16.5211 15 16.5211Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M19.9499 18.8209L16.2372 22.4936C15.9091 22.8179 15.4643 23 15.0004 23C14.5366 23 14.0918 22.8179 13.7636 22.4936L10.0501 18.8209C9.0712 17.8525 8.40455 16.6186 8.13448 15.2754C7.86441 13.9322 8.00306 12.5399 8.53288 11.2746C9.0627 10.0093 9.95991 8.92785 11.111 8.16698C12.2622 7.40611 13.6155 7 15 7C16.3845 7 17.7378 7.40611 18.889 8.16698C20.0401 8.92785 20.9373 10.0093 21.4671 11.2746C21.9969 12.5399 22.1356 13.9322 21.8655 15.2754C21.5955 16.6186 20.9288 17.8525 19.9499 18.8209Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  <span>
+                    <span class="contact__span-h3">г. Москва</span>
+                    <span class="contact__span-text">ул. Московская д.0</span>
+                  </span>
+                </a>
+              </li>
+              <li class="contact__item">
+                <a class="contact__text" href="tel:79000000000">
+                  <svg clsss="contact__svg" width="30" height="30" viewbox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="15" cy="15" r="15" fill="#73A56C"></circle>
+                    <path d="M17.6667 10.5556C18.1382 10.5556 18.5903 10.7429 18.9237 11.0763C19.2571 11.4097 19.4444 11.8618 19.4444 12.3333M17.6667 7C19.0812 7 20.4377 7.5619 21.4379 8.5621C22.4381 9.56229 23 10.9188 23 12.3333M8.77778 7.88889H12.3333L14.1111 12.3333L11.8889 13.6667C12.8409 15.5969 14.4031 17.1591 16.3333 18.1111L17.6667 15.8889L22.1111 17.6667V21.2222C22.1111 21.6937 21.9238 22.1459 21.5904 22.4793C21.257 22.8127 20.8048 23 20.3333 23C16.866 22.7893 13.5957 21.3169 11.1394 18.8606C8.68311 16.4043 7.21071 13.134 7 9.66667C7 9.19517 7.1873 8.74299 7.5207 8.40959C7.8541 8.07619 8.30628 7.88889 8.77778 7.88889Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg>
+                  <span>
+                    <span class="contact__span-h3">+7 900 000 00 00</span>
+                    <span class="contact__span-text">заказать звонок</span>
+                  </span>
+                </a>
+              </li>
+              <li class="contact__item">
+                <a class="contact__text" href="https://a.d-cd.net/57bfb5es-960.jpg" target="_blank">
+                  <svg width="30" height="30" viewbox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="15" cy="15" r="15" fill="#73A56C"/>
+                    <path d="M15 13V16H17.0645M9.83871 7L7 9M20.1613 7L23 9M22.2258 16C22.2258 19.866 18.9907 23 15 23C11.0093 23 7.77419 19.866 7.77419 16C7.77419 12.134 11.0093 9 15 9C18.9907 9 22.2258 12.134 22.2258 16Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  <span>
+                    <span class="contact__span-h3">Пн-Вс 9:00-20:00</span>
+                    <span class="contact__span-text">без выходных</span>
+                  </span>
+                </a>
+              </li>
+            </ul>
+            <!-- Шаблон микс и модификаторы (_) контакт/contact -->
+            <!-- Шаблон микс и модификаторы (_) icone -->
+            <nav class="contacts__nav-icone icone">
+              <ul class="icone__list">
+                <li class="icone__item">
+                  <a class="icone__link" href="https://vk.com/" target="_blank">
+                    <img src="img/icone/01.svg" alt="Вконтакте">
+                  </a>
+                </li>
+                <li class="icone__item">
+                  <a class="icone__link" href="https://telegram.org/" target="_blank">
+                    <img src="img/icone/02.svg" alt="Телеграмм">
+                  </a>
+                </li>
+                <li class="icone__item">
+                  <a class="icone__link" href="https://whatsapp.com/" target="_blank">
+                    <img src="img/icone/03.svg" alt="Ватсап">
+                  </a>
+                </li>
+                <li class="icone__item">
+                  <a class="icone__link" href="https://viber.com/" target="_blank">
+                    <img src="img/icone/04.svg" alt="Вайбер">
+                  </a>
+                </li>
+              </ul>
+            </nav>
+            <!-- // Шаблон микс и модификаторы (_) icone -->
+            <a class="contacts__conditionality" href="Политика конфиденциальности.docx">Политика конфиденциальности</a>
+          </div>
+          <div class="contacts__map" id="map"></div>
+        </div>
+      </section>  
     </main>
     <footer class="footer">
-      <div class="footer__container"></div>
-    </footer>	
+      <div class="footer__container">
+        <a class="footer__up" href="#header" id="up">
+          <svg width="152" height="152" viewbox="0 0 152 152" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="76" cy="76" r="76" fill="#79AEFF"/>
+            <path d="M101 88L76 63L51 88" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+        <div class="footer__left">
+          <a href="#" class="footer__logo">
+            <img class="footer__logo-img" src="img/logo-big.png" alt="Логотип Slate в подвале">
+          </a>
+          <p class="footer__desc desc">
+            Реставрация (восстановление) лакокрасочного покрытия на объекте (окна, двери), профессиональная окраска на объекте (окна, двери, предметы интерьера и экстерьера, ограждения, витражи и т.д.)
+          </p>
+          <div class="footer__rights footer__rights_none717">СитиПро <span class="year">2023</span></div>
+        </div>
+        <div class="footer__center">
+          <nav class="footer__nav">
+            <ul class="footer__list">
+              <!--  menu" id="menu  -->
+              <li class="footer__item">
+                <a class="footer__link" href="#" aria-label="Нажмите чтобы узнать о нас">О нас</a>
+              </li>
+              <li class="footer__item">
+                <a class="header__link" href="#" aria-label="Нажмите чтобы увидеть виды услуг">Виды услуг</a>
+              </li>
+              <li class="footer__item">
+                <a class="footer__link" href="#" aria-label="Нажмите чтобы увидеть портфолио">Портфолио</a>
+              </li>
+              <li class="footer__item">
+                <a class="footer__link" href="#" aria-label="Нажмите чтобы оставить заявку">Оставьте заявку</a>
+              </li>
+              <li class="footer__item">
+                <a class="footer__link" href="#" aria-label="Нажмите чтобы узнать о нас">Контакты</a>
+              </li>
+            </ul>
+          </nav>
+          <a class="footer__conditionality" href="Политика конфиденциальности.docx">Политика конфиденциальности</a>
+          <div class="footer__rights footer__rights_none1920">СитиПро <span class="year">2023</span></div>
+          <div class="footer__devised">Разработано
+            <img src="img/maxocom.png" alt="Логотип Maxocom">
+          </div>
+        </div>
+        <div class="footer__right">
+          <ul class="footer__right-list contact">
+            <li class="contact__item">
+              <a class="contact__text" href="https://yandex.ru/maps/213/moscow/house/moskovskaya_ulitsa_1/Z04YcgdpT0AAQFtvfXp3eHxjYg==/?ll=37.410041%2C55.668887&amp;pt=55.669006%2C37.409657&amp;z=18.8" target="_blank">
+                <svg width="30" height="30" viewbox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="15" cy="15" r="15" fill="#73A56C"></circle>
+                  <path d="M15 16.5211C16.4497 16.5211 17.625 15.3585 17.625 13.9244C17.625 12.4903 16.4497 11.3277 15 11.3277C13.5502 11.3277 12.375 12.4903 12.375 13.9244C12.375 15.3585 13.5502 16.5211 15 16.5211Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                  <path d="M19.9499 18.8209L16.2372 22.4936C15.9091 22.8179 15.4643 23 15.0004 23C14.5366 23 14.0918 22.8179 13.7636 22.4936L10.0501 18.8209C9.0712 17.8525 8.40455 16.6186 8.13448 15.2754C7.86441 13.9322 8.00306 12.5399 8.53288 11.2746C9.0627 10.0093 9.95991 8.92785 11.111 8.16698C12.2622 7.40611 13.6155 7 15 7C16.3845 7 17.7378 7.40611 18.889 8.16698C20.0401 8.92785 20.9373 10.0093 21.4671 11.2746C21.9969 12.5399 22.1356 13.9322 21.8655 15.2754C21.5955 16.6186 20.9288 17.8525 19.9499 18.8209Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg>
+                <span>
+                  <span class="contact__span-h3">г. Москва</span>
+                  <span class="contact__span-text">ул. Московская д.0</span>
+                </span>
+              </a>
+            </li>
+            <li class="contact__item">
+              <a class="contact__text" href="tel:79000000000">
+                <svg clsss="contact__svg" width="30" height="30" viewbox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="15" cy="15" r="15" fill="#73A56C"></circle>
+                  <path d="M17.6667 10.5556C18.1382 10.5556 18.5903 10.7429 18.9237 11.0763C19.2571 11.4097 19.4444 11.8618 19.4444 12.3333M17.6667 7C19.0812 7 20.4377 7.5619 21.4379 8.5621C22.4381 9.56229 23 10.9188 23 12.3333M8.77778 7.88889H12.3333L14.1111 12.3333L11.8889 13.6667C12.8409 15.5969 14.4031 17.1591 16.3333 18.1111L17.6667 15.8889L22.1111 17.6667V21.2222C22.1111 21.6937 21.9238 22.1459 21.5904 22.4793C21.257 22.8127 20.8048 23 20.3333 23C16.866 22.7893 13.5957 21.3169 11.1394 18.8606C8.68311 16.4043 7.21071 13.134 7 9.66667C7 9.19517 7.1873 8.74299 7.5207 8.40959C7.8541 8.07619 8.30628 7.88889 8.77778 7.88889Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+                <span>
+                  <span class="contact__span-h3">+7 900 000 00 00</span>
+                  <span class="contact__span-text">заказать звонок</span>
+                </span>
+              </a>
+            </li>
+            <li class="contact__item">
+              <a class="contact__text" href="https://a.d-cd.net/57bfb5es-960.jpg" target="_blank">
+                <svg width="30" height="30" viewbox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="15" cy="15" r="15" fill="#73A56C"></circle>
+                  <path d="M15 13V16H17.0645M9.83871 7L7 9M20.1613 7L23 9M22.2258 16C22.2258 19.866 18.9907 23 15 23C11.0093 23 7.77419 19.866 7.77419 16C7.77419 12.134 11.0093 9 15 9C18.9907 9 22.2258 12.134 22.2258 16Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg>
+                <span>
+                  <span class="contact__span-h3">Пн-Вс 9:00-20:00</span>
+                  <span class="contact__span-text">без выходных</span>
+                </span>
+              </a>
+            </li>
+          </ul>
+          <nav class="footer__nav-icone icone">
+            <ul class="icone__list">
+              <li class="icone__item">
+                <a class="icone__link" href="https://vk.com/" target="_blank">
+                  <img src="img/icone/01.svg" alt="Вконтакте">
+                </a>
+              </li>
+              <li class="icone__item">
+                <a class="icone__link" href="https://telegram.org/" target="_blank">
+                  <img src="img/icone/02.svg" alt="Телеграмм">
+                </a>
+              </li>
+              <li class="icone__item">
+                <a class="icone__link" href="https://whatsapp.com/" target="_blank">
+                  <img src="img/icone/03.svg" alt="Ватсап">
+                </a>
+              </li>
+              <li class="icone__item">
+                <a class="icone__link" href="https://viber.com/" target="_blank">
+                  <img src="img/icone/04.svg" alt="Вайбер">
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </footer>
 
     <div class="modals">
-      <!-- Модалка без js кода/-Реставрация лакокрасочного покрытия- id="openModal01"-->
-      <div class="modals__registration registration" data-modal="trigger-01">
-        <div class="modal-container" data-simplebar>
+      <!-- Модалка01/-Реставрация лакокрасочного покрытия--->
+      <div class="modals__registration registration trigger" data-modal="trigger-01">
+        <div class="registration__modal trigger-block">
           <div class="registration__white">
-            <a href="#" class="registration__logo">
+            <a class="registration__logo" href="#">
               <img class="registration__logo-img" src="img/logo.png" alt="Логотип Slate">
             </a>
-            <a class="registration__close" href="#siti-pro" title="Закрыть">
+            <button class="registration__close modal-close" title="Закрыть">
+              <!-- siti-pro -->
               <svg width="60" height="60" viewbox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M20 20L40.0208 40M40.0208 20L20 40M58 30C58 45.464 45.464 58 30 58C14.536 58 2 45.464 2 30C2 14.536 14.536 2 30 2C45.464 2 58 14.536 58 30Z" stroke="#465067" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                <path
+                  d="M20 20L40.0208 40M40.0208 20L20 40M58 30C58 45.464 45.464 58 30 58C14.536 58 2 45.464 2 30C2 14.536 14.536 2 30 2C45.464 2 58 14.536 58 30Z"
+                  stroke="#465067" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
               </svg>
-            </a>
+            </button>
             <button class="registration__burger burger" id="registration__burger01" aria-label="Меню">
               <span class="rect"></span>
               <span class="rect"></span>
               <span class="rect"></span>
             </button>
             <div class="registration__block-menu menu header__block-menu menu" id="registration__menu01">
+              <nav class="registration__nav">
+                <ul class="registration__list">
+                  <!--  menu" id="menu  -->
+                  <li class="registration__item">
+                    <a class="registration__link" href="#" aria-label="Нажмите чтобы узнать о нас">О нас</a>
+                  </li>
+                  <li class="registration__item">
+                    <a class="registration__link" href="#" aria-label="Нажмите чтобы увидеть виды услуг">Виды услуг</a>
+                  </li>
+                  <li class="registration__item">
+                    <a class="registration__link" href="#" aria-label="Нажмите чтобы увидеть портфолио">Портфолио</a>
+                  </li>
+                  <li class="registration__item">
+                    <a class="registration__link" href="#" aria-label="Нажмите чтобы оставить заявку">Оставьте заявку</a>
+                  </li>
+                  <li class="registration__item">
+                    <a class="registration__link" href="#" aria-label="Нажмите чтобы узнать о нас">Контакты</a>
+                  </li>
+                </ul>
+              </nav>
+              <!-- Шаблон микс и модификаторы (_) icone -->
+              <nav class="registration__nav-icone icone">
+                <ul class="icone__list">
+                  <li class="icone__item">
+                    <a class="icone__link" href="https://vk.com/" target="_blank">
+                      <img src="img/icone/01.svg" alt="Вконтакте">
+                    </a>
+                  </li>
+                  <li class="icone__item">
+                    <a class="icone__link" href="https://telegram.org/" target="_blank">
+                      <img src="img/icone/02.svg" alt="Телеграмм">
+                    </a>
+                  </li>
+                  <li class="icone__item">
+                    <a class="icone__link" href="https://whatsapp.com/" target="_blank">
+                      <img src="img/icone/03.svg" alt="Ватсап">
+                    </a>
+                  </li>
+                  <li class="icone__item">
+                    <a class="icone__link" href="https://viber.com/" target="_blank">
+                      <img src="img/icone/04.svg" alt="Вайбер">
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+              <!-- // Шаблон микс и модификаторы (_) icone -->
+            </div>
+          </div>
+          <div class="registration__img"></div>
+          <div class="registration__block">
+            <div class="registration__info">
+              <h2 class="registration__h2 h2">Оставьте заявку</h2>
+              <p class="registration__desc desc">
+                И наш менеджер свяжется с вами <br>в ближайшее время <br>для уточнения <br>деталей
+              </p>
+            </div>
+            <form class="registration__form form form_js01 form-disabled" action="mail.php"
+              enctype="multipart/form-data" method="POST" aria-label="Заказ лакокрасочного покрытия">
+              <!--action="#"-->
+              <input type="hidden" name="admin_email[]" value="darki@yandex.ru">
+              <!--darki@yandex.ru-->
+              <input type="hidden" name="admin_email[]" value="darki@mail.ru">
+              <input type="hidden" name="form_subject" value="Заказ --Реставрация лакокрасочного покрытия--">
+              <div class="form__block">
+                <!--data здесь он обрабатывает плагин валидатор кода-->
+                <label class="form__label form__label_grid" for="nameZakaz01">
+                  <input class="form__input" type="text" name="name" placeholder="Ваше имя" data-validate-field="name"
+                    id="nameZakaz01" required="" aria-label="Введите ваше имя" maxlength="20">
+                </label>
+                <label class="form__label form__label_gridTwo" for="telZakaz01">
+                  <input class="form__input" type="tel" name="tel" placeholder="Номер телефона*"
+                    data-validate-field="tel" data-validate-rules="phone" id="telZakaz01"
+                    aria-label="Введите ваш телефон">
+                </label>
+                <!-- <label class="form__label" for="emailZakaz01">
+                    <input class="form__input" type="email" name="email" placeholder="Email"
+                      data-validate-field="email" id="emailZakaz01" aria-label="Введите вашу почту" maxlength="35">
+                  </label> -->
+                <label class="form__label form__label_areas" for="messageZakaz01">
+                  <span class="form__label-descr"></span>
+                  <textarea class="form__textarea" name="message" id="messageZakaz01" placeholder="Ваше сообщение"
+                    data-validate-field="text"></textarea>
+                </label>
+              </div>
+              <div class="form__checkbox-container">
+                <input class="form__input-checkbox checkbox-js checkbox-disabled01" id="checkbox01" type="checkbox"
+                  checked="checked" aria-label="Нажмите если принимаете пользовательское соглашение" required=""
+                  data-validate-field="checkbox">
+                <label class="form__label form__label_checkbox" for="checkbox01"></label>
+                <p class="form__desc desc">Нажимая кнопку «ОТПРАВИТЬ» вы соглашаетесь на обработку ваших данных</p>
+              </div>
+              <button class="form__button btn form__button_jsDis01 form__button_filled01"
+                aria-label="Нажмите чтобы отправить">
+                Отправить
+              </button>
+            </form>
+          </div>          
+        </div>
+      </div>
+      <!-- Модалка02/-Профессиональная окраска на объекте- -->
+      <div class="modals__registration registration trigger" data-modal="trigger-02">
+        <div class="registration__modal trigger-block">
+          <div class="registration__white">
+            <a class="registration__logo" href="#">
+              <img class="registration__logo-img" src="img/logo.png" alt="Логотип Slate">
+            </a>
+            <button class="registration__close modal-close" title="Закрыть">
+              <svg width="60" height="60" viewbox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M20 20L40.0208 40M40.0208 20L20 40M58 30C58 45.464 45.464 58 30 58C14.536 58 2 45.464 2 30C2 14.536 14.536 2 30 2C45.464 2 58 14.536 58 30Z"
+                  stroke="#465067" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </button>
+            <button class="registration__burger burger" id="registration__burger02" aria-label="Меню">
+              <span class="rect"></span>
+              <span class="rect"></span>
+              <span class="rect"></span>
+            </button>
+            <div class="registration__block-menu menu header__block-menu menu" id="registration__menu02">
               <nav class="header__nav">
                 <ul class="header__list">
                   <!--  menu" id="menu  -->
@@ -580,28 +886,28 @@
               <nav class="header__nav-icone icone">
                 <ul class="icone__list">
                   <li class="icone__item">
-                    <a class="icone__link" href="https://vk.com/" target="blank">
+                    <a class="icone__link" href="https://vk.com/" target="_blank">
                       <img src="img/icone/01.svg" alt="Вконтакте">
                     </a>
                   </li>
                   <li class="icone__item">
-                    <a class="icone__link" href="https://telegram.org/" target="blank">
+                    <a class="icone__link" href="https://telegram.org/" target="_blank">
                       <img src="img/icone/02.svg" alt="Телеграмм">
                     </a>
                   </li>
                   <li class="icone__item">
-                    <a class="icone__link" href="https://whatsapp.com/" target="blank">
+                    <a class="icone__link" href="https://whatsapp.com/" target="_blank">
                       <img src="img/icone/03.svg" alt="Ватсап">
                     </a>
                   </li>
                   <li class="icone__item">
-                    <a class="icone__link" href="https://viber.com/" target="blank">
+                    <a class="icone__link" href="https://viber.com/" target="_blank">
                       <img src="img/icone/04.svg" alt="Вайбер">
                     </a>
                   </li>
                 </ul>
               </nav>
-            </div>
+            </div>          
           </div>
           <div class="registration__img"></div>
           <div class="registration__block">
@@ -611,79 +917,8 @@
                 И наш менеджер свяжется с вами <br>в ближайшее время <br>для уточнения <br>деталей
               </p>
             </div>
-            <form class="registration__form form form_js01 form-disabled" action="mail.php" enctype="multipart/form-data"
-              method="POST" aria-label="Здесь Вы можете заказать лакокрасочное покрытие">
-              <!--action="#"-->
-              <input type="hidden" name="admin_email[]" value="darki@yandex.ru">
-              <!--darki@yandex.ru-->
-              <input type="hidden" name="admin_email[]" value="darki@mail.ru">
-              <input type="hidden" name="form_subject" value="Заказ --Реставрация лакокрасочного покрытия--">
-              <div class="form__block">
-                <!--data здесь он обрабатывает плагин валидатор кода-->
-                <label class="form__label form__label_grid" for="nameZakaz01">
-                  <input class="form__input" type="text" name="name" placeholder="Ваше имя" data-validate-field="name"
-                    id="nameZakaz01" required="" aria-label="Введите ваше имя" maxlength="20">
-                </label>
-                <label class="form__label form__label_gridTwo" for="telZakaz01">
-                  <input class="form__input" type="tel" name="tel" placeholder="Номер телефона*" data-validate-field="tel"
-                    data-validate-rules="phone" id="telZakaz01" aria-label="Введите ваш телефон">
-                </label>
-                <!-- <label class="form__label" for="emailZakaz01">
-                    <input class="form__input" type="email" name="email" placeholder="Email"
-                      data-validate-field="email" id="emailZakaz01" aria-label="Введите вашу почту" maxlength="35">
-                  </label> -->
-                <label class="form__label form__label_areas" for="messageZakaz01">
-                  <span class="form__label-descr"></span>
-                  <textarea class="form__textarea" name="message" id="messageZakaz01" placeholder="Ваше сообщение" data-validate-field="text"></textarea>
-                </label>
-              </div>
-              <div class="form__checkbox-container">
-                <input class="form__input-checkbox checkbox-js checkbox-disabled01" id="checkbox01" type="checkbox" checked="checked" aria-label="Нажмите если принимаете пользовательское соглашение" required="" data-validate-field="checkbox">
-                <label class="form__label form__label_checkbox" for="checkbox01">
-                  <p class="form__desc desc">Нажимая кнопку «ОТПРАВИТЬ» вы соглашаетесь на обработку ваших данных</p>
-                </label>
-              </div>
-              <button class="form__button btn form__button_jsDis01 form__button_filled01" aria-label="Нажмите чтобы отправить">
-                Отправить
-              </button>
-            </form>
-          </div>
-          <!-- Шаблон микс modal СПАСИБО/-Профессиональная окраска ограждений и витражей- -->
-          <div class="registration__modal01 modal01 modal_js01">
-            <div class="modal__sps01 modal__sps_js01">
-              <button class="modal__close01 modal__close_js01" title="Закрыть">
-                &#10006;
-              </button>
-              <h2 class="modal01__h2 h2">
-                Спасибо, мы с вами свяжемся!
-              </h2>
-            </div>
-          </div>
-          <!-- // Шаблон микс modal СПАСИБО/-Профессиональная окраска ограждений и витражей- -->
-        </div>
-      </div>
-      <!-- Модалка без js кода/-Профессиональная окраска на объекте- -->
-      <div class="modals__registration registration" id="openModal02">
-        <div>
-          <div class="registration__white">
-            <a href="#" class="registration__logo">
-              <img class="registration__logo-img" src="img/logo.png" alt="Логотип Slate">
-            </a>
-          </div>
-          <a class="registration__close" href="#siti-pro" title="Закрыть">
-            <svg width="60" height="60" viewbox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M20 20L40.0208 40M40.0208 20L20 40M58 30C58 45.464 45.464 58 30 58C14.536 58 2 45.464 2 30C2 14.536 14.536 2 30 2C45.464 2 58 14.536 58 30Z" stroke="#465067" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </a>
-          <div class="registration__block">
-            <div class="registration__info">
-              <h2 class="registration__h2 h2">Оставьте заявку</h2>
-              <p class="registration__desc desc">
-                И наш менеджер свяжется с вами <br>в ближайшее время <br>для уточнения <br>деталей
-              </p>
-            </div>
             <form class="registration__form form form_js02 form-disabled" action="mail.php" enctype="multipart/form-data"
-              method="POST" aria-label="Здесь Вы можете заказать профессиональную окраску на объекте">
+              method="POST" aria-label="Заказ профессиональную окраску на объекте">
               <!--action="#"-->
               <input type="hidden" name="admin_email[]" value="darki@yandex.ru">
               <!--darki@yandex.ru-->
@@ -700,9 +935,9 @@
                     data-validate-rules="phone" id="telZakaz02" aria-label="Введите ваш телефон">
                 </label>
                 <!-- <label class="form__label" for="emailZakaz02">
-                    <input class="form__input" type="email" name="email" placeholder="Email"
-                      data-validate-field="email" id="emailZakaz02" aria-label="Введите вашу почту" maxlength="35">
-                  </label> -->
+                      <input class="form__input" type="email" name="email" placeholder="Email"
+                        data-validate-field="email" id="emailZakaz02" aria-label="Введите вашу почту" maxlength="35">
+                    </label> -->
                 <label class="form__label form__label_areas" for="messageZakaz02">
                   <span class="form__label-descr"></span>
                   <textarea class="form__textarea" name="message" id="messageZakaz02" placeholder="Ваше сообщение"
@@ -710,15 +945,14 @@
                 </label>
               </div>
               <div class="form__checkbox-container">
-                <input class="form__input-checkbox checkbox-js checkbox-disabled"
-                  id="checkbox02" type="checkbox" checked="checked"
-                  aria-label="Нажмите если принимаете пользовательское соглашение" required=""
+                <input class="form__input-checkbox checkbox-js checkbox-disabled" id="checkbox02" type="checkbox"
+                  checked="checked" aria-label="Нажмите если принимаете пользовательское соглашение" required=""
                   data-validate-field="checkbox">
-                <label class="form__label form__label_checkbox" for="checkbox02">
-                  <p class="form__desc desc">Нажимая кнопку «ОТПРАВИТЬ» вы соглашаетесь на обработку ваших данных</p>
-                </label>
+                <label class="form__label form__label_checkbox" for="checkbox02"></label>
+                <p class="form__desc desc">Нажимая кнопку «ОТПРАВИТЬ» вы соглашаетесь на обработку ваших данных</p>
               </div>
-              <button class="form__button btn form__button_jsDis02 form__button_filled02" aria-label="Нажмите чтобы отправить">
+              <button class="form__button btn form__button_jsDis02 form__button_filled02"
+                aria-label="Нажмите чтобы отправить">
                 Отправить
               </button>
             </form>
@@ -737,19 +971,74 @@
           <!-- // Шаблон микс modal СПАСИБО/-Профессиональная окраска ограждений и витражей- -->
         </div>
       </div>
-      <!-- Модалка без js кода/-Профессиональная окраска экстерьера- -->
-      <div class="modals__registration registration" id="openModal03">
-        <div>
+      <!-- Модалка03/-Профессиональная окраска экстерьера- -->
+      <div class="modals__registration registration trigger" data-modal="trigger-03">
+        <div class="registration__modal trigger-block">
           <div class="registration__white">
-            <a href="#" class="registration__logo">
+            <a class="registration__logo" href="#">
               <img class="registration__logo-img" src="img/logo.png" alt="Логотип Slate">
             </a>
+            <button class="registration__close modal-close" title="Закрыть">
+              <svg width="60" height="60" viewbox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M20 20L40.0208 40M40.0208 20L20 40M58 30C58 45.464 45.464 58 30 58C14.536 58 2 45.464 2 30C2 14.536 14.536 2 30 2C45.464 2 58 14.536 58 30Z"
+                  stroke="#465067" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </button>
+            <button class="registration__burger burger" id="registration__burger03" aria-label="Меню">
+              <span class="rect"></span>
+              <span class="rect"></span>
+              <span class="rect"></span>
+            </button>
+            <div class="registration__block-menu menu header__block-menu menu" id="registration__menu03">
+              <nav class="header__nav">
+                <ul class="header__list">
+                  <!--  menu" id="menu  -->
+                  <li class="header__item">
+                    <a class="header__link" href="#" aria-label="Нажмите чтобы узнать о нас">О нас</a>
+                  </li>
+                  <li class="header__item">
+                    <a class="header__link" href="#" aria-label="Нажмите чтобы увидеть виды услуг">Виды услуг</a>
+                  </li>
+                  <li class="header__item">
+                    <a class="header__link" href="#" aria-label="Нажмите чтобы увидеть портфолио">Портфолио</a>
+                  </li>
+                  <li class="header__item">
+                    <a class="header__link" href="#" aria-label="Нажмите чтобы оставить заявку">Оставьте заявку</a>
+                  </li>
+                  <li class="header__item">
+                    <a class="header__link" href="#" aria-label="Нажмите чтобы узнать о нас">Контакты</a>
+                  </li>
+                </ul>
+              </nav>
+              <!-- Шаблон микс и модификаторы (_) icone -->
+              <nav class="header__nav-icone icone">
+                <ul class="icone__list">
+                  <li class="icone__item">
+                    <a class="icone__link" href="https://vk.com/" target="_blank">
+                      <img src="img/icone/01.svg" alt="Вконтакте">
+                    </a>
+                  </li>
+                  <li class="icone__item">
+                    <a class="icone__link" href="https://telegram.org/" target="_blank">
+                      <img src="img/icone/02.svg" alt="Телеграмм">
+                    </a>
+                  </li>
+                  <li class="icone__item">
+                    <a class="icone__link" href="https://whatsapp.com/" target="_blank">
+                      <img src="img/icone/03.svg" alt="Ватсап">
+                    </a>
+                  </li>
+                  <li class="icone__item">
+                    <a class="icone__link" href="https://viber.com/" target="_blank">
+                      <img src="img/icone/04.svg" alt="Вайбер">
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
           </div>
-          <a class="registration__close" href="#siti-pro" title="Закрыть">
-            <svg width="60" height="60" viewbox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M20 20L40.0208 40M40.0208 20L20 40M58 30C58 45.464 45.464 58 30 58C14.536 58 2 45.464 2 30C2 14.536 14.536 2 30 2C45.464 2 58 14.536 58 30Z" stroke="#465067" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </a>
+          <div class="registration__img"></div>
           <div class="registration__block">
             <div class="registration__info">
               <h2 class="registration__h2 h2">Оставьте заявку</h2>
@@ -757,8 +1046,8 @@
                 И наш менеджер свяжется с вами <br>в ближайшее время <br>для уточнения <br>деталей
               </p>
             </div>
-            <form class="registration__form form form_js03 form-disabled" action="mail.php" enctype="multipart/form-data"
-              method="POST" aria-label="Здесь Вы можете заказать профессиональной окраски экстерьеры">
+            <form class="registration__form form form_js03 form-disabled" action="mail.php"
+              enctype="multipart/form-data" method="POST" aria-label="Заказ профессиональной окраски экстерьеры">
               <!--action="#"-->
               <input type="hidden" name="admin_email[]" value="darki@yandex.ru">
               <!--darki@yandex.ru-->
@@ -771,8 +1060,9 @@
                     id="nameZakaz03" required="" aria-label="Введите ваше имя" maxlength="20">
                 </label>
                 <label class="form__label form__label_gridTwo" for="telZakaz03">
-                  <input class="form__input" type="tel" name="tel" placeholder="Номер телефона*" data-validate-field="tel"
-                    data-validate-rules="phone" id="telZakaz03" aria-label="Введите ваш телефон">
+                  <input class="form__input" type="tel" name="tel" placeholder="Номер телефона*"
+                    data-validate-field="tel" data-validate-rules="phone" id="telZakaz03"
+                    aria-label="Введите ваш телефон">
                 </label>
                 <!-- <label class="form__label" for="emailZakaz03">
                     <input class="form__input" type="email" name="email" placeholder="Email"
@@ -785,46 +1075,88 @@
                 </label>
               </div>
               <div class="form__checkbox-container">
-                <input class="form__input-checkbox checkbox-js checkbox-disabled"
-                  id="checkbox03" type="checkbox" checked="checked"
-                  aria-label="Нажмите если принимаете пользовательское соглашение" required=""
+                <input class="form__input-checkbox checkbox-js checkbox-disabled" id="checkbox03" type="checkbox"
+                  checked="checked" aria-label="Нажмите если принимаете пользовательское соглашение" required=""
                   data-validate-field="checkbox">
-                <label class="form__label form__label_checkbox" for="checkbox03">
-                  <p class="form__desc desc">Нажимая кнопку «ОТПРАВИТЬ» вы соглашаетесь на обработку ваших данных</p>
-                </label>
+                <label class="form__label form__label_checkbox" for="checkbox03"></label>
+                <p class="form__desc desc">Нажимая кнопку «ОТПРАВИТЬ» вы соглашаетесь на обработку ваших данных</p>
               </div>
-              <button class="form__button btn form__button_jsDis03 form__button_filled03" aria-label="Нажмите чтобы отправить">
+              <button class="form__button btn form__button_jsDis03 form__button_filled03"
+                aria-label="Нажмите чтобы отправить">
                 Отправить
               </button>
             </form>
           </div>
-          <!-- Шаблон микс modal СПАСИБО/-Профессиональная окраска ограждений и витражей- -->
-          <div class="registration__modal03 modal03 modal_js03">
-            <div class="modal__sps03 modal__sps_js03">
-              <button class="modal__close03 modal__close_js03" title="Закрыть">
-                &#10006;
-              </button>
-              <h2 class="modal03__h2 h2">
-                Спасибо, мы с вами свяжемся!
-              </h2>
-            </div>
-          </div>
-          <!-- // Шаблон микс modal СПАСИБО/-Профессиональная окраска ограждений и витражей- -->
         </div>
       </div>
-      <!-- Модалка без js кода/-Профессиональная окраска ограждений и витражей- -->
-      <div class="modals__registration registration" id="openModal04">
-        <div>
+      <!-- Модалка04/-Профессиональная окраска ограждений и витражей- -->
+      <div class="modals__registration registration trigger" data-modal="trigger-04">
+        <div class="registration__modal trigger-block">
           <div class="registration__white">
-            <a href="#" class="registration__logo">
+            <a class="registration__logo" href="#">
               <img class="registration__logo-img" src="img/logo.png" alt="Логотип Slate">
             </a>
+            <button class="registration__close modal-close" title="Закрыть">
+              <svg width="60" height="60" viewbox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M20 20L40.0208 40M40.0208 20L20 40M58 30C58 45.464 45.464 58 30 58C14.536 58 2 45.464 2 30C2 14.536 14.536 2 30 2C45.464 2 58 14.536 58 30Z"
+                  stroke="#465067" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </button>
+            <button class="registration__burger burger" id="registration__burger04" aria-label="Меню">
+              <span class="rect"></span>
+              <span class="rect"></span>
+              <span class="rect"></span>
+            </button>
+            <div class="registration__block-menu menu" id="registration__menu04">
+              <nav class="header__nav">
+                <ul class="header__list">
+                  <!--  menu" id="menu  -->
+                  <li class="header__item">
+                    <a class="header__link" href="#" aria-label="Нажмите чтобы узнать о нас">О нас</a>
+                  </li>
+                  <li class="header__item">
+                    <a class="header__link" href="#" aria-label="Нажмите чтобы увидеть виды услуг">Виды услуг</a>
+                  </li>
+                  <li class="header__item">
+                    <a class="header__link" href="#" aria-label="Нажмите чтобы увидеть портфолио">Портфолио</a>
+                  </li>
+                  <li class="header__item">
+                    <a class="header__link" href="#" aria-label="Нажмите чтобы оставить заявку">Оставьте заявку</a>
+                  </li>
+                  <li class="header__item">
+                    <a class="header__link" href="#" aria-label="Нажмите чтобы узнать о нас">Контакты</a>
+                  </li>
+                </ul>
+              </nav>
+              <!-- Шаблон микс и модификаторы (_) icone -->
+              <nav class="header__nav-icone icone">
+                <ul class="icone__list">
+                  <li class="icone__item">
+                    <a class="icone__link" href="https://vk.com/" target="_blank">
+                      <img src="img/icone/01.svg" alt="Вконтакте">
+                    </a>
+                  </li>
+                  <li class="icone__item">
+                    <a class="icone__link" href="https://telegram.org/" target="_blank">
+                      <img src="img/icone/02.svg" alt="Телеграмм">
+                    </a>
+                  </li>
+                  <li class="icone__item">
+                    <a class="icone__link" href="https://whatsapp.com/" target="_blank">
+                      <img src="img/icone/03.svg" alt="Ватсап">
+                    </a>
+                  </li>
+                  <li class="icone__item">
+                    <a class="icone__link" href="https://viber.com/" target="_blank">
+                      <img src="img/icone/04.svg" alt="Вайбер">
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
           </div>
-          <a class="registration__close" href="#siti-pro" title="Закрыть">
-            <svg width="60" height="60" viewbox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M20 20L40.0208 40M40.0208 20L20 40M58 30C58 45.464 45.464 58 30 58C14.536 58 2 45.464 2 30C2 14.536 14.536 2 30 2C45.464 2 58 14.536 58 30Z" stroke="#465067" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </a>
+          <div class="registration__img"></div>
           <div class="registration__block">
             <div class="registration__info">
               <h2 class="registration__h2 h2">Оставьте заявку</h2>
@@ -833,7 +1165,7 @@
               </p>
             </div>
             <form class="registration__form form form_js04 form-disabled" action="mail.php" enctype="multipart/form-data"
-              method="POST" aria-label="Здесь Вы можете получить консультацию">
+              method="POST" aria-label="Заказ профессиональной окраски ограждений и витражей">
               <!--action="#"-->
               <input type="hidden" name="admin_email[]" value="darki@yandex.ru">
               <!--darki@yandex.ru-->
@@ -850,9 +1182,9 @@
                     data-validate-rules="phone" id="telZakaz04" aria-label="Введите ваш телефон">
                 </label>
                 <!-- <label class="form__label" for="emailZakaz04">
-                    <input class="form__input" type="email" name="email" placeholder="Email"
-                      data-validate-field="email" id="emailZakaz04" aria-label="Введите вашу почту" maxlength="35">
-                  </label> -->
+                      <input class="form__input" type="email" name="email" placeholder="Email"
+                        data-validate-field="email" id="emailZakaz04" aria-label="Введите вашу почту" maxlength="35">
+                    </label> -->
                 <label class="form__label form__label_areas" for="messageZakaz04">
                   <span class="form__label-descr"></span>
                   <textarea class="form__textarea" name="message" id="messageZakaz04" placeholder="Ваше сообщение"
@@ -860,38 +1192,90 @@
                 </label>
               </div>
               <div class="form__checkbox-container">
-                <input class="form__input-checkbox checkbox-js checkbox-disabled"
-                  id="checkbox04" type="checkbox" checked="checked"
-                  aria-label="Нажмите если принимаете пользовательское соглашение" required=""
+                <input class="form__input-checkbox checkbox-js checkbox-disabled" id="checkbox04" type="checkbox"
+                  checked="checked" aria-label="Нажмите если принимаете пользовательское соглашение" required=""
                   data-validate-field="checkbox">
-                <label class="form__label form__label_checkbox" for="checkbox04">
-                  <p class="form__desc desc">Нажимая кнопку «ОТПРАВИТЬ» вы соглашаетесь на обработку ваших данных</p>
-                </label>
+                <label class="form__label form__label_checkbox" for="checkbox04"></label>
+                <p class="form__desc desc">Нажимая кнопку «ОТПРАВИТЬ» вы соглашаетесь на обработку ваших данных</p>
               </div>
-              <button class="form__button btn form__button_jsDis04 form__button_filled04" aria-label="Нажмите чтобы отправить">
+              <button class="form__button btn form__button_jsDis04 form__button_filled04"
+                aria-label="Нажмите чтобы отправить">
                 Отправить
               </button>
             </form>
           </div>
-          <!-- Шаблон микс modal СПАСИБО/-Профессиональная окраска ограждений и витражей- -->
-          <div class="registration__modal04 modal04 modal_js04">
-            <div class="modal__sps04 modal__sps_js04">
-              <button class="modal__close04 modal__close_js04" title="Закрыть">
-                &#10006;
-              </button>
-              <h2 class="modal04__h2 h2">
-                Спасибо, мы с вами свяжемся!
-              </h2>
-            </div>
-          </div>
-          <!-- // Шаблон микс modal СПАСИБО/-Профессиональная окраска ограждений и витражей- -->
+        </div>  
+      </div>
+
+      <!-- Шаблон микс modal СПАСИБО-01/-Реставрация лакокрасочного покрытия- -->
+      <div class="modals__modal01 modal01 modal_js01">
+        <div class="modal__sps01 modal__sps_js01">
+          <button class="modal__close01 modal__close_js01" title="Закрыть">
+            &#10006;
+          </button>
+          <h2 class="modal01__h2 h2">
+            Спасибо, мы с вами свяжемся!
+          </h2>
         </div>
       </div>
+      <!-- // Шаблон микс modal СПАСИБО-01/-Реставрация лакокрасочного покрытия- -->
+      <!-- Шаблон микс modal СПАСИБО-02/-Профессиональная окраска на объекте- -->
+      <div class="modals__modal02 modal02 modal_js02">
+        <div class="modal__sps02 modal__sps_js02">
+          <button class="modal__close02 modal__close_js02" title="Закрыть">
+            &#10006;
+          </button>
+          <h2 class="modal02__h2 h2">
+            Спасибо, мы с вами свяжемся!
+          </h2>
+        </div>
+      </div>
+      <!-- // Шаблон микс modal СПАСИБО-02/-Профессиональная окраска на объекте- -->         
+      <!-- Шаблон микс modal СПАСИБО-03/-Профессиональная окраска экстерьера- -->
+      <div class="registration__modal03 modal03 modal_js03">
+        <div class="modal__sps03 modal__sps_js03">
+          <button class="modal__close03 modal__close_js03" title="Закрыть">
+            &#10006;
+          </button>
+          <h2 class="modal03__h2 h2">
+            Спасибо, мы с вами свяжемся!
+          </h2>
+        </div>
+      </div>
+      <!-- // Шаблон микс modal СПАСИБО/-Профессиональная окраска экстерьера- -->   
+      <!-- Шаблон микс modal СПАСИБО-04/-Профессиональная окраска ограждений и витражей- -->
+      <div class="modals__modal04 modal04 modal_js04">
+        <div class="modal__sps04 modal__sps_js04">
+          <button class="modal__close04 modal__close_js04" title="Закрыть">
+            &#10006;
+          </button>
+          <h2 class="modal04__h2 h2">
+            Спасибо, мы с вами свяжемся!
+          </h2>
+        </div>
+      </div>
+      <!-- // Шаблон микс modal СПАСИБО-04/-Профессиональная окраска ограждений и витражей- -->
     </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
   </div>
   <!-- wrapper -->
-  
-  
+
+
 
 
   <!-- Swiper JS -->
@@ -902,8 +1286,6 @@
   <script src="js/inputmask.min.js"></script>
   <!--Валидатор input-ов-->
   <script src="js/just-validate.js"></script>
-  <!--Скроллбар для модалок
-  <script src="https://unpkg.com/simplebar@latest/dist/simplebar.min.js"></script>-->
 
   <!-- Мои JS -->
   <script src="/js/jquery.min.js"></script>
@@ -912,6 +1294,7 @@
   <script src="js/form/formTwo.js"></script>
   <script src="js/form/formThree.js"></script>
   <script src="js/form/formFour.js"></script>
+  <script src="js/map.js"></script>
 </body>
 
 </html>
