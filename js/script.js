@@ -267,7 +267,7 @@ document.addEventListener('DOMContentLoaded', function () {
           }
         }
 
-        xhr.open('POST', 'mail.php', true);// 'mail.php', 'list.php',
+        xhr.open('POST', 'mail.php', 'list.php', true);
         xhr.send(formData);
         thisForm.reset();
         document.querySelector('.modal_js').classList.toggle('modal_js_active');

@@ -2000,9 +2000,14 @@ input[type="checkbox"]:hover~label::before {
   }
 
   .footer__up {
-    right: 0;
-    display: none;
+    top: -130px;
+    right: 20px;
   }  
+
+  .footer__up svg {
+    width: 120px;
+    height: 120px;
+  }
 }
 
 @media (max-width: 1252px) {
@@ -2403,6 +2408,17 @@ input[type="checkbox"]:hover~label::before {
     -ms-grid-template-columns: 34% 1fr;
     grid-template-columns: 34% 1fr;
   }
+
+
+  .footer__up {
+    top: -100px;
+    right: 20px;
+  }  
+
+  .footer__up svg {
+    width: 90px;
+    height: 90px;
+  }
 }
 
 @media (max-width: 717px) {
@@ -2623,6 +2639,10 @@ input[type="checkbox"]:hover~label::before {
     align-items: center;
     flex-direction: column;
   }
+
+  .footer__up {
+    display: none;
+  } 
 
   .footer__left {
     display: flex;

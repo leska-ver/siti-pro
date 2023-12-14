@@ -22,6 +22,32 @@
   <title>СИТИ ПРО</title>
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/style.css">
+  <script>
+    // для Базы данных timeweb.ru
+    const formBaza = document.querySelector('.form');
+    if (formBaza) { // Обёртка if. Спасение Gulp-а от null в браузере
+      $(function () {
+        $('.form-button').on('click', function () {
+          let data = {
+            'name': $('[name="name"]').val(),
+            'tel': $('[name="tel"]').val(),
+            // 'email': $('[name="email"]').val(),
+            'message': $('[name="message"]').val()
+          };
+          $.post('mail.php', data, function (response) {
+            if (response == 1) {
+              $('[name="name"]').val('');
+              $('[name="tel"]').val('');
+              // $('[name="email"]').val('');
+              $('[name="message"]').val('');
+            }
+          })
+
+          return false;
+        });
+      });
+    };
+  </script>
 </head>
 
 <body>
@@ -43,19 +69,19 @@
               <ul class="header__list">
                 <!--  menu" id="menu  -->
                 <li class="header__item">
-                  <a class="header__link" href="#" aria-label="Нажмите чтобы узнать о нас">О нас</a>
+                  <a class="header__link" href="#about" aria-label="Нажмите чтобы узнать о нас">О нас</a>
                 </li>
                 <li class="header__item">
-                  <a class="header__link" href="#" aria-label="Нажмите чтобы увидеть виды услуг">Виды услуг</a>
+                  <a class="header__link" href="#services" aria-label="Нажмите чтобы увидеть виды услуг">Виды услуг</a>
                 </li>
                 <li class="header__item">
-                  <a class="header__link" href="#" aria-label="Нажмите чтобы увидеть портфолио">Портфолио</a>
+                  <a class="header__link" href="#portfolio" aria-label="Нажмите чтобы увидеть портфолио">Портфолио</a>
                 </li>
                 <li class="header__item">
-                  <a class="header__link" href="#" aria-label="Нажмите чтобы оставить заявку">Оставьте заявку</a>
+                  <a class="header__link" href="#forms" aria-label="Нажмите чтобы оставить заявку">Оставьте заявку</a>
                 </li>
                 <li class="header__item">
-                  <a class="header__link" href="#" aria-label="Нажмите чтобы узнать о нас">Контакты</a>
+                  <a class="header__link" href="#contacts" aria-label="Нажмите чтобы узнать о нас">Контакты</a>
                 </li>
               </ul>
             </nav>
@@ -131,8 +157,8 @@
           </div>
         </div>
       </section>
-      <section class="about">
-        <div class="about__container figure">
+      <section class="about" id="about">
+        <div class="about__container figure" id="about__container">
           <span class="about__span figure-span"></span>
           <h2 class="about__h2 h2">О нас</h2>
           <div class="about__grid">
@@ -207,9 +233,9 @@
           </ul>
         </div>
       </section>
-      <section class="services">
+      <section class="services" id="services">
         <!-- Swiper -->
-        <div class="services__container">
+        <div class="services__container" id="services__container">
           <h2 class="services__h2 h2">Виды услуг</h2>
           <div class="services__mySwiper swiper">
             <ul class="services__list swiper-wrapper">
@@ -352,8 +378,8 @@
           </ul>
         </div>
       </section>
-      <section class="portfolio">
-        <div class="portfolio__container">
+      <section class="portfolio" id="portfolio">
+        <div class="portfolio__container" id="portfolio__container">
           <div class="portfolio__overflow">
             <div class="portfolio__padding">
               <!-- Swiper -->
@@ -472,17 +498,15 @@
           </div>
         </div>
       </section>
-      <section class="forms">
-        <div class="forms__container">
+      <section class="forms" id="forms">
+        <div class="forms__container" id="forms__container">
           <div class="forms__background">
             <h2 class="forms__h2 h2">Оставьте заявку</h2>
             <!-- Шаблон микс form -->
             <form class="forms__form form form_js form-disabled" action="mail.php" enctype="multipart/form-data"
               method="POST" aria-label="Здесь Вы можете заказать товар">
-              <!--action="#"-->
-              <input type="hidden" name="admin_email[]" value="darki@yandex.ru">
-              <!--darki@yandex.ru-->
-              <input type="hidden" name="admin_email[]" value="darki@mail.ru">
+              <input type="hidden" name="admin_email[]" value="kussa90-03@mail.ru"><!--darki@yandex.ru-->              
+              <input type="hidden" name="admin_email[]" value="lyaisan.333@yandex.ru"><!--darki@yandex.ru-->
               <input type="hidden" name="form_subject" value="Оставьте заявку forms">
               <div class="form__block">
                 <!--data здесь он обрабатывает плагин валидатор кода-->
@@ -517,7 +541,7 @@
                 Отправить
               </button>
             </form>
-            <!-- Шаблон микс modal СПАСИБО/-Профессиональная окраска ограждений и витражей- -->
+            <!-- Шаблон микс modal СПАСИБО/-Регистрация- -->
             <div class="forms__modal modal modal_js">
               <div class="modal__sps modal__sps_js">
                 <button class="modal__close modal__close_js" title="Закрыть">
@@ -528,12 +552,12 @@
                 </h2>
               </div>
             </div>
-            <!-- // Шаблон микс modal СПАСИБО/-Профессиональная окраска ограждений и витражей- -->
+            <!-- // Шаблон микс modal СПАСИБО/-Регистрация- -->
           </div>
         </div>
       </section>
-      <section class="contacts">
-        <div class="contacts__container">
+      <section class="contacts" id="contacts">
+        <div class="contacts__container" id="contacts__container">
           <div class="contacts__info">
             <h2 class="contacts__h2 h2">Контакты</h2>
             <!-- Шаблон микс и модификаторы (_) контакт/contact -->
@@ -631,19 +655,19 @@
             <ul class="footer__list">
               <!--  menu" id="menu  -->
               <li class="footer__item">
-                <a class="footer__link" href="#" aria-label="Нажмите чтобы узнать о нас">О нас</a>
+                <a class="footer__link" href="#about__container" aria-label="Нажмите чтобы узнать о нас">О нас</a>
               </li>
               <li class="footer__item">
-                <a class="header__link" href="#" aria-label="Нажмите чтобы увидеть виды услуг">Виды услуг</a>
+                <a class="header__link" href="#services__container" aria-label="Нажмите чтобы увидеть виды услуг">Виды услуг</a>
               </li>
               <li class="footer__item">
-                <a class="footer__link" href="#" aria-label="Нажмите чтобы увидеть портфолио">Портфолио</a>
+                <a class="footer__link" href="#portfolio__container" aria-label="Нажмите чтобы увидеть портфолио">Портфолио</a>
               </li>
               <li class="footer__item">
-                <a class="footer__link" href="#" aria-label="Нажмите чтобы оставить заявку">Оставьте заявку</a>
+                <a class="footer__link" href="#forms__container" aria-label="Нажмите чтобы оставить заявку">Оставьте заявку</a>
               </li>
               <li class="footer__item">
-                <a class="footer__link" href="#" aria-label="Нажмите чтобы узнать о нас">Контакты</a>
+                <a class="footer__link" href="#contacts__container" aria-label="Нажмите чтобы узнать о нас">Контакты</a>
               </li>
             </ul>
           </nav>
@@ -801,10 +825,8 @@
             </div>
             <form class="registration__form form form_js01 form-disabled" action="mail.php"
               enctype="multipart/form-data" method="POST" aria-label="Заказ лакокрасочного покрытия">
-              <!--action="#"-->
-              <input type="hidden" name="admin_email[]" value="darki@yandex.ru">
-              <!--darki@yandex.ru-->
-              <input type="hidden" name="admin_email[]" value="darki@mail.ru">
+              <input type="hidden" name="admin_email[]" value="kussa90-03@mail.ru"><!--darki@yandex.ru-->              
+              <input type="hidden" name="admin_email[]" value="lyaisan.333@yandex.ru"><!--darki@yandex.ru-->
               <input type="hidden" name="form_subject" value="Заказ --Реставрация лакокрасочного покрытия--">
               <div class="form__block">
                 <!--data здесь он обрабатывает плагин валидатор кода-->
@@ -919,10 +941,8 @@
             </div>
             <form class="registration__form form form_js02 form-disabled" action="mail.php" enctype="multipart/form-data"
               method="POST" aria-label="Заказ профессиональную окраску на объекте">
-              <!--action="#"-->
-              <input type="hidden" name="admin_email[]" value="darki@yandex.ru">
-              <!--darki@yandex.ru-->
-              <input type="hidden" name="admin_email[]" value="darki@mail.ru">
+              <input type="hidden" name="admin_email[]" value="kussa90-03@mail.ru"><!--darki@yandex.ru-->              
+              <input type="hidden" name="admin_email[]" value="lyaisan.333@yandex.ru"><!--darki@yandex.ru-->
               <input type="hidden" name="form_subject" value="Заказ --Профессиональной окраски на объекте--">
               <div class="form__block">
                 <!--data здесь он обрабатывает плагин валидатор кода-->
@@ -1048,10 +1068,8 @@
             </div>
             <form class="registration__form form form_js03 form-disabled" action="mail.php"
               enctype="multipart/form-data" method="POST" aria-label="Заказ профессиональной окраски экстерьеры">
-              <!--action="#"-->
-              <input type="hidden" name="admin_email[]" value="darki@yandex.ru">
-              <!--darki@yandex.ru-->
-              <input type="hidden" name="admin_email[]" value="darki@mail.ru">
+              <input type="hidden" name="admin_email[]" value="kussa90-03@mail.ru"><!--darki@yandex.ru-->              
+              <input type="hidden" name="admin_email[]" value="lyaisan.333@yandex.ru"><!--darki@yandex.ru-->
               <input type="hidden" name="form_subject" value="Заказ --Профессиональной окраски экстерьеры--">
               <div class="form__block">
                 <!--data здесь он обрабатывает плагин валидатор кода-->
@@ -1166,10 +1184,8 @@
             </div>
             <form class="registration__form form form_js04 form-disabled" action="mail.php" enctype="multipart/form-data"
               method="POST" aria-label="Заказ профессиональной окраски ограждений и витражей">
-              <!--action="#"-->
-              <input type="hidden" name="admin_email[]" value="darki@yandex.ru">
-              <!--darki@yandex.ru-->
-              <input type="hidden" name="admin_email[]" value="darki@mail.ru">
+              <input type="hidden" name="admin_email[]" value="kussa90-03@mail.ru"><!--darki@yandex.ru-->              
+              <input type="hidden" name="admin_email[]" value="lyaisan.333@yandex.ru"><!--darki@yandex.ru-->
               <input type="hidden" name="form_subject" value="--Получить консультацию--">
               <div class="form__block">
                 <!--data здесь он обрабатывает плагин валидатор кода-->
