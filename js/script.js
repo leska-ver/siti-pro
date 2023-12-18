@@ -74,13 +74,13 @@ document.addEventListener('DOMContentLoaded', function () {
           spaceBetween: 25,
         },
       },
-      /*//Бесконечное листание страниц
+      //Бесконечное листание страниц
       speed: 3000,//Интервал ожидания
 
       autoplay: {
         delay: 5000,//Интервал ожидания
         disableOnInteraction: false,      
-      }*/
+      }
     });
   };
 
@@ -158,11 +158,7 @@ document.addEventListener('DOMContentLoaded', function () {
   };
   
   
-
-
-  
  
-  
   // Активность кнопки - галка и Отправить(.form__button_filled:disabled)
   const formDis = document.querySelector(".form-disabled");
   if (formDis) {
@@ -190,7 +186,6 @@ document.addEventListener('DOMContentLoaded', function () {
       document.querySelector('.modal__sps_js').classList.remove('modal__sps_js_active');
     });    
   }
-
 
 
 
@@ -267,7 +262,7 @@ document.addEventListener('DOMContentLoaded', function () {
           }
         }
 
-        xhr.open('POST', 'mail.php', 'list.php', true);
+        xhr.open('POST', 'mail.php', true);// 'list.php',
         xhr.send(formData);
         thisForm.reset();
         document.querySelector('.modal_js').classList.toggle('modal_js_active');

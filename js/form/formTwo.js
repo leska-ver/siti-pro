@@ -29,9 +29,9 @@ document.addEventListener('DOMContentLoaded', function () {
   
   
   // inputmask - Телефон/-Профессиональная окраска на объекте-
-  const formJs02 = document.querySelector('.form_js02');
-  if (formJs02) { // Обёртка if. Спасение Gulp-а от null в браузере
-    const telSelector = formJs02.querySelector('input[type="tel"]');
+  const formJsTwo = document.querySelector('.form_js02');
+  if (formJsTwo) { // Обёртка if. Спасение Gulp-а от null в браузере
+    const telSelector = formJsTwo.querySelector('input[type="tel"]');
     const inputMask = new Inputmask('+7 999 999 99 99');
     inputMask.mask(telSelector);
 
@@ -101,7 +101,7 @@ document.addEventListener('DOMContentLoaded', function () {
           }
         }
 
-        xhr.open('POST', 'mail.php', 'list.php', true);
+        xhr.open('POST', 'mail.php', true);// 'list.php',
         xhr.send(formData);
         thisForm.reset();
         document.querySelector('.modal_js02').classList.toggle('modal_js02_active');

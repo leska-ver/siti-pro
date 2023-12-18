@@ -54,9 +54,9 @@ document.addEventListener('DOMContentLoaded', function () {
   
   
   // inputmask - Телефон/-Реставрация лакокрасочного покрытия-
-  const formJs01 = document.querySelector('.form_js01');
-  if (formJs01) { // Обёртка if. Спасение Gulp-а от null в браузере
-    const telSelector = formJs01.querySelector('input[type="tel"]');
+  const formJsOne = document.querySelector('.form_js01');
+  if (formJsOne) { // Обёртка if. Спасение Gulp-а от null в браузере
+    const telSelector = formJsOne.querySelector('input[type="tel"]');
     const inputMask = new Inputmask('+7 999 999 99 99');
     inputMask.mask(telSelector);
 
@@ -126,7 +126,7 @@ document.addEventListener('DOMContentLoaded', function () {
           }
         }
 
-        xhr.open('POST', 'mail.php', 'list.php', true);
+        xhr.open('POST', 'mail.php', true);// 'list.php',
         xhr.send(formData);
         thisForm.reset();
         document.querySelector('.modal_js01').classList.toggle('modal_js01_active');

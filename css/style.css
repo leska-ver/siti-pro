@@ -372,7 +372,7 @@ textarea {
 
 .form__input::placeholder,
 .form__textarea::placeholder {
-  font-size: 23px;
+  font-size: 18.3px;
   color: var(--color-gray);
 }
 
@@ -2581,10 +2581,6 @@ input[type="checkbox"]:hover~label::before {
   .registration__desc {
     margin-bottom: 21px;
     text-align: center;
-  }
-
-  .registration__block .form__input::placeholder {
-    font-size: 18px;
   }
 
   .contacts__container {

@@ -29,9 +29,9 @@ document.addEventListener('DOMContentLoaded', function () {
   
   
   // inputmask - Телефон/-Профессиональная окраска экстерьера-
-  const formJs03 = document.querySelector('.form_js03');
-  if (formJs03) { // Обёртка if. Спасение Gulp-а от null в браузере
-    const telSelector = formJs03.querySelector('input[type="tel"]');
+  const formJsThree = document.querySelector('.form_js03');
+  if (formJsThree) { // Обёртка if. Спасение Gulp-а от null в браузере
+    const telSelector = formJsThree.querySelector('input[type="tel"]');
     const inputMask = new Inputmask('+7 999 999 99 99');
     inputMask.mask(telSelector);
 
@@ -101,7 +101,7 @@ document.addEventListener('DOMContentLoaded', function () {
           }
         }
 
-        xhr.open('POST', 'mail.php', 'list.php', true);
+        xhr.open('POST', 'mail.php', true);// 'list.php',
         xhr.send(formData);
         thisForm.reset();
         document.querySelector('.modal_js03').classList.toggle('modal_js03_active');

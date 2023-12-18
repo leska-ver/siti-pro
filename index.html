@@ -24,7 +24,7 @@
   <link rel="stylesheet" href="css/style.css">
   <script>
     // для Базы данных timeweb.ru
-    const formBaza = document.querySelector('.form');
+    const formBaza = document.querySelector('.form');//Он не тот класс что стоит в forms, тот form просто микс шаблон
     if (formBaza) { // Обёртка if. Спасение Gulp-а от null в браузере
       $(function () {
         $('.form-button').on('click', function () {
@@ -512,7 +512,7 @@
                 <!--data здесь он обрабатывает плагин валидатор кода-->
                 <label class="form__label form__label_grid" for="nameZakaz">
                   <input class="form__input" type="text" name="name" placeholder="Ваше имя" data-validate-field="name"
-                    id="nameZakaz" required="" aria-label="Введите ваше имя" maxlength="20">
+                    id="nameZakaz" required aria-label="Введите ваше имя" maxlength="20">
                 </label>
                 <label class="form__label form__label_gridTwo" for="telZakaz">
                   <input class="form__input" type="tel" name="tel" placeholder="Номер телефона*"
