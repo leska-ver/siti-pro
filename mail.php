@@ -1,8 +1,8 @@
   <?
   // Подключение "Базы данных", тот же код. ПРОФИ КОД. Скопировали и закинули в файл list.php
   // Исправляем код на своё ci54422_elochka 1GmHsZV
-  $dbname = 'ci54422_sitiPro';//Из сайта имя "Базы данных MySQL"/
-  $dbuser = 'ci54422_sitiPro';//Из сайта имя "Базы данных MySQL"/
+  $dbname = 'ci54422_sitipro';//Из сайта имя "Базы данных MySQL"/
+  $dbuser = 'ci54422_sitipro';//Из сайта имя "Базы данных MySQL"/
   $dbpass = '1GmHsZV';//Пароль из сайта "Базы данных". Пароль не менять! Он должен быть един для всех проектов!/
   $pdo = new PDO("mysql:host=localhost;dbname=$dbname", $dbuser, $dbpass);
 
@@ -10,7 +10,7 @@
 
   //Делаем запрос.
   // $stmt = $pdo->prepare('INSERT INTO orders(name, phone, email) VALUES(:name, :phone, :email)');
-  $stmt = $pdo->prepare('INSERT INTO orders(name, tel, message) VALUES(:name, :tel, :message)');//email, :email,
+  $stmt = $pdo->prepare('INSERT INTO orders(name, tel, message) VALUES(:name, :tel, :message)');//email, :email, 
   $stmt->bindValue(':name', $_POST['name']);
   $stmt->bindValue(':tel', $_POST['tel']);
   // $stmt->bindValue(':email', $_POST['email']);
@@ -66,7 +66,7 @@ $message = "<table style='width: 100%;'>$message</table>";
 
 
 // От кого
-$mail->setFrom('adm@' . $_SERVER['HTTP_HOST'], 'Из сайта:');
+$mail->setFrom('adm@' . $_SERVER['HTTP_HOST'], 'Из сайта siti-pro:');
  
 // Кому
 foreach ( $admin_email as $key => $value ) {

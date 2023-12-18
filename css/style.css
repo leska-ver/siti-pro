@@ -36,7 +36,7 @@
   --color-mineShaft: #272727;
   --color-fiord: #465067;
   --color-cobalt: #0041a4;
-  --color-asparagus: #73A56C;
+  --color-asparagus: #73a56c;
   --color-mercury: #e8e8e8;
   --color-fruitSalad: #54994b;
   --color-gray: #878787;
@@ -2239,21 +2239,22 @@ input[type="checkbox"]:hover~label::before {
     display: block;
   }
 
+
   .hero {
     margin-top: 0;
   }
 
-  .hero__swiper {
+  /* .hero__swiper {
     position: relative;
     margin-top: -76px;
-  }
+  } */
 
   .hero__container_padding {
-    padding-top: 679px;
-    padding-bottom: 122px;
+    padding-top: 20%;
+    padding-bottom: 54%;
   }
 
-  .hero__swiper {
+  /* .hero__swiper {
     border-radius: 20px;
   }
 
@@ -2277,6 +2278,13 @@ input[type="checkbox"]:hover~label::before {
     left: 6px;
     bottom: 45px;
     text-align: center;
+  }*/
+
+  .hero__mySwiper .swiper-pagination-bullets.swiper-pagination-horizontal {
+    position: absolute;
+    top: 53%;
+    left: 46px;
+    width: max-content;
   }
 
   .hero__pagination .swiper-pagination-bullet:first-child:before {
@@ -2288,20 +2296,22 @@ input[type="checkbox"]:hover~label::before {
   }
 
   .hero__h2 {
-    margin: 117px auto 48px;
-    width: 78%;
-    text-align: center;
+    /* margin: 117px auto 48px; */
+    margin-bottom: 5%;
+    width: 50%;
+    /* text-align: center; */
   }
 
   .hero__btn {
-    display: block;
-    margin: 0 auto;
-    padding: 22px 51px 21px;
-  }
+    /* display: block; */
+    /* margin: 0 auto; */
+    padding: 21px 30px;
+  } 
 
   .about {
-    margin-top: 0;
-    padding-top: 205px;
+    /* margin-top: 0; */
+    /* padding-top: 205px; */
+    padding-top: 0;
   }
 
   .about__container {
@@ -2761,7 +2771,7 @@ input[type="checkbox"]:hover~label::before {
   }
 
   .hero__container_padding {
-    padding-top: 266px;
+    padding-top: 92%;
     padding-bottom: 81px;
   }
 
@@ -3174,6 +3184,10 @@ input[type="checkbox"]:hover~label::before {
 }
 
 @media (max-width: 360px) {
+  .hero__container_padding {
+    padding-top: 83%;
+  }
+
   .registration__block {
     background: url(../img/rectangle-320-phone.png)
   }
