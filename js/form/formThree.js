@@ -1,5 +1,30 @@
 document.addEventListener('DOMContentLoaded', function () {
 
+  /*Клик БУРГЕР*/
+  const registrationBurger03 = document.querySelector('#registration__burger03');
+  const registrationMenu03 = document.querySelector('#registration__menu03');
+  //Анимируем крест бургера
+  registrationBurger03.addEventListener('click', function(e) {
+    registrationBurger03.classList.toggle('active');
+  });
+  //Кликом по бургеру открываем меню
+  registrationBurger03.addEventListener('click', function () {
+    registrationBurger03.classList.add('open');
+
+    registrationMenu03.classList.toggle('is-active');
+
+    if (registrationMenu03.classList.contains('is-active')) {
+      registrationMenu03.style.transition = 'transform .7s ease-in-out';
+    }
+  });
+  registrationMenu03.addEventListener('transitionend', function () {
+    if (!registrationMenu03.classList.contains('is-active')) {
+      registrationMenu03.style.transition = '';
+      registrationBurger03.classList.remove('open');
+    }
+  });
+
+
   // Активность кнопки - галка и Отправить(.form__button_filled:disabled)
   const formDis03 = document.querySelector(".form-disabled03");
   if (formDis03) {
