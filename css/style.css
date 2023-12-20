@@ -221,7 +221,6 @@ textarea {
 .figure {
   position: relative;
   border-radius: 35px;
-  /* background: url(../img/rectangle.png) left top / contain no-repeat; */
   background-color: var(--color-mercury);
 }
 
@@ -235,7 +234,6 @@ textarea {
   width: clamp(178px, 5vw, 306px);
   width: 26%;
   height: 111px;
-  /* background: url(../img/rectangle.png) left top / contain no-repeat; */
   background-color: var(--color-mercury);
   z-index: -1;
 }
@@ -945,46 +943,48 @@ input[type="checkbox"]:hover~label::before {
 .header__nav-icone {
   display: none;
 }
-
-
 /*** // Шапка header-1920px***/
 
 
 /*** Слайдер hero-1920px***/
-
 .hero {
   position: relative;
-  margin-top: -152px;
+  margin: -152px 0 10px;
 }
 
 .hero__swiper_one {
-  background: url("../img/swiper-1/01.png") 0% 0% / cover no-repeat;
+  background: url("../img/swiper-1/01.png") center / cover no-repeat;
 }
 
 .hero__swiper_two {
-  background: url("../img/swiper-1/02.png") 0% 0% / cover no-repeat;
+  background: url("../img/swiper-1/02.png") center / cover no-repeat;
 }
 
 .hero__swiper_three {
-  background: url("../img/swiper-1/03.png") 0% 0% / cover no-repeat;
+  background: url("../img/swiper-1/03.png") center / cover no-repeat;
 }
 
-.hero__mySwiper .swiper-horizontal>.swiper-pagination-bullets,
+.hero__mySwiper {
+  position: relative;
+}
+
 .hero__mySwiper .swiper-pagination-bullets.swiper-pagination-horizontal {
   position: absolute;
-  bottom: 40.4%;
+  top: 52%;
   left: 25%;
   z-index: 1;
 }
 
-.hero__container_padding {
-  padding-top: 190px;
-  padding-bottom: 469px;
+.hero__img {
+  display: none;
 }
 
+.hero__container_padding {
+  padding-top: 190px;
+  padding-bottom: 590px;
+}
 
 /*булить стала палочкой*/
-
 .hero__pagination .swiper-pagination-bullet {
   position: relative;
   border-radius: 100px;
@@ -992,16 +992,12 @@ input[type="checkbox"]:hover~label::before {
   height: 4px;
 }
 
-
 /* цвет булита */
-
 .hero__pagination .swiper-pagination-bullet-active {
   background-color: var(--color-cobalt);
 }
 
-
 /*булить палочки отталкиваем друг от друга*/
-
 .hero__mySwiper .swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet,
 .hero__mySwiper .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
   margin-right: 16px;
@@ -1046,16 +1042,18 @@ input[type="checkbox"]:hover~label::before {
   margin: 0 70px 0 140px;
 }
 
-
+/*не удалять!*/
+.hero__btn:not(:last-child) {
+  margin-bottom: 20px;
+}
 /*** // Слайдер hero-1920px***/
 
 
 /***  О нас about-1920px***/
-
 .about {
   position: relative;
-  margin-top: -115px;
-  padding-top: 27px;
+  margin-top: -235px;
+  padding-top: 17px;
   padding-bottom: 51px;
   z-index: 1;
 }
@@ -1096,13 +1094,10 @@ input[type="checkbox"]:hover~label::before {
 .about__img img {
   border-radius: 20px;
 }
-
-
 /*** // О нас about-1920px***/
 
 
 /*** обещать promise-1920px***/
-
 .promise {
   padding: 51px 0 104px;
 }
@@ -1399,7 +1394,9 @@ input[type="checkbox"]:hover~label::before {
 /*** Нам доверяют partners-1920px***/
 
 .partners {
+  position: relative;
   padding-bottom: 50px;
+  z-index: 1;
 }
 
 .partners__h2 {
@@ -1911,6 +1908,20 @@ input[type="checkbox"]:hover~label::before {
     background: url("../img/swiper-1/03.png") center / cover no-repeat;
   }
 
+  .hero__h2 {
+    margin-bottom: 40px;
+    padding-left: 7%;
+  }  
+
+  .hero__btn {
+    margin-left: 7%;
+  }
+
+  .hero__mySwiper .swiper-pagination-bullets.swiper-pagination-horizontal {
+    left: 14%;
+  }  
+
+
   .registration>div {
     margin: 12px auto;
     padding-bottom: 16px;
@@ -2024,8 +2035,26 @@ input[type="checkbox"]:hover~label::before {
   }
 
   .hero__container_padding {
-    padding-top: 190px;
-    padding-bottom: 469px;
+    padding-top: 15%;
+    padding-bottom: 44%;
+  }
+
+  .hero__h2 {
+    padding-left: 4%;
+  }
+
+  .hero__btn {
+    margin-left: 4%;
+  }
+
+  .hero__mySwiper .swiper-pagination-bullets.swiper-pagination-horizontal {
+    left: 11%;
+  }
+  
+
+  
+  .about {
+    margin-top: -160px;
   }
 
   .about__container {
@@ -2082,13 +2111,19 @@ input[type="checkbox"]:hover~label::before {
   }
 
   .hero__h2 {
-    margin-bottom: 54px;
+    margin-bottom: 34px;
     padding: 0;
   }
 
   .hero__btn {
     margin: 0;
   }
+
+  .hero__mySwiper .swiper-pagination-bullets.swiper-pagination-horizontal {
+    top: 54%;
+    left: 8%;
+  }
+
 
   .about__container {
     padding-top: 23px;
@@ -2241,50 +2276,17 @@ input[type="checkbox"]:hover~label::before {
 
 
   .hero {
-    margin-top: 0;
+    margin-top: -60px;
   }
 
-  /* .hero__swiper {
-    position: relative;
-    margin-top: -76px;
-  } */
+  .hero__mySwiper .swiper-pagination-bullets.swiper-pagination-horizontal {
+    top: 52%;
+    left: 61px;
+  }
 
   .hero__container_padding {
-    padding-top: 20%;
-    padding-bottom: 54%;
-  }
-
-  /* .hero__swiper {
-    border-radius: 20px;
-  }
-
-  .hero__swiper_one {
-    background: url("../img/swiper-1/01-320.png") center / contain no-repeat;
-    background-color: var(--color-mercury);
-  }
-
-  .hero__swiper_two {
-    background: url("../img/swiper-1/02-320.png") center / contain no-repeat;
-    background-color: var(--color-mercury);
-  }
-
-  .hero__swiper_three {
-    background: url("../img/swiper-1/03-320.png") center / contain no-repeat;
-    background-color: var(--color-mercury);
-  }
-
-  .hero__mySwiper .swiper-pagination-bullets.swiper-pagination-horizontal {
-    position: relative;
-    left: 6px;
-    bottom: 45px;
-    text-align: center;
-  }*/
-
-  .hero__mySwiper .swiper-pagination-bullets.swiper-pagination-horizontal {
-    position: absolute;
-    top: 53%;
-    left: 46px;
-    width: max-content;
+    padding-top: calc(7% + 60px);
+    padding-bottom: 47%;
   }
 
   .hero__pagination .swiper-pagination-bullet:first-child:before {
@@ -2296,21 +2298,15 @@ input[type="checkbox"]:hover~label::before {
   }
 
   .hero__h2 {
-    /* margin: 117px auto 48px; */
     margin-bottom: 5%;
     width: 50%;
-    /* text-align: center; */
   }
 
   .hero__btn {
-    /* display: block; */
-    /* margin: 0 auto; */
     padding: 21px 30px;
   } 
 
   .about {
-    /* margin-top: 0; */
-    /* padding-top: 205px; */
     padding-top: 0;
   }
 
@@ -2443,10 +2439,15 @@ input[type="checkbox"]:hover~label::before {
   .figure-span {
     left: 177px;
   }
-
   /* // Шаблон микс figure 717px*/
+
+  .hero__container_padding {
+    padding-top: calc(9% + 60px);
+    padding-bottom: 57%;
+  }
+
+
   .about {
-    padding-top: 102px;
     padding-bottom: 39px;
   }
 
@@ -2744,8 +2745,8 @@ input[type="checkbox"]:hover~label::before {
     margin-left: -9px;
     margin-top: -4px;
   }
-
   /* // Шаблон микс. Показать и скрыть часть текста  jquery 555px*/
+
   /* Шаблон микс figure 555px*/
   .figure {
     position: relative;
@@ -2761,34 +2762,83 @@ input[type="checkbox"]:hover~label::before {
     display: none;
   }
 
+  .header__padding {
+    align-items: baseline;
+    padding: 14px 0 11px;
+  }
   /* // Шаблон микс figure 555px*/
+
+
+  .hero {
+    padding-bottom: 16px;
+    margin-bottom: 0;
+  }
+
   .hero__mySwiper {
-    padding-top: 23px;
+    border-radius: 20px;
+    background-color: var(--color-mercury);
   }
 
   .hero__swiper {
-    margin-top: -83px;
+    margin-top: 0;
+  }
+
+  .hero__swiper_one, .hero__swiper_two, .hero__swiper_three {
+    background-image: none;
+  }
+
+  .hero__img {
+    display: block;
+    margin: 0 auto;
+    width: 320px;
+    height: 400px;
+  }
+
+  .hero__img_one {
+    background: url("../img/swiper-1/01-320.png") top / cover no-repeat;
+  }
+
+  .hero__img_two {
+    background: url("../img/swiper-1/02-320.png") top / cover no-repeat;
+  }
+
+  .hero__img_three {
+    background: url("../img/swiper-1/03-320.png") top / cover no-repeat;
   }
 
   .hero__container_padding {
-    padding-top: 92%;
-    padding-bottom: 81px;
+    margin-top: -62px;
+    padding-top: 0;
+    padding-bottom: 97px;
   }
 
   .hero__h2 {
-    margin: 71px auto 22px;
+    margin: 0 auto 22px;
+    width: 77%;
+    text-align: center;
   }
 
-  .hero__swiper {
-    padding-bottom: 16px;
-    background-position: top;
+  .hero__btn {
+    display: block;
+    margin: 0 auto;
   }
 
   .hero__mySwiper .swiper-pagination-bullets.swiper-pagination-horizontal {
-    bottom: 48px;
+    top: auto;
+    bottom: 21px;
+    left: 49px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 89%;
+  }
+
+  .hero__mySwiper .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+    margin-bottom: 5px;
   }
 
   .about {
+    margin-top: 0;
     padding: 13px 0 14px;
   }
 
@@ -2825,6 +2875,7 @@ input[type="checkbox"]:hover~label::before {
 
   .services {
     padding-bottom: 37px;
+    border-radius: 20px;
     background: url("../img/rectangle-320.png") center / cover no-repeat;
     background-size: 127% 100%;
   }
@@ -3180,16 +3231,26 @@ input[type="checkbox"]:hover~label::before {
     width: 210px;
     margin: 0 auto;
   }
-
 }
 
 @media (max-width: 360px) {
-  .hero__container_padding {
-    padding-top: 83%;
+  .hero {
+    padding-bottom: 16px;
+    margin-bottom: 0;
   }
 
+  .hero__btn {
+    width: 78%;
+  }
+
+  .hero__mySwiper .swiper-pagination-bullets.swiper-pagination-horizontal {
+    bottom: 29px;
+    left: 59px;
+    justify-content: start;
+  }  
+
   .registration__block {
-    background: url(../img/rectangle-320-phone.png)
+    background: url("../img/rectangle-320-phone.png")
   }
 }
 
