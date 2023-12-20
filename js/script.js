@@ -171,7 +171,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
-
   
   // Шаблон микс modal СПАСИБО/forms
   const btnCloseBuy = document.querySelector('.modal__close_js');
@@ -186,7 +185,6 @@ document.addEventListener('DOMContentLoaded', function () {
       document.querySelector('.modal__sps_js').classList.remove('modal__sps_js_active');
     });    
   }
-
 
 
   // inputmask - Телефон/forms
@@ -270,7 +268,6 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     })
   }
-
 
 
   // Плавный скролл по якорям. В любое место можно кинуть.
