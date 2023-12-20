@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
 
-  /*Клик БУРГЕР*/
+  /*Клик БУРГЕР - 01*/
   const registrationBurger01 = document.querySelector('#registration__burger01');
   const registrationMenu01 = document.querySelector('#registration__menu01');
   //Анимируем крест бургера
@@ -39,16 +39,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
   // Шаблон микс modal СПАСИБО/-Реставрация лакокрасочного покрытия-
-  const btnCloseBuy01 = document.querySelector('.modal__close_js01');
-  const modalBuy01 = document.querySelector('.modal_js01');
+  const btnCloseBuy01 = document.querySelector('.modal__close01_js');
+  const modalBuy01 = document.querySelector('.modal01_js');
   if (modalBuy01) {
     btnCloseBuy01.addEventListener('click', function () {
-      document.querySelector('.modal_js01').classList.toggle('modal_js01_active');
+      document.querySelector('.modal01_js').classList.toggle('modal01_js_active');
     });
     modalBuy01.addEventListener('click', function (event) {
       if (event._notClick) return;
-      modalBuy01.classList.remove('modal_js01_active');
-      document.querySelector('.modal__sps_js01').classList.remove('modal__sps_js01_active');
+      modalBuy01.classList.remove('modal01_js_active');
+      document.querySelector('.modal__sps01_js').classList.remove('modal__sps01_js_active');
     });    
   }
   

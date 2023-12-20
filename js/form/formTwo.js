@@ -1,4 +1,29 @@
 document.addEventListener('DOMContentLoaded', function () {
+
+  /*Клик БУРГЕР - 02*/
+  const registrationBurger02 = document.querySelector('#registration__burger02');
+  const registrationMenu02 = document.querySelector('#registration__menu02');
+  //Анимируем крест бургера
+  registrationBurger02.addEventListener('click', function(e) {
+    registrationBurger02.classList.toggle('active');
+  });
+  //Кликом по бургеру открываем меню
+  registrationBurger02.addEventListener('click', function () {
+    registrationBurger02.classList.add('open');
+
+    registrationMenu02.classList.toggle('is-active');
+
+    if (registrationMenu02.classList.contains('is-active')) {
+      registrationMenu02.style.transition = 'transform .7s ease-in-out';
+    }
+  });
+  registrationMenu02.addEventListener('transitionend', function () {
+    if (!registrationMenu02.classList.contains('is-active')) {
+      registrationMenu02.style.transition = '';
+      registrationBurger02.classList.remove('open');
+    }
+  });
+
  
   // Активность кнопки - галка и Отправить(.form__button_filled:disabled)
   const formDis02 = document.querySelector(".form-disabled02");
@@ -14,16 +39,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
   // Шаблон микс modal СПАСИБО/-Профессиональная окраска на объекте-
-  const btnCloseBuy02 = document.querySelector('.modal__close_js02');
-  const modalBuy02 = document.querySelector('.modal_js02');
-  if (modalBuy02) {
-    btnCloseBuy02.addEventListener('click', function () {
-      document.querySelector('.modal_js02').classList.toggle('modal_js02_active');
+  const btnCloseBuy01 = document.querySelector('.modal__close02_js');
+  const modalBuy01 = document.querySelector('.modal02_js');
+  if (modalBuy01) {
+    btnCloseBuy01.addEventListener('click', function () {
+      document.querySelector('.modal02_js').classList.toggle('modal02_js_active');
     });
-    modalBuy02.addEventListener('click', function (event) {
+    modalBuy01.addEventListener('click', function (event) {
       if (event._notClick) return;
-      modalBuy02.classList.remove('modal_js02_active');
-      document.querySelector('.modal__sps_js02').classList.remove('modal__sps_js02_active');
+      modalBuy01.classList.remove('modal02_js_active');
+      document.querySelector('.modal__sps02_js').classList.remove('modal__sps02_js_active');
     });    
   }
   

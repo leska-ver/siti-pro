@@ -39,16 +39,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
   // Шаблон микс modal СПАСИБО/-Профессиональная окраска экстерьера-
-  const btnCloseBuy03 = document.querySelector('.modal__close_js03');
-  const modalBuy03 = document.querySelector('.modal_js03');
-  if (modalBuy03) {
-    btnCloseBuy03.addEventListener('click', function () {
-      document.querySelector('.modal_js03').classList.toggle('modal_js03_active');
+  const btnCloseBuy01 = document.querySelector('.modal__close03_js');
+  const modalBuy01 = document.querySelector('.modal03_js');
+  if (modalBuy01) {
+    btnCloseBuy01.addEventListener('click', function () {
+      document.querySelector('.modal03_js').classList.toggle('modal03_js_active');
     });
-    modalBuy03.addEventListener('click', function (event) {
+    modalBuy01.addEventListener('click', function (event) {
       if (event._notClick) return;
-      modalBuy03.classList.remove('modal_js03_active');
-      document.querySelector('.modal__sps_js03').classList.remove('modal__sps_js03_active');
+      modalBuy01.classList.remove('modal03_js_active');
+      document.querySelector('.modal__sps03_js').classList.remove('modal__sps03_js_active');
     });    
   }
   

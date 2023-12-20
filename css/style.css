@@ -555,10 +555,10 @@ input[type="checkbox"]:hover~label::before {
 }
 
 .modal_js,
-.modal_js01,
-.modal_js02,
-.modal_js03,
-.modal_js04 {
+.modal01_js,
+.modal02_js,
+.modal03_js,
+.modal04_js {
   visibility: hidden;
   opacity: 0;
   position: fixed;
@@ -571,10 +571,10 @@ input[type="checkbox"]:hover~label::before {
 }
 
 .modal_js_active,
-.modal_js01_active,
-.modal_js02_active,
-.modal_js03_active,
-.modal_js04_active {
+.modal01_js_active,
+.modal02_js_active,
+.modal03_js_active,
+.modal04_js_active {
   visibility: visible;
   opacity: 1;
 }
@@ -605,19 +605,19 @@ input[type="checkbox"]:hover~label::before {
 }
 
 .modal__sps_js,
-.modal__sps_js01,
-.modal__sps_js02,
-.modal__sps_js03,
-.modal__sps_js04 {
+.modal__sps01_js,
+.modal__sps02_js,
+.modal__sps03_js,
+.modal__sps04_js {
   display: none;
   opacity: 0;
 }
 
 .modal__sps_js_active,
-.modal__sps_js01_active,
-.modal__sps_js02_active,
-.modal__sps_js03_active,
-.modal__sps_js04_active {
+.modal__sps01_js_active,
+.modal__sps02_js_active,
+.modal__sps03_js_active,
+.modal__sps04_js_active {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -627,10 +627,10 @@ input[type="checkbox"]:hover~label::before {
 
 /*Модалку модалку перекрыла*/
 
-.modals__modal01.modal_js01_active .modal__sps_js01,
-.modals__modal02.modal_js02_active .modal__sps_js02,
-.modals__modal03.modal_js03_active .modal__sps_js03,
-.modals__modal04.modal_js04_active .modal__sps_js04 {
+.modals__modal01.modal01_js_active .modal__sps01_js,
+.modals__modal02.modal01_js_active .modal__sps02_js,
+.modals__modal03.modal01_js_active .modal__sps03_js,
+.modals__modal04.modal01_js_active .modal__sps04_js {
   padding: 75px 30px;
   flex-basis: 520px;
 }
@@ -642,13 +642,10 @@ input[type="checkbox"]:hover~label::before {
   font-size: 25px;
   line-height: 1.5;
 }
-
-
 /* // Модалку модалку перекрыла*/
 
 
 /*Крест выключатель модального окна*/
-
 .modal__close,
 .modal__close01,
 .modal__close02,
@@ -1576,13 +1573,10 @@ input[type="checkbox"]:hover~label::before {
   margin: -24px 0 51px;
   width: 222px;
 }
-
-
 /*** // Оставьте заявку работ forms-1920px***/
 
 
 /* modals - openModal микс 1920px */
-
 .registration {
   background: rgba(232, 232, 232, 0.60);
   backdrop-filter: blur(12.5px);
@@ -1673,7 +1667,7 @@ input[type="checkbox"]:hover~label::before {
 
 .registration__h2 {
   margin-bottom: 19px;
-  font-size: clamp(32px, 5vw, 65px);
+  font-size: clamp(35px, 5vw, 65px);
   color: var(--color-fiord);
 }
 
@@ -1681,6 +1675,10 @@ input[type="checkbox"]:hover~label::before {
   font-size: clamp(14px, 2vw, 30px);
   line-height: 1.17;
   color: var(--color-mineShaft);
+}
+
+.registration__nav-icone {
+  display: none;
 }
 
 .registration__block .form__block {
@@ -1733,13 +1731,10 @@ input[type="checkbox"]:hover~label::before {
 .registration__block .form__checkbox-container .js-validate-error-label {
   left: 0;
 }
-
-
 /* // modals - openModal микс 1920px */
 
 
 /* Контакты contacts 1920px */
-
 .contacts {
   padding-bottom: 51px;
 }
@@ -2415,6 +2410,10 @@ input[type="checkbox"]:hover~label::before {
     grid-template-columns: 34% 1fr;
   }
 
+  .registration__nav-icone {
+    display: block;
+  }
+
 
   .footer__up {
     top: -100px;
@@ -2602,7 +2601,7 @@ input[type="checkbox"]:hover~label::before {
   }
 
   .registration__desc {
-    margin-bottom: 21px;
+    margin-bottom: 23px;
     text-align: center;
   }
 
@@ -3166,8 +3165,13 @@ input[type="checkbox"]:hover~label::before {
   }
 
   /*modals - openModal*/
+  .registration__white {
+    align-items: center;
+    padding: 11px 20px;
+  }
+
   .registration__block .form__label:not(:last-child) {
-    margin-bottom: 22px;
+    margin-bottom: 21px;
   }
 
   .registration__block .form__input {
@@ -3175,7 +3179,7 @@ input[type="checkbox"]:hover~label::before {
   }
 
   .registration__block .form__textarea {
-    padding: 25px 28px;
+    padding: 22px 28px;
   }
 
   .registration__block .form__textarea::placeholder {
@@ -3183,7 +3187,7 @@ input[type="checkbox"]:hover~label::before {
   }
 
   .registration__block .form__block {
-    margin-bottom: 23px;
+    margin: 0 0 23px;
   }
 
   .registration__block .form__checkbox-container {
@@ -3204,6 +3208,15 @@ input[type="checkbox"]:hover~label::before {
   .registration__block .form__button {
     padding: 20px 17px;
     font-size: 17px;
+  }
+
+  .registration__h2 {
+    padding-top: 15px;
+    line-height: .94;
+  }
+
+  .registration__desc br:first-child {
+    display: block;
   }
 
 
@@ -3263,7 +3276,8 @@ input[type="checkbox"]:hover~label::before {
   }  
 
   .registration__block {
-    background: url("../img/rectangle-320-phone.png")
+    background: url("../img/rectangle-320-phone.png");
+    background-color: var(--color-white);
   }
 }
 

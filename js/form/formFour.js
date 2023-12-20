@@ -39,16 +39,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
   // Шаблон микс modal СПАСИБО/-Профессиональная окраска ограждений и витражей-
-  const btnCloseBuy04 = document.querySelector('.modal__close_js04');
-  const modalBuy04 = document.querySelector('.modal_js04');
-  if (modalBuy04) {
-    btnCloseBuy04.addEventListener('click', function () {
-      document.querySelector('.modal_js04').classList.toggle('modal_js04_active');
+  const btnCloseBuy01 = document.querySelector('.modal__close04_js');
+  const modalBuy01 = document.querySelector('.modal04_js');
+  if (modalBuy01) {
+    btnCloseBuy01.addEventListener('click', function () {
+      document.querySelector('.modal04_js').classList.toggle('modal04_js_active');
     });
-    modalBuy04.addEventListener('click', function (event) {
+    modalBuy01.addEventListener('click', function (event) {
       if (event._notClick) return;
-      modalBuy04.classList.remove('modal_js04_active');
-      document.querySelector('.modal__sps_js04').classList.remove('modal__sps_js04_active');
+      modalBuy01.classList.remove('modal04_js_active');
+      document.querySelector('.modal__sps04_js').classList.remove('modal__sps04_js_active');
     });    
   }
   
