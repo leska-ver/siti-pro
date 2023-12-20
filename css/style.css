@@ -2468,6 +2468,18 @@ input[type="checkbox"]:hover~label::before {
     line-height: 1.2;
   }
 
+  .portfolio__mySwiper.figure:before {
+    width: 55.2%;
+  }
+
+  .portfolio__span.figure-span {
+    left: 54.2%;
+  }
+
+  .portfolio__mySwiper.figure:after {
+    left: 55.2%;
+  }
+
   .registration {
     background: transparent;
     backdrop-filter: none;
@@ -2974,7 +2986,7 @@ input[type="checkbox"]:hover~label::before {
   }
 
   .portfolio__h2 {
-    margin: 18px 0 19.5px;
+    margin: 18px auto 19.5px;
     padding-left: 0;
     text-align: center;
     line-height: .9;
@@ -3083,6 +3095,7 @@ input[type="checkbox"]:hover~label::before {
   }
 
   .forms__container {
+    border-radius: 20px;
     background: url("../img/rectangle-green-320.png") top / cover no-repeat;
   }
 
