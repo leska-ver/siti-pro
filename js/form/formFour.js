@@ -39,16 +39,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
   // Шаблон микс modal СПАСИБО/-Профессиональная окраска ограждений и витражей-
-  const btnCloseBuy01 = document.querySelector('.modal__close04_js');
-  const modalBuy01 = document.querySelector('.modal04_js');
+  const btnCloseBuy01 = document.querySelector('.modalFour__close_js');
+  const modalBuy01 = document.querySelector('.modalFour_js');
   if (modalBuy01) {
     btnCloseBuy01.addEventListener('click', function () {
-      document.querySelector('.modal04_js').classList.toggle('modal04_js_active');
+      document.querySelector('.modalFour_js').classList.toggle('modalFour_js_active');
     });
     modalBuy01.addEventListener('click', function (event) {
       if (event._notClick) return;
-      modalBuy01.classList.remove('modal04_js_active');
-      document.querySelector('.modal__sps04_js').classList.remove('modal__sps04_js_active');
+      modalBuy01.classList.remove('modalFour_js_active');
+      document.querySelector('.modalFour__sps_js').classList.remove('modalFour__sps_js_active');
     });    
   }
   
@@ -129,8 +129,8 @@ document.addEventListener('DOMContentLoaded', function () {
         xhr.open('POST', 'mail.php', 'list.php', true);//
         xhr.send(formData);
         thisForm.reset();
-        document.querySelector('.modal_js04').classList.toggle('modal_js04_active');
-        document.querySelector('.modal__sps_js04').classList.toggle('modal__sps_js04_active');
+        document.querySelector('.modalFour_js').classList.toggle('modalFour_js_active');
+        document.querySelector('.modalFour__sps_js').classList.toggle('modalFour__sps_js_active');
       }
     })
   }

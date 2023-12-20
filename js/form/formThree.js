@@ -39,16 +39,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
   // Шаблон микс modal СПАСИБО/-Профессиональная окраска экстерьера-
-  const btnCloseBuy01 = document.querySelector('.modal__close03_js');
-  const modalBuy01 = document.querySelector('.modal03_js');
+  const btnCloseBuy01 = document.querySelector('.modalThree__close_js');
+  const modalBuy01 = document.querySelector('.modalThree_js');
   if (modalBuy01) {
     btnCloseBuy01.addEventListener('click', function () {
-      document.querySelector('.modal03_js').classList.toggle('modal03_js_active');
+      document.querySelector('.modalThree_js').classList.toggle('modalThree_js_active');
     });
     modalBuy01.addEventListener('click', function (event) {
       if (event._notClick) return;
-      modalBuy01.classList.remove('modal03_js_active');
-      document.querySelector('.modal__sps03_js').classList.remove('modal__sps03_js_active');
+      modalBuy01.classList.remove('modalThree_js_active');
+      document.querySelector('.modalThree__sps_js').classList.remove('modalThree__sps_js_active');
     });    
   }
   
@@ -129,8 +129,8 @@ document.addEventListener('DOMContentLoaded', function () {
         xhr.open('POST', 'mail.php', 'list.php', true);//
         xhr.send(formData);
         thisForm.reset();
-        document.querySelector('.modal_js03').classList.toggle('modal_js03_active');
-        document.querySelector('.modal__sps_js03').classList.toggle('modal__sps_js03_active');
+        document.querySelector('.modalThree_js').classList.toggle('modalThree_js_active');
+        document.querySelector('.modalThree__sps_js').classList.toggle('modalThree__sps_js_active');
       }
     })
   }

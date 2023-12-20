@@ -39,16 +39,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
   // Шаблон микс modal СПАСИБО/-Профессиональная окраска на объекте-
-  const btnCloseBuy01 = document.querySelector('.modal__close02_js');
-  const modalBuy01 = document.querySelector('.modal02_js');
+  const btnCloseBuy01 = document.querySelector('.modalTwo__close_js');
+  const modalBuy01 = document.querySelector('.modalTwo_js');
   if (modalBuy01) {
     btnCloseBuy01.addEventListener('click', function () {
-      document.querySelector('.modal02_js').classList.toggle('modal02_js_active');
+      document.querySelector('.modalTwo_js').classList.toggle('modalTwo_js_active');
     });
     modalBuy01.addEventListener('click', function (event) {
       if (event._notClick) return;
-      modalBuy01.classList.remove('modal02_js_active');
-      document.querySelector('.modal__sps02_js').classList.remove('modal__sps02_js_active');
+      modalBuy01.classList.remove('modalTwo_js_active');
+      document.querySelector('.modalTwo__sps_js').classList.remove('modalTwo__sps_js_active');
     });    
   }
   
@@ -129,8 +129,8 @@ document.addEventListener('DOMContentLoaded', function () {
         xhr.open('POST', 'mail.php', 'list.php', true);//
         xhr.send(formData);
         thisForm.reset();
-        document.querySelector('.modal_js02').classList.toggle('modal_js02_active');
-        document.querySelector('.modal__sps_js02').classList.toggle('modal__sps_js02_active');
+        document.querySelector('.modalTwo_js').classList.toggle('modalTwo_js_active');
+        document.querySelector('.modalTwo__sps_js').classList.toggle('modalTwo__sps_js_active');
       }
     })
   }

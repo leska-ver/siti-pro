@@ -39,16 +39,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
   // Шаблон микс modal СПАСИБО/-Реставрация лакокрасочного покрытия-
-  const btnCloseBuy01 = document.querySelector('.modal__close01_js');
-  const modalBuy01 = document.querySelector('.modal01_js');
+  const btnCloseBuy01 = document.querySelector('.modalOne__close_js');
+  const modalBuy01 = document.querySelector('.modalOne_js');
   if (modalBuy01) {
     btnCloseBuy01.addEventListener('click', function () {
-      document.querySelector('.modal01_js').classList.toggle('modal01_js_active');
+      document.querySelector('.modalOne_js').classList.toggle('modalOne_js_active');
     });
     modalBuy01.addEventListener('click', function (event) {
       if (event._notClick) return;
-      modalBuy01.classList.remove('modal01_js_active');
-      document.querySelector('.modal__sps01_js').classList.remove('modal__sps01_js_active');
+      modalBuy01.classList.remove('modalOne_js_active');
+      document.querySelector('.modalOne__sps_js').classList.remove('modalOne__sps_js_active');
     });    
   }
   
@@ -129,8 +129,8 @@ document.addEventListener('DOMContentLoaded', function () {
         xhr.open('POST', 'mail.php', 'list.php', true);//
         xhr.send(formData);
         thisForm.reset();
-        document.querySelector('.modal_js01').classList.toggle('modal_js01_active');
-        document.querySelector('.modal__sps_js01').classList.toggle('modal__sps_js01_active');
+        document.querySelector('.modalOne_js').classList.toggle('modalOne_js_active');
+        document.querySelector('.modalOne__sps_js').classList.toggle('modalOne__sps_js_active');
       }
     })
   }

@@ -536,15 +536,12 @@ input[type="checkbox"]:hover~label::before {
 
 
 /*** МИКС modal-Модальное окно РЕГИСТРАЦИЯ 1920px ***/
-
-
 /*** Шаблон микс modal СПАСИБО 1920px***/
-
 .modal,
-.modal01,
-.modal02,
-.modal03,
-.modal04 {
+.modalOne,
+.modalTwo,
+.modalThree,
+.modalFour {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -555,10 +552,10 @@ input[type="checkbox"]:hover~label::before {
 }
 
 .modal_js,
-.modal01_js,
-.modal02_js,
-.modal03_js,
-.modal04_js {
+.modalOne_js,
+.modalTwo_js,
+.modalThree_js,
+.modalFour_js {
   visibility: hidden;
   opacity: 0;
   position: fixed;
@@ -571,19 +568,19 @@ input[type="checkbox"]:hover~label::before {
 }
 
 .modal_js_active,
-.modal01_js_active,
-.modal02_js_active,
-.modal03_js_active,
-.modal04_js_active {
+.modalOne_js_active,
+.modalTwo_js_active,
+.modalThree_js_active,
+.modalFour_js_active {
   visibility: visible;
   opacity: 1;
 }
 
 .modal__sps,
-.modal__sps01,
-.modal__sps02,
-.modal__sps03,
-.modal__sps04 {
+.modalOne__sps,
+.modalTwo__sps,
+.modalThree__sps,
+.modalFour__sps {
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -605,19 +602,19 @@ input[type="checkbox"]:hover~label::before {
 }
 
 .modal__sps_js,
-.modal__sps01_js,
-.modal__sps02_js,
-.modal__sps03_js,
-.modal__sps04_js {
+.modalOne__sps_js,
+.modalTwo__sps_js,
+.modalThree__sps_js,
+.modalFour__sps_js {
   display: none;
   opacity: 0;
 }
 
 .modal__sps_js_active,
-.modal__sps01_js_active,
-.modal__sps02_js_active,
-.modal__sps03_js_active,
-.modal__sps04_js_active {
+.modalOne__sps_js_active,
+.modalTwo__sps_js_active,
+.modalThree__sps_js_active,
+.modalFour__sps_js_active {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -626,19 +623,18 @@ input[type="checkbox"]:hover~label::before {
 
 
 /*Модалку модалку перекрыла*/
-
-.modals__modal01.modal01_js_active .modal__sps01_js,
-.modals__modal02.modal01_js_active .modal__sps02_js,
-.modals__modal03.modal01_js_active .modal__sps03_js,
-.modals__modal04.modal01_js_active .modal__sps04_js {
+.modals__modalOne.modalOne_js_active .modalOne__sps_js,
+.modals__modalTwo.modalTwo_js_active .modalTwo__sps_js,
+.modals__modalThree.modalThree_js_active .modalThree__sps_js,
+.modals__modalFour.modalFour_js_active .modalFour__sps_js {
   padding: 75px 30px;
   flex-basis: 520px;
 }
 
-.modal01__h2,
-.modal02__h2,
-.modal03__h2,
-.modal04__h2 {
+.modalOne__h2,
+.modalTwo__h2,
+.modalThree__h2,
+.modalFour__h2 {
   font-size: 25px;
   line-height: 1.5;
 }
@@ -647,10 +643,10 @@ input[type="checkbox"]:hover~label::before {
 
 /*Крест выключатель модального окна*/
 .modal__close,
-.modal__close01,
-.modal__close02,
-.modal__close03,
-.modal__close04 {
+.modalOne__close,
+.modalTwo__close,
+.modalThree__close,
+.modalFour__close {
   position: absolute;
   top: 15px;
   right: 15px;
@@ -667,27 +663,27 @@ input[type="checkbox"]:hover~label::before {
 }
 
 .modal__close:focus-visible,
-.modal__close01:focus-visible,
-.modal__close02:focus-visible,
-.modal__close03:focus-visible,
-.modal__close04:focus-visible {
+.modalOne__close:focus-visible,
+.modalTwo__close:focus-visible,
+.modalThree__close:focus-visible,
+.modalFour__close:focus-visible {
   border: 1px solid var(--color-cobalt);
 }
 
 .modal__close:hover,
-.modal__close01:hover,
-.modal__close02:hover,
-.modal__close03:hover,
-.modal__close04:hover {
+.modalOne__close:hover,
+.modalTwo__close:hover,
+.modalThree__close:hover,
+.modalFour__close:hover {
   color: var(--color-white);
   background-color: var(--color-cobalt);
 }
 
 .modal__close:active,
-.modal__close01:active,
-.modal__close02:active,
-.modal__close03:active,
-.modal__close04:active {
+.modalOne__close:active,
+.modalTwo__close:active,
+.modalThree__close:active,
+.modalFour__close:active {
   opacity: .7;
 }
 
@@ -748,13 +744,10 @@ input[type="checkbox"]:hover~label::before {
   font-size: 16px;
   font-weight: 400;
 }
-
-
 /* //Шаблон микс и модификаторы (_) контакт/contact */
 
 
 /*---Яндекс карта map---*/
-
 #map {
   margin: 0;
   padding: 0;
@@ -769,19 +762,14 @@ input[type="checkbox"]:hover~label::before {
   border-radius: 15px;
 }
 
-
 /* Скрыла рекламу такси и всякий мусор */
-
 .ymaps-2-1-79-copyrights-pane {
   display: none;
 }
-
-
 /*--- // Яндекс карта map---*/
 
 
 /***Шапка header-1920px***/
-
 .header {
   position: relative;
   margin: 37px 0;
@@ -1126,13 +1114,10 @@ input[type="checkbox"]:hover~label::before {
   font-size: 16px;
   line-height: 1.1;
 }
-
-
 /*** // обещать promise-1920px***/
 
 
 /*** Виды услуг services-1920px***/
-
 .services {
   position: relative;
   width: 100%;
@@ -1334,9 +1319,7 @@ input[type="checkbox"]:hover~label::before {
   width: 299px;
 }
 
-
 /*булить стала палочкой*/
-
 .services__pagination .swiper-pagination-bullet {
   position: relative;
   border-radius: 100px;
@@ -1344,16 +1327,12 @@ input[type="checkbox"]:hover~label::before {
   height: 4px;
 }
 
-
 /* цвет булита */
-
 .services__pagination .swiper-pagination-bullet-active {
   background-color: var(--color-cobalt);
 }
 
-
 /*булить палочки отталкиваем друг от друга*/
-
 .services__mySwiper .swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet,
 .services__mySwiper .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
   margin-right: 16px;
@@ -1383,13 +1362,10 @@ input[type="checkbox"]:hover~label::before {
   right: -34px;
   font-size: 18px;
 }
-
-
 /*** // Виды услуг services-1920px***/
 
 
 /*** Нам доверяют partners-1920px***/
-
 .partners {
   position: relative;
   padding-bottom: 50px;
@@ -1423,13 +1399,10 @@ input[type="checkbox"]:hover~label::before {
   background-color: var(--color-white);
   box-shadow: 0px 0px 100px 0px rgba(0, 0, 0, 0.10);
 }
-
-
 /*** // Нам доверяют partners-1920px***/
 
 
 /*** ПОРТФОЛИО работ portfolio-1920px***/
-
 .portfolio {
   padding: 50px 0 52px;
 }
@@ -1891,18 +1864,6 @@ input[type="checkbox"]:hover~label::before {
 /* // Подвал footer 1920px */
 
 @media (max-width: 1484px) {
-  .hero__swiper_one {
-    background: url("../img/swiper-1/01.png") center / cover no-repeat;
-  }
-
-  .hero__swiper_two {
-    background: url("../img/swiper-1/02.png") center / cover no-repeat;
-  }
-
-  .hero__swiper_three {
-    background: url("../img/swiper-1/03.png") center / cover no-repeat;
-  }
-
   .hero__h2 {
     margin-bottom: 40px;
     padding-left: 7%;
@@ -2601,7 +2562,8 @@ input[type="checkbox"]:hover~label::before {
   }
 
   .registration__desc {
-    margin-bottom: 23px;
+    margin: 0 auto 23px;
+    width: 70%;
     text-align: center;
   }
 
@@ -2687,7 +2649,6 @@ input[type="checkbox"]:hover~label::before {
 }
 
 @media (max-width: 555px) {
-
   /* Шаблон микc. Показать и скрыть часть текста  jquery 555px*/
   .content-block {
     overflow: hidden;
@@ -3215,6 +3176,11 @@ input[type="checkbox"]:hover~label::before {
     line-height: .94;
   }
 
+  .registration__desc {
+    width: 100%;
+  }
+
+
   .registration__desc br:first-child {
     display: block;
   }
@@ -3281,5 +3247,3 @@ input[type="checkbox"]:hover~label::before {
   }
 }
 
-
-/******/
