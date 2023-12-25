@@ -935,18 +935,45 @@ input[type="checkbox"]:hover~label::before {
 .hero {
   position: relative;
   margin: -152px 0 10px;
+  padding-bottom: 10px;
+}
+
+.hero__figure-img {
+  position: relative;
+  top: -116px;
+  width: 100%;
+  height: 101px;
+  background: url("../img/swiper-1/01-figure.png") center / cover no-repeat;
+  z-index: 1;
+}
+
+.hero__container_grid {
+  /* display: grid;
+  grid-template-columns: 492px 1fr;
+  gap: 30px; */
+  position: relative;
+  padding-top: 190px;
+  padding-bottom: 226px;
+}
+
+.hero__swiper {
+  /*Для резины. Не удалять!*/
+  height: auto;
 }
 
 .hero__swiper_one {
-  background: url("../img/swiper-1/01.png") center / cover no-repeat;
+  background: url("../img/swiper-1/01-copy2.png") center / cover no-repeat;
+  background-color: var(--color-mercury);
 }
 
 .hero__swiper_two {
-  background: url("../img/swiper-1/02.png") center / cover no-repeat;
+  background: url("../img/swiper-1/02-copy2.png") center / cover no-repeat;
+  background-color: var(--color-mercury);
 }
 
 .hero__swiper_three {
-  background: url("../img/swiper-1/03.png") center / cover no-repeat;
+  background: url("../img/swiper-1/03-copy2.png") center / cover no-repeat;
+  background-color: var(--color-mercury);
 }
 
 .hero__mySwiper {
@@ -954,19 +981,32 @@ input[type="checkbox"]:hover~label::before {
 }
 
 .hero__mySwiper .swiper-pagination-bullets.swiper-pagination-horizontal {
-  position: absolute;
-  top: 52%;
-  left: 25%;
   z-index: 1;
+  position: relative;
+  bottom: 176px;
+  left: 105px;
 }
 
 .hero__img {
-  display: none;
+  width: 1100px;
+  height: 1121px;
+  position: absolute;
+  left: 30.4%;
+  top: 0;
 }
 
-.hero__container_padding {
-  padding-top: 190px;
-  padding-bottom: 590px;
+.hero__img_one {
+  background: url("../img/swiper-1/01-cadr.png") center / cover no-repeat;
+}
+
+.hero__img_two {
+  top: -3%;
+  background: url("../img/swiper-1/02-cadr.png") center / cover no-repeat;
+}
+
+.hero__img_three {
+  top: -3%;
+  background: url("../img/swiper-1/03-cadr.png") center / cover no-repeat;
 }
 
 /*булить стала палочкой*/
@@ -1037,7 +1077,6 @@ input[type="checkbox"]:hover~label::before {
 /***  О нас about-1920px***/
 .about {
   position: relative;
-  margin-top: -235px;
   padding-top: 17px;
   padding-bottom: 51px;
   z-index: 1;
@@ -1121,13 +1160,13 @@ input[type="checkbox"]:hover~label::before {
 .services {
   position: relative;
   width: 100%;
-  padding-bottom: 164px;
+  padding-bottom: 161px;
   background-color: var(--color-mercury);
   background: url("../img/rectangle-center.png") center / cover no-repeat;
 }
 
 .services__h2 {
-  margin-bottom: 48px;
+  margin-bottom: 51px;
   padding: 23px 0 0;
   text-align: center;
 }
@@ -1543,7 +1582,7 @@ input[type="checkbox"]:hover~label::before {
 }
 
 .forms__h2 {
-  margin: -24px 0 51px;
+  margin: -24px 0 53px;
   width: 222px;
 }
 /*** // Оставьте заявку работ forms-1920px***/
@@ -1782,7 +1821,7 @@ input[type="checkbox"]:hover~label::before {
 
 .footer__up {
   position: absolute;
-  top: -151px;
+  top: -152px;
   right: -42px;
   -webkit-transition: all .4s ease-in-out;
   -moz-transition: all .4s ease-in-out;
@@ -1864,6 +1903,16 @@ input[type="checkbox"]:hover~label::before {
 /* // Подвал footer 1920px */
 
 @media (max-width: 1484px) {
+  .hero {
+    margin-bottom: 0;
+    padding-bottom: 80px;
+  }
+
+  .hero__container_grid {
+    padding-top: 200px;
+    padding-bottom: 126px;
+  }
+
   .hero__h2 {
     margin-bottom: 40px;
     padding-left: 7%;
@@ -1873,9 +1922,26 @@ input[type="checkbox"]:hover~label::before {
     margin-left: 7%;
   }
 
-  .hero__mySwiper .swiper-pagination-bullets.swiper-pagination-horizontal {
-    left: 14%;
+  .hero__img {
+    width: 900px;
+    height: 100%;
+    left: 32%;
+    top: 19%;
   }  
+
+  .hero__mySwiper .swiper-pagination-bullets.swiper-pagination-horizontal {
+    left: 7%;
+    bottom: 70px;
+  }  
+
+  .hero__figure-img {
+    display: none;
+  }
+  
+  
+  .about {
+    padding-top: 160px;
+  }
 
 
   .registration>div {
@@ -1990,9 +2056,9 @@ input[type="checkbox"]:hover~label::before {
     padding: 20px 50px;
   }
 
-  .hero__container_padding {
-    padding-top: 15%;
-    padding-bottom: 44%;
+  .hero__container_grid {
+    padding-top: 200px;
+    padding-bottom: 126px;
   }
 
   .hero__h2 {
@@ -2007,11 +2073,6 @@ input[type="checkbox"]:hover~label::before {
     left: 11%;
   }
   
-
-  
-  .about {
-    margin-top: -160px;
-  }
 
   .about__container {
     padding-bottom: 80px;
@@ -2061,11 +2122,6 @@ input[type="checkbox"]:hover~label::before {
     padding: 20px 25px;
   }
 
-  .hero__container_padding {
-    padding-top: 190px;
-    padding-bottom: 469px;
-  }
-
   .hero__h2 {
     margin-bottom: 34px;
     padding: 0;
@@ -2080,6 +2136,10 @@ input[type="checkbox"]:hover~label::before {
     left: 8%;
   }
 
+
+  .about {
+    padding-top: 80px;
+  }
 
   .about__container {
     padding-top: 23px;
@@ -2233,6 +2293,7 @@ input[type="checkbox"]:hover~label::before {
 
   .hero {
     margin-top: -60px;
+    padding-bottom: 40px;
   }
 
   .hero__mySwiper .swiper-pagination-bullets.swiper-pagination-horizontal {
@@ -2240,9 +2301,8 @@ input[type="checkbox"]:hover~label::before {
     left: 61px;
   }
 
-  .hero__container_padding {
-    padding-top: calc(7% + 60px);
-    padding-bottom: 47%;
+  .hero__container_grid {
+    padding: 126px 19px;
   }
 
   .hero__pagination .swiper-pagination-bullet:first-child:before {
@@ -2255,17 +2315,20 @@ input[type="checkbox"]:hover~label::before {
 
   .hero__h2 {
     margin-bottom: 5%;
-    width: 50%;
+    width: 58%;
   }
 
   .hero__btn {
     padding: 21px 30px;
-  } 
-
-  .about {
-    padding-top: 0;
+  }
+  
+  .hero__img {
+    width: 93%;
+    left: 28%;
+    top: 17%;
   }
 
+  
   .about__container {
     padding-top: 20px;
     padding-bottom: 70px;
@@ -2401,9 +2464,18 @@ input[type="checkbox"]:hover~label::before {
   }
   /* // Шаблон микс figure 717px*/
 
-  .hero__container_padding {
-    padding-top: calc(9% + 60px);
-    padding-bottom: 57%;
+
+  .hero {
+    padding-bottom: 20px;
+  }
+
+  .hero__container_grid {
+    padding: 100px 19px 70px;
+  }
+
+  .hero__mySwiper .swiper-pagination-bullets.swiper-pagination-horizontal {
+    bottom: 44px;
+    left: 40px;
   }
 
 
@@ -2412,7 +2484,7 @@ input[type="checkbox"]:hover~label::before {
   }
 
   .promise {
-    padding: 36px 0 16px;
+    padding: 36px 0 24px;
   }
 
   .promise__list {
@@ -2421,7 +2493,7 @@ input[type="checkbox"]:hover~label::before {
   }
 
   .promise__item {
-    margin-bottom: 33px;
+    margin-bottom: 31px;
   }
 
   .promise__desc {
@@ -2747,6 +2819,7 @@ input[type="checkbox"]:hover~label::before {
   }
 
   .hero__mySwiper {
+    padding-bottom: 19px;
     border-radius: 20px;
     background-color: var(--color-mercury);
   }
@@ -2759,11 +2832,18 @@ input[type="checkbox"]:hover~label::before {
     background-image: none;
   }
 
+  .hero__container_grid {
+    padding: 0 0px 70px;
+  }
+
   .hero__img {
+    position: relative;
+    top: 0;
+    left: 0;
     display: block;
     margin: 0 auto;
     width: 320px;
-    height: 400px;
+    height: 338px;
   }
 
   .hero__img_one {
@@ -2778,14 +2858,8 @@ input[type="checkbox"]:hover~label::before {
     background: url("../img/swiper-1/03-320.png") top / cover no-repeat;
   }
 
-  .hero__container_padding {
-    margin-top: -62px;
-    padding-top: 0;
-    padding-bottom: 97px;
-  }
-
   .hero__h2 {
-    margin: 0 auto 22px;
+    margin: 0 auto 21px;
     width: 77%;
     text-align: center;
   }
@@ -2797,12 +2871,11 @@ input[type="checkbox"]:hover~label::before {
 
   .hero__mySwiper .swiper-pagination-bullets.swiper-pagination-horizontal {
     top: auto;
-    bottom: 21px;
-    left: 49px;
+    bottom: 11px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    width: 89%;
+    width: 100%;
   }
 
   .hero__mySwiper .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
@@ -2836,7 +2909,8 @@ input[type="checkbox"]:hover~label::before {
   }
 
   .about__img img {
-    width: 100%;
+    margin: 0 auto;
+    width: max-content;
     height: 191px;
   }
 
@@ -3226,20 +3300,18 @@ input[type="checkbox"]:hover~label::before {
 }
 
 @media (max-width: 360px) {
-  .hero {
-    padding-bottom: 16px;
-    margin-bottom: 0;
-  }
-
   .hero__btn {
-    width: 78%;
+    width: 69%;
   }
 
   .hero__mySwiper .swiper-pagination-bullets.swiper-pagination-horizontal {
-    bottom: 29px;
-    left: 59px;
     justify-content: start;
   }  
+
+  .about__img img {
+    margin: 0;
+    width: 100%;
+  }
 
   .registration__block {
     background: url("../img/rectangle-320-phone.png");
