@@ -1199,8 +1199,10 @@ input[type="checkbox"]:hover~label::before {
   -ms-flex-pack: center;
   -webkit-justify-content: center;
   justify-content: center;
+  border-radius: 20px;
   height: auto;
   text-align: center;
+  overflow: hidden;
 }
 
 .services__mySwiper .swiper-slide img {
@@ -1213,33 +1215,28 @@ input[type="checkbox"]:hover~label::before {
 .services__btnCard {
   position: relative;
   padding: 185px 0 68px;
-  border-radius: 20px;
   width: 100%;
   -webkit-transition: all .4s ease-in-out;
   -moz-transition: all .4s ease-in-out;
   -o-transition: all .4s ease-in-out;
   transition: all .4s ease-in-out;
   outline: none;
+  background-color: var(--color-asparagus);
 }
 
-.services__btnCard_one {
-  background: url("../img/img-services/01.jpg") center / cover no-repeat;
+.services__btnCard:hover {
+  background-color: transparent;
 }
 
-.services__btnCard_two {
-  background: url("../img/img-services/02.jpg") center / cover no-repeat;
-}
-
-.services__btnCard_three {
-  background: url("../img/img-services/03.jpg") center / cover no-repeat;
-}
-
-.services__btnCard_four {
-  background: url("../img/img-services/04.jpg") center / cover no-repeat;
-}
-
-.services__btnCard .services__desc_hover {
-  display: none;
+.services__btnCard::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  background: url("../img/img-services/linear-color-01.png") bottom / cover no-repeat;
 }
 
 .services__btnCard:hover::before {
@@ -1248,85 +1245,100 @@ input[type="checkbox"]:hover~label::before {
   left: 0;
   right: 0;
   bottom: 0;
+  margin-top: 106%;
   border-radius: 107px 100px 20px 20px;
-  height: 208px;
   background: #06F;
+  z-index: 2;
+  transition-duration: 0s;
 }
 
-.services__btnCard:focus-visible.services__btnCard_one {
+.services__btnCard::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: url("../img/img-services/linear-blue-01.png") bottom / cover no-repeat;
+  z-index: 1;
+  opacity: 0;
+  -webkit-transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.services__btnCard:hover::after {
+  opacity: 1;
+}
+
+.services__img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  opacity: 0.6;
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+  -webkit-transition: opacity .4s ease-in-out, -webkit-filter .4s .2s ease-in-out;
+  transition: opacity .4s ease-in-out, -webkit-filter .4s .2s ease-in-out;
+  transition: filter .4s var(--transition), opacity .4s ease-in-out;
+  transition: filter .4s var(--transition), opacity .4s ease-in-out, -webkit-filter .4s .2s ease-in-out;
+}
+
+.services__img:hover {
+  opacity: 1;
+  -webkit-filter: grayscale(0%);
+  filter: grayscale(0%);
+}
+
+.services__img_one {
   background: url("../img/img-services/color-01.jpg") center / cover no-repeat;
 }
 
-.services__btnCard:hover.services__btnCard_one {
-  background: url("../img/img-services/color-blue-01.jpg") center / cover no-repeat;
+.services__img_two {
+  background: url("../img/img-services/color-02.jpg") center / cover no-repeat;
+}
+
+.services__img_three {
+  background: url("../img/img-services/color-03.jpg") center / cover no-repeat;
+}
+
+.services__img_four {
+  background: url("../img/img-services/color-04.jpg") center / cover no-repeat;
+}
+
+.services__btnCard .services__desc_hover {
+  display: none;
 }
 
 .services__btnCard:hover .services__desc_hoverNone {
   display: none;
 }
 
-.services__btnCard:active.services__btnCard_one,
-.services__btnCard:active.services__btnCard_two,
-.services__btnCard:active.services__btnCard_three,
-.services__btnCard:active.services__btnCard_four {
+.services__btnCard:active .services__img {
   opacity: .7;
 }
 
-.services__btnCard:hover.services__btnCard_one .services__btn,
-.services__btnCard:hover.services__btnCard_two .services__btn,
-.services__btnCard:hover.services__btnCard_three .services__btn,
-.services__btnCard:hover.services__btnCard_four .services__btn {
-  transform: rotate(180deg) translateX(50%);
+.services__btnCard:hover .services__btn { 
+  background-color: transparent;
+  transform: rotate(180deg) translateX(50%);  
+  z-index: 3;
+  transition-duration: 0s;
 }
 
-.services__btnCard:hover.services__btnCard_one .services__desc_hover,
-.services__btnCard:hover.services__btnCard_two .services__desc_hover,
-.services__btnCard:hover.services__btnCard_four .services__desc_hover {
+.services__btnCard:hover .services__desc_hover { 
   display: block;
   margin-top: 83px;
-  margin-bottom: 0;
+  margin-bottom: 10px;
   font-size: 24px;
   line-height: 1;
+  z-index: 3;
+  transition-duration: 0s;
 }
 
-.services__btnCard:hover.services__btnCard_four .services__desc {
-  margin-bottom: 32px;
-}
-
-.services__btnCard:hover.services__btnCard_three .services__desc_hover {
-  display: block;
-  margin-top: 97px;
-  margin-bottom: 42px;
-  font-size: 24px;
-  line-height: 1;
-}
-
-.services__btnCard:focus-visible.services__btnCard_two {
-  background: url("../img/img-services/color-02.jpg") center / cover no-repeat;
-}
-
-.services__btnCard:hover.services__btnCard_two {
-  background: url("../img/img-services/color-blue-02.jpg") center / cover no-repeat;
-}
-
-.services__btnCard:focus-visible.services__btnCard_three {
-  background: url("../img/img-services/color-03.jpg") center / cover no-repeat;
-}
-
-.services__btnCard:hover.services__btnCard_three {
-  background: url("../img/img-services/color-blue-03.jpg") center / cover no-repeat;
-}
-
-.services__btnCard:focus-visible.services__btnCard_four {
-  background: url("../img/img-services/color-04.jpg") center / cover no-repeat;
-}
-
-.services__btnCard:hover.services__btnCard_four {
-  background: url("../img/img-services/color-blue-04.jpg") center / cover no-repeat;
-}
-
-.services__btnCard_three {
-  padding: 185px 0 55px;
+.services__btnCard_three:hover .services__desc_hover { 
+  margin-top: 95px;
 }
 
 .services__btnCard_four .services__svg {
@@ -1334,7 +1346,14 @@ input[type="checkbox"]:hover~label::before {
 }
 
 .services__svg {
+  position: relative;
   margin: 0 auto 48px;
+  z-index: 1;
+}
+
+.services__btnCard:hover .services__svg {
+  z-index: 3;
+  transition-duration: 0s;
 }
 
 .services__desc {
@@ -1349,13 +1368,18 @@ input[type="checkbox"]:hover~label::before {
 
 .services__btn {
   position: absolute;
-  bottom: 58px;
+  bottom: 61px;
   /*центрируем по PP*/
   left: 49%;
+  background-color: transparent;
   /*центрируем по PP*/
   transform: translateX(-49%);
-  transition: 0.3s;
+  -webkit-transition: all .4s ease-in-out;
+  -moz-transition: all .4s ease-in-out;
+  -o-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
   outline: none;
+  z-index: 1;
 }
 
 .services__btn:focus-visible path {
@@ -1851,29 +1875,6 @@ input[type="checkbox"]:hover~label::before {
   width: 1170px;
 }
 
-.footer__up {
-  position: absolute;
-  top: -152px;
-  right: -42px;
-  -webkit-transition: all .4s ease-in-out;
-  -moz-transition: all .4s ease-in-out;
-  -o-transition: all .4s ease-in-out;
-  transition: all .4s ease-in-out;
-  outline: none;
-}
-
-.footer__up:focus-visible svg circle {
-  fill: var(--color-cobalt);
-}
-
-.footer__up:hover svg circle {
-  fill: var(--color-asparagus);
-}
-
-.footer__up:active svg circle {
-  opacity: .7;
-}
-
 .footer__logo {
   display: inline-block;
   margin-bottom: 40px;
@@ -1980,6 +1981,40 @@ input[type="checkbox"]:hover~label::before {
   margin-right: 20px;
 }
 /* // Подвал footer 1920px */
+
+/* стрелка "Вверх-Вниз" 1920px*/
+.up {
+  position: fixed;
+  bottom: 16.7%;
+  right: 17.3%;
+  cursor: pointer;
+  z-index: 1000;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: all .4s ease-in-out;
+  -moz-transition: all .4s ease-in-out;
+  -o-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+  outline: none;
+}
+
+/* стрелка "Вверх-Вниз" js */
+.up--active {
+  visibility: visible;
+  opacity: 1;
+}
+
+.up:focus-visible svg circle {
+  fill: var(--color-cobalt);
+}
+
+.up:hover svg circle {
+  fill: var(--color-asparagus);
+}
+
+.up:active svg circle {
+  opacity: .7;
+}
 
 @media (max-width: 1484px) {
   .hero {
@@ -2111,12 +2146,12 @@ input[type="checkbox"]:hover~label::before {
     font-size: 17px;
   }
 
-  .footer__up {
+  .up {
     top: -130px;
     right: 20px;
   }  
 
-  .footer__up svg {
+  .up svg {
     width: 120px;
     height: 120px;
   }
@@ -2157,6 +2192,12 @@ input[type="checkbox"]:hover~label::before {
     padding-bottom: 80px;
     width: 100%;
   }
+
+
+  .services__btnCard:hover::before {
+    margin-top: 300px;
+  }  
+
 
   .portfolio__h2 {
     padding-left: 40px;
@@ -2518,12 +2559,12 @@ input[type="checkbox"]:hover~label::before {
   }
 
 
-  .footer__up {
+  .up {
     top: -100px;
     right: 20px;
   }  
 
-  .footer__up svg {
+  .up svg {
     width: 90px;
     height: 90px;
   }
@@ -2771,10 +2812,6 @@ input[type="checkbox"]:hover~label::before {
     flex-direction: column;
   }
 
-  .footer__up {
-    display: none;
-  } 
-
   .footer__left {
     display: flex;
     flex-direction: column;
@@ -3005,8 +3042,12 @@ input[type="checkbox"]:hover~label::before {
     background-size: 127% 100%;
   }
 
+  .services__container {
+    padding: 0 25px;
+  }
+
   .services__btnCard {
-    width: 96%;
+    width: 100%;
   }
 
   .services__svg {
@@ -3350,6 +3391,7 @@ input[type="checkbox"]:hover~label::before {
   
   .footer__container {
     gap: 0;
+    padding: 0 25px;
   }
   
   .footer__logo {
@@ -3392,9 +3434,15 @@ input[type="checkbox"]:hover~label::before {
     width: 100%;
   }
 
+  .services__pagination .swiper-pagination-bullet:last-child:before {
+    right: -46px;
+  }
+
   .registration__block {
     background: url("../img/rectangle-320-phone.png");
     background-color: var(--color-white);
   }
 }
 
+
+/**/

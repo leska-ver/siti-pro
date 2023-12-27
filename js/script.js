@@ -77,10 +77,10 @@ document.addEventListener('DOMContentLoaded', function () {
       //Бесконечное листание страниц
       speed: 3000,//Интервал ожидания
 
-      autoplay: {
+      /*autoplay: {
         delay: 5000,//Интервал ожидания
         disableOnInteraction: false,      
-      }
+      }*/
     });
   };
 
@@ -268,6 +268,30 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     })
   }
+
+
+  //.up - стрелка "Вверх-Вниз"
+  const offset = 1500;
+  const scrollUp = document.querySelector('.up');
+
+  function getTop() {
+    return window.pageYOffset || document.documentElement.scrollTop;
+  }
+
+  window.addEventListener('scroll', () => {
+    if (getTop() > offset) {
+      scrollUp.classList.add('up--active');
+    } else {
+      scrollUp.classList.remove('up--active');
+    }
+  });
+
+  scrollUp.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  });
 
 
   // Плавный скролл по якорям. В любое место можно кинуть.
